@@ -81,7 +81,8 @@ class Post(object):
             if meta_key == 'author':
                 self.author = el.find('{wp}meta_value').text
             elif meta_key == 'enclosure':
-                self.enclosure = el.find('{wp}meta_value').text
+                self.enclosure = el.find('{wp}meta_value').text\
+                  .splitlines()[0]
             elif meta_key == '_thumbnail_id':
                 self.thumbnail_id = int(el.find('{wp}meta_value').text)
 
