@@ -83,9 +83,27 @@ html {
 .post .overlay .actions a:hover {
   color: skyblue;
 }
+
+.search {
+  margin-bottom: 20px;
+}
+
+.search .tt-dropdown-menu {
+  background: rgba(255, 255, 255, 0.85);
+  width: 100%;
+  padding: 0 8px;
+}
+
+.search .tt-dropdown-menu .tt-cursor {
+  background: black;
+  color: white;
+}
 </style>
 <title>Life of The Law Site Prototype</title>
 <h1>Life of The Law Site Prototype</h1>
+<div class="search">
+  <input type="text" id="search" placeholder="Search here">
+</div>
 <script type="text/html" id="post-template">
   <div class="post"
    {% if thumbnail %}style="background-image: url({{ thumbnail }})"{% endif %}>
@@ -110,8 +128,36 @@ html {
 </script>
 <script src="vendor/jquery.js"></script>
 <script src="vendor/nunjucks.js"></script>
+<script src="vendor/typeahead.js"></script>
 <script src="posts.js"></script>
 <script>
+// https://gist.github.com/jharding/9458744#file-the-basics-js
+var substringMatcher = function(strs) {
+  return function findMatches(q, cb) {
+    var matches, substrRegex;
+
+    // an array that will be populated with substring matches
+    matches = [];
+
+    // regex used to determine if a string contains the substring `q`
+    substrRegex = new RegExp(q, 'i');
+
+    // iterate through the pool of strings and for any string that
+    // contains the substring `q`, add it to the `matches` array
+    $.each(strs, function(i, str) {
+      if (substrRegex.test(str)) {
+        // the typeahead jQuery plugin expects suggestions to a
+        // JavaScript object, refer to typeahead docs for more info
+        matches.push({ value: str });
+      }
+    });
+
+    cb(matches);
+  };
+};
+
+var tags = {};
+
 $(function() {
   nunjucks.configure({autoescape: true});
   var postTemplate = $.trim($('#post-template').text());
@@ -119,8 +165,43 @@ $(function() {
     if (post.author == 'lifeofthelaw')
       post.author = null;
     post.pubdate = new Date(post.pubdate);
-    $(nunjucks.renderString(postTemplate, post))
+    post.$el = $(nunjucks.renderString(postTemplate, post))
       .appendTo('body');
+    post.tags.forEach(function(tag) {
+      if (!(tag in tags))
+        tags[tag] = $();
+      tags[tag] = tags[tag].add(post.$el);
+    });
+  });
+
+  var matcher = substringMatcher(Object.keys(tags));
+
+  $('#search').typeahead({
+    hint: true,
+    highlight: true,
+    minLength: 1
+  }, {
+    name: 'tags',
+    displayKey: 'value',
+    source: matcher
+  }).on('keyup', function(event) {
+    var val = $(this).val();
+    if (event.which == 27)
+      return $(this).typeahead('val', '').trigger('keyup');
+    if (val in tags) {
+      $('.post').hide();
+      tags[val].show();
+    } else {
+      if (event.which == 13 && val) {
+        matcher(val, function(matches) {
+          if (matches.length) {
+            val = matches[0].value;
+            $(this).typeahead('val', val).trigger('keyup');
+          }
+        }.bind(this));
+      } else
+        $('.post').show();
+    }
   });
 });
 </script>
