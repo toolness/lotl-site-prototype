@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<base target="_blank">
+<link rel="stylesheet" href="vendor/font-awesome/css/font-awesome.css">
+<style>
+html {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+* {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.post {
+  width: 250px;
+  height: 250px;
+  position: relative;
+  display: inline-block;
+  vertical-align: bottom;
+  background-size: cover;
+}
+
+.post .overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  color: white;
+  padding: 8px;
+  width: 100%;
+  height: 33%;
+  background: rgba(0, 0, 0, 0.75);
+}
+
+.post:hover .overlay {
+  height: 100%;
+  font-size: 12px;
+}
+
+.post .overlay .details {
+  display: none;
+  padding-top: 8px;
+  color: #f0f0f0;
+}
+
+.post:hover .overlay .details {
+  display: block;
+}
+
+.post .overlay .details .pubdate {
+  font-size: 10px;
+}
+
+.post .overlay .details .author {
+  font-size: 10px;
+}
+
+.post .overlay a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.post .overlay a:hover {
+  text-decoration: underline;
+}
+
+.post .overlay h3 {
+  margin: 0;
+  font-size: 14px;
+}
+
+.post .overlay .actions {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  font-size: 20px;
+  padding: 4px;
+}
+
+.post .overlay .actions a:hover {
+  color: skyblue;
+}
+</style>
+<title>Life of The Law Site Prototype</title>
+<h1>Life of The Law Site Prototype</h1>
+<script type="text/html" id="post-template">
+  <div class="post"
+   {% if thumbnail %}style="background-image: url({{ thumbnail }})"{% endif %}>
+    <div class="overlay">
+      <h3><a href="{{ link }}">{{ title }}</a></h3>
+      <div class="details">
+        {% if author %}
+        <div class="author">By {{ author }}</div>
+        {% endif %}
+        <span class="pubdate">{{ pubdate.toDateString() }}</span>
+        {% if excerpt %}
+        <p>{{ excerpt }}</p>
+        {% endif %}
+      </div>
+      <div class="actions">
+        {% if enclosure %}
+        <a href="{{ enclosure }}"><i class="fa fa-play-circle"></i></a>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</script>
+<script src="vendor/jquery.js"></script>
+<script src="vendor/nunjucks.js"></script>
+<script src="posts.js"></script>
+<script>
+$(function() {
+  nunjucks.configure({autoescape: true});
+  var postTemplate = $.trim($('#post-template').text());
+  POSTS.reverse().forEach(function(post) {
+    if (post.author == 'lifeofthelaw')
+      post.author = null;
+    post.pubdate = new Date(post.pubdate);
+    $(nunjucks.renderString(postTemplate, post))
+      .appendTo('body');
+  });
+});
+</script>
