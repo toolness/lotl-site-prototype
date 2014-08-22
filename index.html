@@ -8,6 +8,11 @@ html {
   background-color: #f0f0f0;
 }
 
+body {
+  width: 900px;
+  margin: 0 auto;
+}
+
 * {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -86,10 +91,16 @@ html {
 
 .search {
   margin-bottom: 20px;
+  padding-right: 8px;
+}
+
+.search, .search .twitter-typeahead, .search #search, .search .tt-hint {
+  width: 100%;
+  border: none;
 }
 
 .search .tt-dropdown-menu {
-  background: rgba(255, 255, 255, 0.85);
+  background: rgba(255, 255, 255, 0.9);
   width: 100%;
   padding: 0 8px;
 }
@@ -98,11 +109,23 @@ html {
   background: black;
   color: white;
 }
+
+.search {
+  width: 150px;
+  display: inline-block;
+  vertical-align: top;
+}
+
+#results {
+  width: 750px;
+  display: inline-block;
+}
 </style>
 <title>Life of The Law Site Prototype</title>
 <h1>Life of The Law Site Prototype</h1>
 <div class="search">
   <input type="text" id="search" placeholder="Search here">
+</div><div id="results">
 </div>
 <script type="text/html" id="post-template">
   <div class="post"
@@ -166,7 +189,7 @@ $(function() {
       post.author = null;
     post.pubdate = new Date(post.pubdate);
     post.$el = $(nunjucks.renderString(postTemplate, post))
-      .appendTo('body');
+      .appendTo('#results');
     post.tags.forEach(function(tag) {
       if (!(tag in tags))
         tags[tag] = $();
