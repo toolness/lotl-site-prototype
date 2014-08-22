@@ -96,4 +96,9 @@ if __name__ == '__main__':
         print "usage: %s <wordpress-extended-rss-file>" % sys.argv[0]
         sys.exit(1)
     db = Database(open(sys.argv[1]))
-    print db.to_json()
+    f = open('posts.js', 'w')
+    f.write('var POSTS = ')
+    f.write(db.to_json())
+    f.write(';')
+    f.close()
+    print "Wrote posts.js."
