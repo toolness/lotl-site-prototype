@@ -25,7 +25,23 @@ body {
   margin-right: 20px; /* Must be mirrored by GUTTER_WIDTH below. */
   margin-bottom: 20px;
   background-color: #FDFDFD;
-  font-size: 12px;
+  font-size: 0;
+}
+
+.post.wide {
+  width: 430px;
+}
+
+.post.wide .post-thumbnail,
+.post.wide .post-details {
+  display: inline-block;
+  width: 50%;
+  vertical-align: top;
+}
+
+.post.wide .post-thumbnail {
+  min-height: 225px;
+  background-size: cover;
 }
 
 .post h3 {
@@ -47,6 +63,7 @@ body {
 }
 
 .post-details {
+  font-size: 12px;
   padding: 14px;
 }
 
@@ -66,8 +83,11 @@ ul.post-actions li {
 <h1>Life of The Law Masonry Prototype</h1>
 <div id="results"></div>
 <script type="text/html" id="post-template">
-  <div class="post">
-    {% if thumbnail %}
+  <div class="post{% if isWide %} wide{% endif %}">
+    {% if isWide %}
+    <div class="post-thumbnail"{% if thumbnail %} style="background-image: url({{ thumbnail.url }})"{% endif %}></div>
+    {% endif %}
+    {% if not isWide and thumbnail %}
     <img src="{{ thumbnail.url }}" width="{{ thumbnail.width }}" height="{{ thumbnail.height }}">
     {% endif %}
     <div class="post-details">
@@ -97,7 +117,7 @@ $(function() {
 
   nunjucks.configure({autoescape: true});
   var postTemplate = $.trim($('#post-template').text());
-  POSTS.reverse().forEach(function(post) {
+  POSTS.reverse().forEach(function(post, i) {
     if (post.author == 'lifeofthelaw')
       post.author = null;
     post.pubdate = new Date(post.pubdate);
@@ -107,6 +127,7 @@ $(function() {
                               post.thumbnail.width;
       post.thumbnail.width = COLUMN_WIDTH;
     }
+    post.isWide = (i == 0);
     post.$el = $(nunjucks.renderString(postTemplate, post))
       .appendTo(results);
   });
