@@ -13,7 +13,11 @@ var POSTS = [
       "Holmes", 
       "Legal History"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2012/08/owh.jpg", 
+    "thumbnail": {
+      "height": "274", 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2012/08/owh.jpg", 
+      "width": "638"
+    }, 
     "title": "Logic and Experience"
   }, 
   {
@@ -31,7 +35,11 @@ var POSTS = [
       "Inquiring Minds", 
       "Law &amp; Economics"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2012/08/books11.jpg", 
+    "thumbnail": {
+      "height": "274", 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2012/08/books11.jpg", 
+      "width": "638"
+    }, 
     "title": "Inquiring Minds: Cass Sunstein"
   }, 
   {
@@ -49,7 +57,11 @@ var POSTS = [
       "Law &amp; Anthropology", 
       "Mark Weiner"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2012/08/books11.jpg", 
+    "thumbnail": {
+      "height": "274", 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2012/08/books11.jpg", 
+      "width": "638"
+    }, 
     "title": "Inquiring Minds: Mark Weiner"
   }, 
   {
@@ -72,7 +84,6 @@ var POSTS = [
       "warning ads", 
       "warning labels"
     ], 
-    "thumbnail_id": null, 
     "title": "Cigarette goggles for smoker\u2019s lung? "
   }, 
   {
@@ -85,7 +96,6 @@ var POSTS = [
     "link": "http://www.lifeofthelaw.org/inquiring-minds-emily-bazelon/", 
     "pubdate": "Sat, 15 Sep 2012 02:46:47 +0000", 
     "tags": [], 
-    "thumbnail_id": null, 
     "title": "Inquiring Minds: Emily Bazelon"
   }, 
   {
@@ -102,7 +112,6 @@ var POSTS = [
       "Inspirations", 
       "This American Life"
     ], 
-    "thumbnail_id": null, 
     "title": "Inspirations: Away from home"
   }, 
   {
@@ -126,7 +135,11 @@ var POSTS = [
       "shari diamond", 
       "war on drugs"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2012/09/juryseatsSIZED.jpeg", 
+    "thumbnail": {
+      "height": "273", 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2012/09/juryseatsSIZED.jpeg", 
+      "width": "624"
+    }, 
     "title": "The Secret Power of Jury Nullification"
   }, 
   {
@@ -139,7 +152,6 @@ var POSTS = [
     "link": "http://www.lifeofthelaw.org/inspirations-the-arsenal-of-exclusion/", 
     "pubdate": "Mon, 17 Sep 2012 00:34:23 +0000", 
     "tags": [], 
-    "thumbnail_id": null, 
     "title": "Inspirations: The Arsenal of Exclusion"
   }, 
   {
@@ -152,7 +164,6 @@ var POSTS = [
     "link": "http://www.lifeofthelaw.org/what-is-law/", 
     "pubdate": "Mon, 17 Sep 2012 20:03:27 +0000", 
     "tags": [], 
-    "thumbnail_id": null, 
     "title": "What is law?"
   }, 
   {
@@ -172,7 +183,11 @@ var POSTS = [
       "south dakota", 
       "suicide risk"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2012/09/MM-photo1.jpg", 
+    "thumbnail": {
+      "height": "343", 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2012/09/MM-photo1.jpg", 
+      "width": "500"
+    }, 
     "title": "How eating M&Ms is a risk factor for suicide, according to a federal court"
   }, 
   {
@@ -185,7 +200,11 @@ var POSTS = [
     "link": "http://www.lifeofthelaw.org/so-what-does-that-mean-for-juries/", 
     "pubdate": "Thu, 20 Sep 2012 01:41:41 +0000", 
     "tags": [], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2012/09/2646545536_ab97f0fa2f.jpg", 
+    "thumbnail": {
+      "height": "477", 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2012/09/2646545536_ab97f0fa2f.jpg", 
+      "width": "500"
+    }, 
     "title": "So what does that mean for juries?"
   }, 
   {
@@ -198,7 +217,6 @@ var POSTS = [
     "link": "http://www.lifeofthelaw.org/fashion-law/", 
     "pubdate": "Tue, 25 Sep 2012 01:05:52 +0000", 
     "tags": [], 
-    "thumbnail_id": null, 
     "title": "Fashion Law"
   }, 
   {
@@ -222,7 +240,11 @@ var POSTS = [
       "prison", 
       "the criminal process"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2012/09/LawyerSized.jpeg", 
+    "thumbnail": {
+      "height": "274", 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2012/09/LawyerSized.jpeg", 
+      "width": "638"
+    }, 
     "title": "Jailhouse Lawyers"
   }, 
   {
@@ -239,7 +261,11 @@ var POSTS = [
       "mary adkins", 
       "Right of Publicity"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2012/09/Bill-Cosby-Post-photo.jpg", 
+    "thumbnail": {
+      "height": "375", 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2012/09/Bill-Cosby-Post-photo.jpg", 
+      "width": "500"
+    }, 
     "title": "What Bill Cosby Made Me Think About the Law"
   }, 
   {
@@ -258,7 +284,11 @@ var POSTS = [
       "mary adkins", 
       "nicholas felton"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2012/09/Photo-for-Feltron-Post.png", 
+    "thumbnail": {
+      "height": "395", 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2012/09/Photo-for-Feltron-Post.png", 
+      "width": "482"
+    }, 
     "title": "Your Honor, I Offer Into Evidence The Me Report"
   }, 
   {
@@ -275,7 +305,11 @@ var POSTS = [
       "mary adkins", 
       "shon hopwood"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2012/10/shon-hopwood.jpg", 
+    "thumbnail": {
+      "height": "320", 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2012/10/shon-hopwood.jpg", 
+      "width": "210"
+    }, 
     "title": "Further Reading: A Jailhouse Lawyer\u2019s Successful Appeal to the Nation\u2019s Highest Court "
   }, 
   {
@@ -293,7 +327,11 @@ var POSTS = [
       "kid politics", 
       "mary adkins"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2012/10/kid-elections-photo.jpg", 
+    "thumbnail": {
+      "height": "466", 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2012/10/kid-elections-photo.jpg", 
+      "width": "600"
+    }, 
     "title": "Kid Elections: Little Adults, But More Fun"
   }, 
   {
@@ -318,7 +356,11 @@ var POSTS = [
       "river", 
       "summer"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2012/10/signSIZED.jpg", 
+    "thumbnail": {
+      "height": "274", 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2012/10/signSIZED.jpg", 
+      "width": "638"
+    }, 
     "title": "Two Sides of a River"
   }, 
   {
@@ -331,7 +373,11 @@ var POSTS = [
     "link": "http://www.lifeofthelaw.org/million-dollar-blocks/", 
     "pubdate": "Wed, 03 Oct 2012 08:10:59 +0000", 
     "tags": [], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2012/10/Million-Dollar-blcosk1.jpeg", 
+    "thumbnail": {
+      "height": "338", 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2012/10/Million-Dollar-blcosk1.jpeg", 
+      "width": "450"
+    }, 
     "title": "Million Dollar Blocks"
   }, 
   {
@@ -351,7 +397,11 @@ var POSTS = [
       "photos", 
       "what the law looks like"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2012/10/2012-09-28-11.01.01-e1369062743846.jpg", 
+    "thumbnail": {
+      "height": 600, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2012/10/2012-09-28-11.01.01-e1369062743846.jpg", 
+      "width": 600
+    }, 
     "title": "What the Law Looks Like"
   }, 
   {
@@ -364,7 +414,6 @@ var POSTS = [
     "link": "http://www.lifeofthelaw.org/inquiring-minds-mad-magazine-and-the-brethren/", 
     "pubdate": "Thu, 11 Oct 2012 00:44:20 +0000", 
     "tags": [], 
-    "thumbnail_id": null, 
     "title": "Inquiring Minds: Mad Magazine and The Brethren"
   }, 
   {
@@ -389,7 +438,11 @@ var POSTS = [
       "Vietnamese-American", 
       "Zoe Sullivan"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2012/10/boat.jpeg", 
+    "thumbnail": {
+      "height": "274", 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2012/10/boat.jpeg", 
+      "width": "638"
+    }, 
     "title": "Law in Translation"
   }, 
   {
@@ -408,7 +461,11 @@ var POSTS = [
       "space", 
       "space law"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2012/10/ngc1300.jpeg", 
+    "thumbnail": {
+      "height": "550", 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2012/10/ngc1300.jpeg", 
+      "width": "937"
+    }, 
     "title": "Space Law 101: The (Literal) Frontier of Law"
   }, 
   {
@@ -426,7 +483,11 @@ var POSTS = [
       "martha nussbaum", 
       "mary adkins"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2012/10/inthenews-nussbaum.jpeg", 
+    "thumbnail": {
+      "height": "300", 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2012/10/inthenews-nussbaum.jpeg", 
+      "width": "200"
+    }, 
     "title": "Martha Nussbaum: Do Not Despise Your Inner World"
   }, 
   {
@@ -445,7 +506,11 @@ var POSTS = [
       "photos of law", 
       "what the law looks like"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2012/10/girl-studying-e1369065534184.jpg", 
+    "thumbnail": {
+      "height": 580, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2012/10/girl-studying-e1369065534184.jpg", 
+      "width": 600
+    }, 
     "title": "What the Law Looks Like"
   }, 
   {
@@ -458,7 +523,11 @@ var POSTS = [
     "link": "http://www.lifeofthelaw.org/are-tweets-intellectual-property-the-answer-in-25-tweets/", 
     "pubdate": "Wed, 31 Oct 2012 19:46:50 +0000", 
     "tags": [], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2012/10/steal-this-tweet.png", 
+    "thumbnail": {
+      "height": "374", 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2012/10/steal-this-tweet.png", 
+      "width": "572"
+    }, 
     "title": "Can You Copyright a Tweet? The Answer in 25 of Them"
   }, 
   {
@@ -478,7 +547,11 @@ var POSTS = [
       "sandy", 
       "staten island"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2012/11/Sandy-Relief-Map.png", 
+    "thumbnail": {
+      "height": "426", 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2012/11/Sandy-Relief-Map.png", 
+      "width": "458"
+    }, 
     "title": "Questionable Relief Math in Sandy\u2019s Aftermath"
   }, 
   {
@@ -496,7 +569,11 @@ var POSTS = [
       "mary adkins", 
       "supreme decision"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2012/11/Lady-Blue-Law-Craft.png", 
+    "thumbnail": {
+      "height": "639", 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2012/11/Lady-Blue-Law-Craft.png", 
+      "width": "941"
+    }, 
     "title": "Am I Smarter Than a Sixth Grader?"
   }, 
   {
@@ -518,7 +595,11 @@ var POSTS = [
       "Scott Kernan", 
       "SHU"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2012/11/IMG_3501-e1353023132163.jpg", 
+    "thumbnail": {
+      "height": "562", 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2012/11/IMG_3501-e1353023132163.jpg", 
+      "width": "750"
+    }, 
     "title": "Behind the Walls of the Most Restricted Cells"
   }, 
   {
@@ -537,7 +618,11 @@ var POSTS = [
       "mary adkins", 
       "mlk"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2012/11/mlk-in-birmingham-jail.jpeg", 
+    "thumbnail": {
+      "height": "412", 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2012/11/mlk-in-birmingham-jail.jpeg", 
+      "width": "605"
+    }, 
     "title": "Martin Luther King on When It's Okay to Break the Law"
   }, 
   {
@@ -550,7 +635,11 @@ var POSTS = [
     "link": "http://www.lifeofthelaw.org/what-the-law-looks-like-3/", 
     "pubdate": "Tue, 27 Nov 2012 03:55:29 +0000", 
     "tags": [], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2012/11/Photo-Aug-25-4-14-20-PM.jpg", 
+    "thumbnail": {
+      "height": "756", 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2012/11/Photo-Aug-25-4-14-20-PM.jpg", 
+      "width": "756"
+    }, 
     "title": "What the Law Looks Like"
   }, 
   {
@@ -568,7 +657,11 @@ var POSTS = [
       "juan haines", 
       "San Quentin"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/01/sq.jpeg", 
+    "thumbnail": {
+      "height": 255, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/01/sq.jpeg", 
+      "width": 406
+    }, 
     "title": "Reflections of a Jailhouse Lawyer"
   }, 
   {
@@ -587,7 +680,11 @@ var POSTS = [
       "mary adkins", 
       "supreme court"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/01/01.jpeg", 
+    "thumbnail": {
+      "height": 508, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/01/01.jpeg", 
+      "width": 500
+    }, 
     "title": "May It Please the Court: Revisiting Maira Kalman's Illustrations of Law"
   }, 
   {
@@ -606,7 +703,11 @@ var POSTS = [
       "my first house", 
       "text"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/01/Brooklyn-townhouse-for-sale.jpeg", 
+    "thumbnail": {
+      "height": 396, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/01/Brooklyn-townhouse-for-sale.jpeg", 
+      "width": 648
+    }, 
     "title": "My First House: The Most Casual High Stakes Purchase of My Life (Part 1)"
   }, 
   {
@@ -625,7 +726,11 @@ var POSTS = [
       "majority", 
       "rina goldfield"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/01/jury-box.jpeg", 
+    "thumbnail": {
+      "height": 368, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/01/jury-box.jpeg", 
+      "width": 491
+    }, 
     "title": "How To Bully a Jury"
   }, 
   {
@@ -642,7 +747,11 @@ var POSTS = [
       "mary adkins", 
       "restorative justice"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/01/Django-Unchained-2-e1358178523406.jpeg", 
+    "thumbnail": {
+      "height": 375, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/01/Django-Unchained-2-e1358178523406.jpeg", 
+      "width": 600
+    }, 
     "title": "Django Unchained : Restorative Justice :: What We Are : What We Want to Be"
   }, 
   {
@@ -664,7 +773,11 @@ var POSTS = [
       "scotus", 
       "storytelling"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/01/justices-sized1.jpg", 
+    "thumbnail": {
+      "height": 274, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/01/justices-sized1.jpg", 
+      "width": 638
+    }, 
     "title": "Tough Crowd"
   }, 
   {
@@ -681,7 +794,11 @@ var POSTS = [
       "kate tellers", 
       "my first house"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/01/Brooklyn-townhouse-for-sale.jpeg", 
+    "thumbnail": {
+      "height": 396, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/01/Brooklyn-townhouse-for-sale.jpeg", 
+      "width": 648
+    }, 
     "title": "MY FIRST HOUSE: THE MOST CASUAL HIGH STAKES PURCHASE OF MY LIFE (PART 2)"
   }, 
   {
@@ -700,7 +817,9 @@ var POSTS = [
       "obama administration", 
       "whistleblower"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/01/whistleblower-e1358448310827.jpg", 
+    "thumbnail": {
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/01/whistleblower-e1358448310827.jpg"
+    }, 
     "title": "How the New Whistleblower Law Might Help the Administration Keep a Lid on Leaks"
   }, 
   {
@@ -718,7 +837,11 @@ var POSTS = [
       "luci lawless", 
       "this does not constitue legal advice"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/01/Engagement-Rings-Ring-On-Hand-e1358531162768.png", 
+    "thumbnail": {
+      "height": 196, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/01/Engagement-Rings-Ring-On-Hand-e1358531162768.png", 
+      "width": 296
+    }, 
     "title": "New Column: This Does Not Constitute Legal Advice"
   }, 
   {
@@ -736,7 +859,11 @@ var POSTS = [
       "eric fish", 
       "twenty-seventh amendment"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/01/27thAmend.jpeg", 
+    "thumbnail": {
+      "height": 415, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/01/27thAmend.jpeg", 
+      "width": 504
+    }, 
     "title": "Heard of the 27th Amendment? Congress Just Violated It... Again"
   }, 
   {
@@ -753,7 +880,11 @@ var POSTS = [
       "kate tellers", 
       "my first house"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/01/Brooklyn-townhouse-for-sale.jpeg", 
+    "thumbnail": {
+      "height": 396, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/01/Brooklyn-townhouse-for-sale.jpeg", 
+      "width": 648
+    }, 
     "title": "MY FIRST HOUSE: THE MOST CASUAL HIGH STAKES PURCHASE OF MY LIFE (PART 3)"
   }, 
   {
@@ -771,7 +902,11 @@ var POSTS = [
       "start ups", 
       "this does not constitute legal advice"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/01/Slide1.jpg", 
+    "thumbnail": {
+      "height": 410, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/01/Slide1.jpg", 
+      "width": 563
+    }, 
     "title": "TDNCLA: How Do I Start a Company?"
   }, 
   {
@@ -796,7 +931,11 @@ var POSTS = [
       "safety", 
       "storytelling"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/01/2GreenpointSS.jpg", 
+    "thumbnail": {
+      "height": 274, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/01/2GreenpointSS.jpg", 
+      "width": 638
+    }, 
     "title": "Block Boss"
   }, 
   {
@@ -814,7 +953,11 @@ var POSTS = [
       "mallory schlossberg", 
       "temping"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/01/url-e1359473717793.jpeg", 
+    "thumbnail": {
+      "height": 399, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/01/url-e1359473717793.jpeg", 
+      "width": 600
+    }, 
     "title": "I Am My Lawyer-Father's Daughter"
   }, 
   {
@@ -831,7 +974,11 @@ var POSTS = [
       "class action fraley v. facebook", 
       "facebook"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/01/screenshot.png", 
+    "thumbnail": {
+      "height": 390, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/01/screenshot.png", 
+      "width": 403
+    }, 
     "title": "Facebook Class Action Email Explained"
   }, 
   {
@@ -848,7 +995,11 @@ var POSTS = [
       "kate tellers", 
       "my first house"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/01/Brooklyn-townhouse-for-sale.jpeg", 
+    "thumbnail": {
+      "height": 396, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/01/Brooklyn-townhouse-for-sale.jpeg", 
+      "width": 648
+    }, 
     "title": "MY FIRST HOUSE: THE MOST CASUAL HIGH STAKES PURCHASE OF MY LIFE (PART 4)"
   }, 
   {
@@ -867,7 +1018,11 @@ var POSTS = [
       "parents", 
       "what can I name my kid"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/02/url.jpeg", 
+    "thumbnail": {
+      "height": 352, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/02/url.jpeg", 
+      "width": 520
+    }, 
     "title": "TDNCLA: Can I Name My Kid JDate?"
   }, 
   {
@@ -885,7 +1040,11 @@ var POSTS = [
       "innocent man", 
       "juan haines"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/02/url1.jpeg", 
+    "thumbnail": {
+      "height": 300, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/02/url1.jpeg", 
+      "width": 400
+    }, 
     "title": "The Innocent Man in Prison"
   }, 
   {
@@ -903,7 +1062,11 @@ var POSTS = [
       "tdncla", 
       "this does not constitute legal advice"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/01/Slide1.jpg", 
+    "thumbnail": {
+      "height": 410, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/01/Slide1.jpg", 
+      "width": 563
+    }, 
     "title": "TDNCLA: Again... How Do I Start a Company?"
   }, 
   {
@@ -918,7 +1081,6 @@ var POSTS = [
     "tags": [
       "this week in law"
     ], 
-    "thumbnail_id": null, 
     "title": "This Week In the Law: Questions Presented"
   }, 
   {
@@ -942,7 +1104,11 @@ var POSTS = [
       "public defender", 
       "storytelling"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/02/public-defenders-resized.jpg", 
+    "thumbnail": {
+      "height": 274, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/02/public-defenders-resized.jpg", 
+      "width": 638
+    }, 
     "title": "Felony Factory"
   }, 
   {
@@ -962,7 +1128,11 @@ var POSTS = [
       "obama", 
       "states' rights"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/02/url.png", 
+    "thumbnail": {
+      "height": 352, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/02/url.png", 
+      "width": 406
+    }, 
     "title": "Substance abuse: the truth behind states' rights"
   }, 
   {
@@ -980,7 +1150,11 @@ var POSTS = [
       "mortgage", 
       "my first house"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/01/Brooklyn-townhouse-for-sale.jpeg", 
+    "thumbnail": {
+      "height": 396, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/01/Brooklyn-townhouse-for-sale.jpeg", 
+      "width": 648
+    }, 
     "title": "MY FIRST HOUSE: THE MOST CASUAL HIGH STAKES PURCHASE OF MY LIFE (PART 5)"
   }, 
   {
@@ -999,7 +1173,11 @@ var POSTS = [
       "review", 
       "zero dark thirty"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/02/House-of-Cards-Netflix-e1360862594831.jpeg", 
+    "thumbnail": {
+      "height": 400, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/02/House-of-Cards-Netflix-e1360862594831.jpeg", 
+      "width": 650
+    }, 
     "title": "TWO TALES OF AMERICAN REVENGE"
   }, 
   {
@@ -1018,7 +1196,11 @@ var POSTS = [
       "same-sex", 
       "windsor"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/02/MG_3963_2-e1361201190610.jpeg", 
+    "thumbnail": {
+      "height": 400, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/02/MG_3963_2-e1361201190610.jpeg", 
+      "width": 600
+    }, 
     "title": "An Open Letter to the President"
   }, 
   {
@@ -1036,7 +1218,11 @@ var POSTS = [
       "law school reform", 
       "law school transparency"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/02/url-1.jpeg", 
+    "thumbnail": {
+      "height": 282, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/02/url-1.jpeg", 
+      "width": 426
+    }, 
     "title": "How To Turn the Legal Profession On Its Head"
   }, 
   {
@@ -1054,7 +1240,11 @@ var POSTS = [
       "marriage", 
       "my first house"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/01/Brooklyn-townhouse-for-sale.jpeg", 
+    "thumbnail": {
+      "height": 396, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/01/Brooklyn-townhouse-for-sale.jpeg", 
+      "width": 648
+    }, 
     "title": "MY FIRST HOUSE: THE MOST CASUAL HIGH STAKES PURCHASE OF MY LIFE (PART 6)"
   }, 
   {
@@ -1072,7 +1262,11 @@ var POSTS = [
       "tdncla", 
       "this does not constitute legal advice"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/01/Slide1.jpg", 
+    "thumbnail": {
+      "height": 410, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/01/Slide1.jpg", 
+      "width": 563
+    }, 
     "title": "TDNCLA: How True is Finders Keepers?"
   }, 
   {
@@ -1098,7 +1292,11 @@ var POSTS = [
       "Red Hook", 
       "youth court"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/02/EP8-REDHOOK-OUTSIDEFAR-BANNER.jpg", 
+    "thumbnail": {
+      "height": 274, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/02/EP8-REDHOOK-OUTSIDEFAR-BANNER.jpg", 
+      "width": 638
+    }, 
     "title": "Redesigning Justice"
   }, 
   {
@@ -1115,7 +1313,11 @@ var POSTS = [
       "brown v. board of education", 
       "narrative in law"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/02/url-2-e1361893702379.jpeg", 
+    "thumbnail": {
+      "height": 400, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/02/url-2-e1361893702379.jpeg", 
+      "width": 600
+    }, 
     "title": "Narrative Argument in Judicial Decisions"
   }, 
   {
@@ -1135,7 +1337,11 @@ var POSTS = [
       "sports deviance", 
       "violence"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/02/url2-e1362024978448.jpeg", 
+    "thumbnail": {
+      "height": 401, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/02/url2-e1362024978448.jpeg", 
+      "width": 600
+    }, 
     "title": "Changing the Culture of Sports Deviance"
   }, 
   {
@@ -1155,7 +1361,11 @@ var POSTS = [
       "tdncla", 
       "toys r us"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/01/Slide1.jpg", 
+    "thumbnail": {
+      "height": 410, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/01/Slide1.jpg", 
+      "width": 563
+    }, 
     "title": "TDNCLA: My Jorts \"R\" Us Facebook Promotion Plan"
   }, 
   {
@@ -1173,7 +1383,11 @@ var POSTS = [
       "sexual assault in the military", 
       "the invisible war"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/03/The-Invisible-War-movie.jpeg", 
+    "thumbnail": {
+      "height": 385, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/03/The-Invisible-War-movie.jpeg", 
+      "width": 600
+    }, 
     "title": "A Film That's Actually Changing the World: Kirby Dick on the Invisible War"
   }, 
   {
@@ -1192,7 +1406,11 @@ var POSTS = [
       "Immigration Law", 
       "katherine thompson"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/03/url-51.jpeg", 
+    "thumbnail": {
+      "height": 498, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/03/url-51.jpeg", 
+      "width": 400
+    }, 
     "title": "Dreamy Accents, and Other Reasons Not To Fraternize with Aliens"
   }, 
   {
@@ -1210,7 +1428,6 @@ var POSTS = [
       "gideon v. wainwright", 
       "kat aaron"
     ], 
-    "thumbnail_id": null, 
     "title": "Gideon at 50"
   }, 
   {
@@ -1228,7 +1445,11 @@ var POSTS = [
       "this does not constitute legal advice", 
       "wrong tattoo"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/01/Slide1.jpg", 
+    "thumbnail": {
+      "height": 410, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/01/Slide1.jpg", 
+      "width": 563
+    }, 
     "title": "TDNCLA: Can I Sue for Giving Me the Wrong Tattoo?"
   }, 
   {
@@ -1247,7 +1468,11 @@ var POSTS = [
       "teaching", 
       "teaching law"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/03/Lucas-+-Teaching-color1-e1363098775463.jpg", 
+    "thumbnail": {
+      "height": 468, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/03/Lucas-+-Teaching-color1-e1363098775463.jpg", 
+      "width": 600
+    }, 
     "title": "8th Grade Democracy: Teaching the Filibuster"
   }, 
   {
@@ -1272,7 +1497,11 @@ var POSTS = [
       "solitary confinement", 
       "storytelling"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/03/banner.jpg", 
+    "thumbnail": {
+      "height": 274, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/03/banner.jpg", 
+      "width": 638
+    }, 
     "title": "Reporter on Death Row"
   }, 
   {
@@ -1293,7 +1522,11 @@ var POSTS = [
       "internship law", 
       "pregnancy discrimination"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/03/url-e1363284774908.jpeg", 
+    "thumbnail": {
+      "height": 338, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/03/url-e1363284774908.jpeg", 
+      "width": 600
+    }, 
     "title": "Employment Law in a Recession: Gawker's Unemployment Stories Analyzed"
   }, 
   {
@@ -1312,7 +1545,11 @@ var POSTS = [
       "this does not constitute legal advice", 
       "wiretapping law"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/01/Slide1.jpg", 
+    "thumbnail": {
+      "height": 410, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/01/Slide1.jpg", 
+      "width": 563
+    }, 
     "title": "TDNCLA: Can I Secretly Record Phone Calls? "
   }, 
   {
@@ -1329,7 +1566,11 @@ var POSTS = [
       "gideon v. wainwright", 
       "raj jayadev"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/01/jury-box.jpeg", 
+    "thumbnail": {
+      "height": 368, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/01/jury-box.jpeg", 
+      "width": 491
+    }, 
     "title": "Gideon\u2019s Anniversary: Agreement on the Problem of Unfair Representation, But What About Solutions?"
   }, 
   {
@@ -1347,7 +1588,11 @@ var POSTS = [
       "sopen shah", 
       "yale law"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/03/031913-Sopen-Headshot-TLOTL1.jpg", 
+    "thumbnail": {
+      "height": 655, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/03/031913-Sopen-Headshot-TLOTL1.jpg", 
+      "width": 502
+    }, 
     "title": "Reflections of a Law School Beauty Queen"
   }, 
   {
@@ -1372,7 +1617,11 @@ var POSTS = [
       "snow", 
       "transportation"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/03/EP10-spotdibs-david-banner1.jpg", 
+    "thumbnail": {
+      "height": 274, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/03/EP10-spotdibs-david-banner1.jpg", 
+      "width": 633
+    }, 
     "title": "Dibs"
   }, 
   {
@@ -1393,7 +1642,11 @@ var POSTS = [
       "what surprised me about law", 
       "what?"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/03/url2.jpeg", 
+    "thumbnail": {
+      "height": 360, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/03/url2.jpeg", 
+      "width": 480
+    }, 
     "title": "New Column: Wait, What? Law Students on What Surprises Them"
   }, 
   {
@@ -1412,7 +1665,11 @@ var POSTS = [
       "prop 8", 
       "supreme court"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/03/Library-of-Congress-and-Supreme-Court.jpg", 
+    "thumbnail": {
+      "height": 467, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/03/Library-of-Congress-and-Supreme-Court.jpg", 
+      "width": 350
+    }, 
     "title": "Same-Sex Marriage, Public Opinion, and the Supreme Court"
   }, 
   {
@@ -1432,7 +1689,11 @@ var POSTS = [
       "living under DOMA", 
       "niagra falls"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/03/jk@niagara.jpeg", 
+    "thumbnail": {
+      "height": 397, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/03/jk@niagara.jpeg", 
+      "width": 600
+    }, 
     "title": "Living Under DOMA: Fleeing to Niagara Falls"
   }, 
   {
@@ -1450,7 +1711,11 @@ var POSTS = [
       "tdncla", 
       "this does not constitute legal advice"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/01/Slide1.jpg", 
+    "thumbnail": {
+      "height": 410, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/01/Slide1.jpg", 
+      "width": 563
+    }, 
     "title": "TDNCLA: Where Can I Bury My Pet?"
   }, 
   {
@@ -1470,7 +1735,11 @@ var POSTS = [
       "life of the law", 
       "the criminal process"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/04/Screen-Shot-2013-04-03-at-9.42.40-AM.png", 
+    "thumbnail": {
+      "height": 345, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/04/Screen-Shot-2013-04-03-at-9.42.40-AM.png", 
+      "width": 549
+    }, 
     "title": "Our New Video Series! Breaking Down the Law"
   }, 
   {
@@ -1488,7 +1757,11 @@ var POSTS = [
       "jill rothenberg", 
       "tom clements"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/04/Colo-Territorial-Prison.jpg", 
+    "thumbnail": {
+      "height": 2112, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/04/Colo-Territorial-Prison.jpg", 
+      "width": 2816
+    }, 
     "title": "Prison City, U.S.A."
   }, 
   {
@@ -1501,7 +1774,11 @@ var POSTS = [
     "link": "http://www.lifeofthelaw.org/announcing-life-of-the-law-live/", 
     "pubdate": "Thu, 04 Apr 2013 16:15:35 +0000", 
     "tags": [], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/04/An-image-from-the-Empty-S-001.jpg", 
+    "thumbnail": {
+      "height": 276, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/04/An-image-from-the-Empty-S-001.jpg", 
+      "width": 460
+    }, 
     "title": "Announcing Life of the Law LIVE!"
   }, 
   {
@@ -1519,7 +1796,11 @@ var POSTS = [
       "law cartoon", 
       "lucas mills"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/04/Juror-4-project-v2-medium-text-e1370607907285.jpg", 
+    "thumbnail": {
+      "height": 191, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/04/Juror-4-project-v2-medium-text-e1370607907285.jpg", 
+      "width": 400
+    }, 
     "title": "Introducing LOTL's New Law Comic, Juror #4"
   }, 
   {
@@ -1542,7 +1823,11 @@ var POSTS = [
       "Shannon Heffernan", 
       "suicide"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/04/Episode11-gun-suicides-poster-banner.jpg", 
+    "thumbnail": {
+      "height": 274, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/04/Episode11-gun-suicides-poster-banner.jpg", 
+      "width": 638
+    }, 
     "title": "Without Means"
   }, 
   {
@@ -1559,7 +1844,11 @@ var POSTS = [
       "i-94", 
       "katherine thompson"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/04/i94e.jpg", 
+    "thumbnail": {
+      "height": 503, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/04/i94e.jpg", 
+      "width": 598
+    }, 
     "title": "Living Under DOMA: The I-94"
   }, 
   {
@@ -1579,7 +1868,11 @@ var POSTS = [
       "rape comics", 
       "texas"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/04/Screen-Shot-2013-04-10-at-3.26.45-PM.png", 
+    "thumbnail": {
+      "height": 571, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/04/Screen-Shot-2013-04-10-at-3.26.45-PM.png", 
+      "width": 468
+    }, 
     "title": "Rape Ed Comics: As Weird As They Sound"
   }, 
   {
@@ -1597,7 +1890,11 @@ var POSTS = [
       "theater", 
       "violence"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/04/420.th_.th_.rv_.HowLongWillICry.jpg", 
+    "thumbnail": {
+      "height": 330, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/04/420.th_.th_.rv_.HowLongWillICry.jpg", 
+      "width": 492
+    }, 
     "title": "Can Theater Stop Violence? "
   }, 
   {
@@ -1624,7 +1921,6 @@ var POSTS = [
       "storytelling", 
       "suicide"
     ], 
-    "thumbnail_id": null, 
     "title": "Full Interview with Justin Helzer"
   }, 
   {
@@ -1642,7 +1938,11 @@ var POSTS = [
       "jill weinberg", 
       "terrorism"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/04/screenshot.png", 
+    "thumbnail": {
+      "height": 244, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/04/screenshot.png", 
+      "width": 572
+    }, 
     "title": "The Politics of the T-Word: Defining Terrorism in the Wake of the Boston Marathon Bombings"
   }, 
   {
@@ -1659,7 +1959,11 @@ var POSTS = [
       "ip law and gender", 
       "lady drawers"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/04/kotex.jpeg", 
+    "thumbnail": {
+      "height": 849, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/04/kotex.jpeg", 
+      "width": 660
+    }, 
     "title": "The Strange Legal History of Feminine Hygiene"
   }, 
   {
@@ -1677,7 +1981,11 @@ var POSTS = [
       "how to get subpoenaed", 
       "what to do when you get a subpoena"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/04/Screen-Shot-2013-04-03-at-9.42.40-AM.png", 
+    "thumbnail": {
+      "height": 345, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/04/Screen-Shot-2013-04-03-at-9.42.40-AM.png", 
+      "width": 549
+    }, 
     "title": "Breaking Down the Law Episode 2: What's a Subpoena? "
   }, 
   {
@@ -1693,7 +2001,11 @@ var POSTS = [
       "compassionate release", 
       "juan haines"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/04/3565225984_dc55be0ac8_o.jpg", 
+    "thumbnail": {
+      "height": 195, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/04/3565225984_dc55be0ac8_o.jpg", 
+      "width": 300
+    }, 
     "title": "Compassionate Release: Should Inmates Be Allowed to Die With Family? "
   }, 
   {
@@ -1718,7 +2030,11 @@ var POSTS = [
       "tribunal", 
       "video_games"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/04/Ep12_GamesLaw_banner.jpg", 
+    "thumbnail": {
+      "height": 274, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/04/Ep12_GamesLaw_banner.jpg", 
+      "width": 637
+    }, 
     "title": "Games and Law"
   }, 
   {
@@ -1735,7 +2051,11 @@ var POSTS = [
       "lucas mills", 
       "the frog and the litigator"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/04/Juror-4-project-v2-medium-text-e1370607907285.jpg", 
+    "thumbnail": {
+      "height": 191, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/04/Juror-4-project-v2-medium-text-e1370607907285.jpg", 
+      "width": 400
+    }, 
     "title": "A Classic Fable"
   }, 
   {
@@ -1753,7 +2073,11 @@ var POSTS = [
       "founding", 
       "logan beirne"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/04/bostonmassacrebychampney.jpg", 
+    "thumbnail": {
+      "height": 446, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/04/bostonmassacrebychampney.jpg", 
+      "width": 600
+    }, 
     "title": "Lessons from the Founding: The Boston Massacre"
   }, 
   {
@@ -1773,7 +2097,11 @@ var POSTS = [
       "rina goldfield", 
       "tuition"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/04/29065_510719292570_1889013_n.jpg", 
+    "thumbnail": {
+      "height": 540, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/04/29065_510719292570_1889013_n.jpg", 
+      "width": 720
+    }, 
     "title": "The Right to Education: Peter Cooper's Vision, and What Its Unraveling Represents"
   }, 
   {
@@ -1791,7 +2119,11 @@ var POSTS = [
       "niagra falls", 
       "us immigration"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/04/usacanada.jpg", 
+    "thumbnail": {
+      "height": 282, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/04/usacanada.jpg", 
+      "width": 425
+    }, 
     "title": "Living Under DOMA: Returning to the U.S."
   }, 
   {
@@ -1808,7 +2140,11 @@ var POSTS = [
       "aptonyms", 
       "loving"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/05/va4lovers-1.jpg", 
+    "thumbnail": {
+      "height": 303, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/05/va4lovers-1.jpg", 
+      "width": 441
+    }, 
     "title": "A Case by Any Other Name ..."
   }, 
   {
@@ -1828,7 +2164,11 @@ var POSTS = [
       "play", 
       "Ross Bronfenbrenner"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/05/courtingharry-022713.jpg", 
+    "thumbnail": {
+      "height": 520, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/05/courtingharry-022713.jpg", 
+      "width": 920
+    }, 
     "title": "Two Reviews of The Play about Justice Harry Blackmun"
   }, 
   {
@@ -1844,7 +2184,11 @@ var POSTS = [
       "law photos", 
       "what the law looks like"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2012/10/2012-09-28-11.01.01-e1369062743846.jpg", 
+    "thumbnail": {
+      "height": 600, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2012/10/2012-09-28-11.01.01-e1369062743846.jpg", 
+      "width": 600
+    }, 
     "title": "What the Law Looks Like: A Reprise"
   }, 
   {
@@ -1861,7 +2205,11 @@ var POSTS = [
       "graham gremore", 
       "how to divorce your parents"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/04/Screen-Shot-2013-04-03-at-9.42.40-AM.png", 
+    "thumbnail": {
+      "height": 345, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/04/Screen-Shot-2013-04-03-at-9.42.40-AM.png", 
+      "width": 549
+    }, 
     "title": "Breaking Down the Law Episode 3: How to Divorce Your Parents"
   }, 
   {
@@ -1884,7 +2232,11 @@ var POSTS = [
       "storytelling", 
       "UC Hastings"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/05/gavel.jpg", 
+    "thumbnail": {
+      "height": 274, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/05/gavel.jpg", 
+      "width": 637
+    }, 
     "title": "A Life on the Bench"
   }, 
   {
@@ -1902,7 +2254,11 @@ var POSTS = [
       "scotus", 
       "supreme court ideology"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/05/LadyJusticeImage.jpg", 
+    "thumbnail": {
+      "height": 389, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/05/LadyJusticeImage.jpg", 
+      "width": 583
+    }, 
     "title": "Florida v. Jardines and Politics on the Supreme Court"
   }, 
   {
@@ -1919,7 +2275,11 @@ var POSTS = [
       "gilad edelman", 
       "wait what"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/05/life-ring.jpg", 
+    "thumbnail": {
+      "height": 332, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/05/life-ring.jpg", 
+      "width": 500
+    }, 
     "title": "Wait, What? No Duty to Rescue"
   }, 
   {
@@ -1936,7 +2296,11 @@ var POSTS = [
       "practicing law in my dreams", 
       "the rape case"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/05/cloud-spif.jpg", 
+    "thumbnail": {
+      "height": 165, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/05/cloud-spif.jpg", 
+      "width": 430
+    }, 
     "title": "Practicing Law in My Dreams"
   }, 
   {
@@ -1953,7 +2317,11 @@ var POSTS = [
       "law comic", 
       "lucas mills"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/04/Juror-4-project-v2-medium-text-e1370607907285.jpg", 
+    "thumbnail": {
+      "height": 191, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/04/Juror-4-project-v2-medium-text-e1370607907285.jpg", 
+      "width": 400
+    }, 
     "title": "An Easy Mistake"
   }, 
   {
@@ -1970,7 +2338,11 @@ var POSTS = [
       "doma", 
       "katherine thompson"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/05/Screen-Shot-2013-05-28-at-12.12.00-PM.png", 
+    "thumbnail": {
+      "height": 457, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/05/Screen-Shot-2013-05-28-at-12.12.00-PM.png", 
+      "width": 636
+    }, 
     "title": "Death, Taxes, the Green Card Lottery and Amendment One"
   }, 
   {
@@ -1989,7 +2361,11 @@ var POSTS = [
       "terry schuster", 
       "will harrell"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/05/IK_FromInaRussian.jpg", 
+    "thumbnail": {
+      "height": 450, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/05/IK_FromInaRussian.jpg", 
+      "width": 552
+    }, 
     "title": "10 Things Every Juvenile Prison Should Do"
   }, 
   {
@@ -2005,7 +2381,11 @@ var POSTS = [
       "breaking down the law", 
       "graham gremore"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/04/Screen-Shot-2013-04-03-at-9.42.40-AM.png", 
+    "thumbnail": {
+      "height": 345, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/04/Screen-Shot-2013-04-03-at-9.42.40-AM.png", 
+      "width": 549
+    }, 
     "title": "Breaking Down the Law Episode 4: SLANDER!"
   }, 
   {
@@ -2029,7 +2409,11 @@ var POSTS = [
       "solitary confinement", 
       "storytelling"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/05/banner1.jpg", 
+    "thumbnail": {
+      "height": 275, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/05/banner1.jpg", 
+      "width": 673
+    }, 
     "title": "An Architect\u2019s Code"
   }, 
   {
@@ -2054,7 +2438,11 @@ var POSTS = [
       "Ross Bronfenbrenner", 
       "small claims"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/06/021913_robocalls_600.jpg", 
+    "thumbnail": {
+      "height": 450, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/06/021913_robocalls_600.jpg", 
+      "width": 600
+    }, 
     "title": "College Student Sues Robocaller"
   }, 
   {
@@ -2072,7 +2460,11 @@ var POSTS = [
       "juror #4", 
       "lucas mills"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/04/Juror-4-project-v2-medium-text-e1370607907285.jpg", 
+    "thumbnail": {
+      "height": 191, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/04/Juror-4-project-v2-medium-text-e1370607907285.jpg", 
+      "width": 400
+    }, 
     "title": "Four Square"
   }, 
   {
@@ -2088,7 +2480,11 @@ var POSTS = [
       "juan haines", 
       "mental illness in prison"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/06/Trapped-Mental-Illness-in-Prison-037-868x578.jpg", 
+    "thumbnail": {
+      "height": 578, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/06/Trapped-Mental-Illness-in-Prison-037-868x578.jpg", 
+      "width": 868
+    }, 
     "title": "Mental Health Services in Prison: A Matter of Public Safety"
   }, 
   {
@@ -2110,7 +2506,11 @@ var POSTS = [
       "trayvon martin", 
       "voting rights"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/06/equalpay.jpg", 
+    "thumbnail": {
+      "height": 378, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/06/equalpay.jpg", 
+      "width": 544
+    }, 
     "title": "In the Law This Week!"
   }, 
   {
@@ -2132,7 +2532,11 @@ var POSTS = [
       "prism", 
       "privacy"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/06/06_10_2013_prism-logo.jpg", 
+    "thumbnail": {
+      "height": 346, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/06/06_10_2013_prism-logo.jpg", 
+      "width": 460
+    }, 
     "title": "A Click Away From Conviction"
   }, 
   {
@@ -2151,7 +2555,11 @@ var POSTS = [
       "lsat predictor of law school performance", 
       "mary adkins"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/06/human-brain.jpg", 
+    "thumbnail": {
+      "height": 787, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/06/human-brain.jpg", 
+      "width": 1000
+    }, 
     "title": "Does the LSAT Make You Smarter?"
   }, 
   {
@@ -2175,7 +2583,11 @@ var POSTS = [
       "media", 
       "polyamorous"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/06/family_drawing-banner.jpg", 
+    "thumbnail": {
+      "height": 274, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/06/family_drawing-banner.jpg", 
+      "width": 638
+    }, 
     "title": "New Frontiers of Family Law"
   }, 
   {
@@ -2192,7 +2604,11 @@ var POSTS = [
       "luci lawless", 
       "tdncla"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/01/Slide1.jpg", 
+    "thumbnail": {
+      "height": 410, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/01/Slide1.jpg", 
+      "width": 563
+    }, 
     "title": "TDNCLA: Can I Refuse a Brethalyzer Test?"
   }, 
   {
@@ -2208,7 +2624,11 @@ var POSTS = [
       "legal briefs", 
       "this week in law"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/06/Screen-Shot-2013-06-17-at-2.04.28-PM.png", 
+    "thumbnail": {
+      "height": 344, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/06/Screen-Shot-2013-06-17-at-2.04.28-PM.png", 
+      "width": 597
+    }, 
     "title": "Legal Briefs: This Week in Law"
   }, 
   {
@@ -2227,7 +2647,11 @@ var POSTS = [
       "katherine thompson", 
       "windsor"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/06/2c9f2a27ae2f999c46a554b7847df09f1.jpg", 
+    "thumbnail": {
+      "height": 487, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/06/2c9f2a27ae2f999c46a554b7847df09f1.jpg", 
+      "width": 666
+    }, 
     "title": "Taking One For The Team"
   }, 
   {
@@ -2245,7 +2669,11 @@ var POSTS = [
       "kat aaron", 
       "review"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/06/www.indiewire.jpeg", 
+    "thumbnail": {
+      "height": 478, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/06/www.indiewire.jpeg", 
+      "width": 680
+    }, 
     "title": "Three Public Defenders and a Court System in Crisis"
   }, 
   {
@@ -2263,7 +2691,11 @@ var POSTS = [
       "how to be audited", 
       "IRS audit"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/04/Screen-Shot-2013-04-03-at-9.42.40-AM.png", 
+    "thumbnail": {
+      "height": 345, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/04/Screen-Shot-2013-04-03-at-9.42.40-AM.png", 
+      "width": 549
+    }, 
     "title": "Breaking Down the Law Episode 5: How to Survive an IRS Audit"
   }, 
   {
@@ -2281,7 +2713,11 @@ var POSTS = [
       "hammers", 
       "personal injury law ads"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/06/Screen-Shot-2013-06-23-at-11.13.15-AM.png", 
+    "thumbnail": {
+      "height": 336, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/06/Screen-Shot-2013-06-23-at-11.13.15-AM.png", 
+      "width": 619
+    }, 
     "title": "Watch these Attorney Ads, You Won't Regret It"
   }, 
   {
@@ -2298,7 +2734,11 @@ var POSTS = [
       "legal briefs", 
       "this week in law"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/06/Screen-Shot-2013-06-24-at-10.32.56-AM.png", 
+    "thumbnail": {
+      "height": 439, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/06/Screen-Shot-2013-06-24-at-10.32.56-AM.png", 
+      "width": 773
+    }, 
     "title": "Legal Briefs: This Week in Law"
   }, 
   {
@@ -2316,7 +2756,11 @@ var POSTS = [
       "supreme court decisions", 
       "supreme court roundup"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/01/us_supreme_court_105065010_fullwidth_620x350.jpg", 
+    "thumbnail": {
+      "height": 350, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/01/us_supreme_court_105065010_fullwidth_620x350.jpg", 
+      "width": 620
+    }, 
     "title": "SCOTUS Roundup"
   }, 
   {
@@ -2341,7 +2785,11 @@ var POSTS = [
       "storytelling", 
       "television"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/06/banner.png", 
+    "thumbnail": {
+      "height": 274, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/06/banner.png", 
+      "width": 638
+    }, 
     "title": "Call NOW!"
   }, 
   {
@@ -2362,7 +2810,11 @@ var POSTS = [
       "scotus decision", 
       "scotus roundup"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/06/Screen-Shot-2013-06-24-at-10.32.56-AM.png", 
+    "thumbnail": {
+      "height": 439, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/06/Screen-Shot-2013-06-24-at-10.32.56-AM.png", 
+      "width": 773
+    }, 
     "title": "SCOTUS Roundup: Times are a-changin\u2019"
   }, 
   {
@@ -2378,7 +2830,11 @@ var POSTS = [
       "legal briefs", 
       "this week in law"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/07/130628_wendy_davis2_ap_328.jpg", 
+    "thumbnail": {
+      "height": 328, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/07/130628_wendy_davis2_ap_328.jpg", 
+      "width": 605
+    }, 
     "title": "Legal Briefs: This Week in Law"
   }, 
   {
@@ -2396,7 +2852,11 @@ var POSTS = [
       "martha castaing", 
       "unfit to parent"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/07/Casab05t0085M.jpg", 
+    "thumbnail": {
+      "height": 1352, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/07/Casab05t0085M.jpg", 
+      "width": 2032
+    }, 
     "title": "Perspectives from Family Court: Getting the Benefit of the Doubt or Unfit to Parent?"
   }, 
   {
@@ -2414,7 +2874,11 @@ var POSTS = [
       "this does not constitute legal advice", 
       "transgendered bathrooms"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/01/Slide1.jpg", 
+    "thumbnail": {
+      "height": 410, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/01/Slide1.jpg", 
+      "width": 563
+    }, 
     "title": "TNDCLA: If I open a restaurant, do I have to offer a bathroom?"
   }, 
   {
@@ -2430,7 +2894,11 @@ var POSTS = [
       "legal briefs", 
       "this week in law"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/07/cropped-Mabel-and-I-on-rock-Utah.jpg", 
+    "thumbnail": {
+      "height": 198, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/07/cropped-Mabel-and-I-on-rock-Utah.jpg", 
+      "width": 1140
+    }, 
     "title": "Legal Briefs: This Week in Law"
   }, 
   {
@@ -2456,7 +2924,11 @@ var POSTS = [
       "Stephanie Hughes", 
       "storytelling"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/07/EP17-REDEFININGRAPE-HUGHES-BANNER.jpg", 
+    "thumbnail": {
+      "height": 274, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/07/EP17-REDEFININGRAPE-HUGHES-BANNER.jpg", 
+      "width": 634
+    }, 
     "title": "Redefining Rape"
   }, 
   {
@@ -2475,7 +2947,11 @@ var POSTS = [
       "suing ups", 
       "yale law school"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/07/christianlouboutin-daffodile-1110823_bk01_3_1200x1200_2.jpg", 
+    "thumbnail": {
+      "height": 1200, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/07/christianlouboutin-daffodile-1110823_bk01_3_1200x1200_2.jpg", 
+      "width": 1200
+    }, 
     "title": "The Case of the Missing Shoes: How I Used My Yale Law Degree to Sue UPS in Small Claims"
   }, 
   {
@@ -2492,7 +2968,11 @@ var POSTS = [
       "photos of law", 
       "what the law looks like"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/07/WTLLL-Banner.jpg", 
+    "thumbnail": {
+      "height": 282, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/07/WTLLL-Banner.jpg", 
+      "width": 599
+    }, 
     "title": "What the Law Looks Like"
   }, 
   {
@@ -2510,7 +2990,11 @@ var POSTS = [
       "this week in law", 
       "zimmerman"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/07/Screen-Shot-2013-07-15-at-10.13.56-AM.png", 
+    "thumbnail": {
+      "height": 514, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/07/Screen-Shot-2013-07-15-at-10.13.56-AM.png", 
+      "width": 822
+    }, 
     "title": "Legal Briefs: This Week In Law"
   }, 
   {
@@ -2527,7 +3011,11 @@ var POSTS = [
       "katherine thompson", 
       "living under DOMA"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/07/IMG_1541.jpeg", 
+    "thumbnail": {
+      "height": 611, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/07/IMG_1541.jpeg", 
+      "width": 925
+    }, 
     "title": "Living Through DOMA"
   }, 
   {
@@ -2544,7 +3032,11 @@ var POSTS = [
       "graham gremore", 
       "sexual harassment"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/04/Screen-Shot-2013-04-03-at-9.42.40-AM.png", 
+    "thumbnail": {
+      "height": 345, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/04/Screen-Shot-2013-04-03-at-9.42.40-AM.png", 
+      "width": 549
+    }, 
     "title": "Breaking Down the Law Episode 6: Sexual Harassment in the Workplace"
   }, 
   {
@@ -2561,7 +3053,11 @@ var POSTS = [
       "rebecca worthington", 
       "this week in law"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/07/071313-San-Francisco-crash-wrong-names.jpg", 
+    "thumbnail": {
+      "height": 395, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/07/071313-San-Francisco-crash-wrong-names.jpg", 
+      "width": 526
+    }, 
     "title": "Legal Briefs: This Week in Law"
   }, 
   {
@@ -2586,7 +3082,11 @@ var POSTS = [
       "technology", 
       "texas"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/07/Lime-Street-Fire-banner.png", 
+    "thumbnail": {
+      "height": 274, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/07/Lime-Street-Fire-banner.png", 
+      "width": 638
+    }, 
     "title": "Forensics in Flames"
   }, 
   {
@@ -2605,7 +3105,11 @@ var POSTS = [
       "tdncla", 
       "this does not constitute legal advice"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/01/Slide1.jpg", 
+    "thumbnail": {
+      "height": 410, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/01/Slide1.jpg", 
+      "width": 563
+    }, 
     "title": "TDNCLA: Who Can Conjugal(ly) Visit Me in Prison?"
   }, 
   {
@@ -2621,7 +3125,11 @@ var POSTS = [
       "filibuster", 
       "jill weinberg"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/07/672170513_DigVs-M-1.jpg", 
+    "thumbnail": {
+      "height": 400, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/07/672170513_DigVs-M-1.jpg", 
+      "width": 600
+    }, 
     "title": "Blue in the Face: The Art of the Filibuster"
   }, 
   {
@@ -2638,7 +3146,11 @@ var POSTS = [
       "rebecca worthington", 
       "this week in law"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/07/Detroit_Bankruptcy-0dea5.jpg", 
+    "thumbnail": {
+      "height": 414, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/07/Detroit_Bankruptcy-0dea5.jpg", 
+      "width": 606
+    }, 
     "title": "Legal Briefs: This Week in Law"
   }, 
   {
@@ -2658,7 +3170,11 @@ var POSTS = [
       "pay to stay", 
       "rich people lie more"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/07/94-istock_000004415349medium.jpg", 
+    "thumbnail": {
+      "height": 1466, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/07/94-istock_000004415349medium.jpg", 
+      "width": 1310
+    }, 
     "title": "Money, Money, Money, Law"
   }, 
   {
@@ -2675,7 +3191,11 @@ var POSTS = [
       "legal briefs", 
       "rebecca worthington"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/08/Gerald-Henderson-15-of-the-Duke-Blue-Devils-is-fouled-by-Deon-Thompson-21-of-the-North-Carolina-Tar-Heels-during-their-game-at-the-Dean-E-Smith-Center-on-March-8-2009.jpg", 
+    "thumbnail": {
+      "height": 2102, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/08/Gerald-Henderson-15-of-the-Duke-Blue-Devils-is-fouled-by-Deon-Thompson-21-of-the-North-Carolina-Tar-Heels-during-their-game-at-the-Dean-E-Smith-Center-on-March-8-2009.jpg", 
+      "width": 3000
+    }, 
     "title": "Legal Briefs: This Week in Law"
   }, 
   {
@@ -2693,7 +3213,11 @@ var POSTS = [
       "nsa", 
       "parallel construction"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/08/s1.reutersmedia-1.jpeg", 
+    "thumbnail": {
+      "height": 338, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/08/s1.reutersmedia-1.jpeg", 
+      "width": 450
+    }, 
     "title": "DEA Uses NSA Intercepts to Nab People, Directs Officers/DAs to Launder the Information"
   }, 
   {
@@ -2708,7 +3232,11 @@ var POSTS = [
     "tags": [
       "terry schuster"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/08/grview-32531-1.jpg", 
+    "thumbnail": {
+      "height": 350, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/08/grview-32531-1.jpg", 
+      "width": 525
+    }, 
     "title": "Prisons: The Next Frontier for LGBTI Rights"
   }, 
   {
@@ -2724,7 +3252,11 @@ var POSTS = [
       "legal briefs", 
       "rebecca worthington"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/08/201387125520601734_20.jpg", 
+    "thumbnail": {
+      "height": 450, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/08/201387125520601734_20.jpg", 
+      "width": 680
+    }, 
     "title": "Legal Briefs: This Week in Law"
   }, 
   {
@@ -2743,7 +3275,11 @@ var POSTS = [
       "sharon riley", 
       "sixth amendment"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/08/bail-bonds-nj.jpg", 
+    "thumbnail": {
+      "height": 258, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/08/bail-bonds-nj.jpg", 
+      "width": 400
+    }, 
     "title": "Rina and Sharon Go to Court: A Summer Friday Night in Manhattan"
   }, 
   {
@@ -2760,7 +3296,11 @@ var POSTS = [
       "prisoner hunger strike", 
       "SHU"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/08/lat-la-prison-strike-la0010353341-20130708.jpeg", 
+    "thumbnail": {
+      "height": 418, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/08/lat-la-prison-strike-la0010353341-20130708.jpeg", 
+      "width": 599
+    }, 
     "title": "An Insider's View of the California Prison Hunger Strike"
   }, 
   {
@@ -2777,7 +3317,11 @@ var POSTS = [
       "rebecca worthington", 
       "this week in law"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/08/facebook.jpg", 
+    "thumbnail": {
+      "height": 244, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/08/facebook.jpg", 
+      "width": 325
+    }, 
     "title": "Legal Briefs: This Week in Law"
   }, 
   {
@@ -2795,7 +3339,11 @@ var POSTS = [
       "jamie longazel", 
       "prison abuse"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2012/11/IMG_3483.jpg", 
+    "thumbnail": {
+      "height": "2736", 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2012/11/IMG_3483.jpg", 
+      "width": "3648"
+    }, 
     "title": "The Pains of Solitary Confinement and Beyond"
   }, 
   {
@@ -2812,7 +3360,11 @@ var POSTS = [
       "march on washington anniversary", 
       "raj jayadev"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/08/220px-Bayard_Rustin_NYWTS_3.jpg", 
+    "thumbnail": {
+      "height": 282, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/08/220px-Bayard_Rustin_NYWTS_3.jpg", 
+      "width": 220
+    }, 
     "title": "Echoes of \u201860s March: Sixties-Style Civil Disobedience Drives New Era of Activism"
   }, 
   {
@@ -2829,7 +3381,11 @@ var POSTS = [
       "rebecca worthington", 
       "this week in law"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/08/s026132338-300.jpg", 
+    "thumbnail": {
+      "height": 226, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/08/s026132338-300.jpg", 
+      "width": 402
+    }, 
     "title": "Legal Briefs: This Week in Law"
   }, 
   {
@@ -2847,7 +3403,11 @@ var POSTS = [
       "kluger", 
       "simple justice"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/08/81-5LMn9iSL._SL1500_1.jpg", 
+    "thumbnail": {
+      "height": 1047, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/08/81-5LMn9iSL._SL1500_1.jpg", 
+      "width": 1061
+    }, 
     "title": "Inquiring Minds: Nothing Simple About Simple Justice"
   }, 
   {
@@ -2860,7 +3420,11 @@ var POSTS = [
     "link": "http://www.lifeofthelaw.org/thanks-to-air-for-the-shout-out/", 
     "pubdate": "Fri, 30 Aug 2013 14:46:04 +0000", 
     "tags": [], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/08/Thank-You-1-500x408.jpg", 
+    "thumbnail": {
+      "height": 408, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/08/Thank-You-1-500x408.jpg", 
+      "width": 500
+    }, 
     "title": "Thanks to AIR for the shout-out! "
   }, 
   {
@@ -2888,7 +3452,11 @@ var POSTS = [
       "storytelling", 
       "texas"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/09/steinbeck.jpg", 
+    "thumbnail": {
+      "height": 274, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/09/steinbeck.jpg", 
+      "width": 638
+    }, 
     "title": "Judging Steinbeck's Lennie"
   }, 
   {
@@ -2904,7 +3472,11 @@ var POSTS = [
       "legal briefs", 
       "this week in law"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/09/mfa-elk1.jpg", 
+    "thumbnail": {
+      "height": 293, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/09/mfa-elk1.jpg", 
+      "width": 400
+    }, 
     "title": "Legal Briefs: This Week in Law"
   }, 
   {
@@ -2917,7 +3489,11 @@ var POSTS = [
     "link": "http://www.lifeofthelaw.org/a-dying-dream-reflections-on-the-marches-on-washington/", 
     "pubdate": "Wed, 04 Sep 2013 12:49:30 +0000", 
     "tags": [], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/09/DuBois_0025.jpg", 
+    "thumbnail": {
+      "height": 681, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/09/DuBois_0025.jpg", 
+      "width": 1024
+    }, 
     "title": "A Dying Dream: Reflections on the Marches on Washington"
   }, 
   {
@@ -2933,7 +3509,11 @@ var POSTS = [
       "australia elections", 
       "katherine thompson"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/09/australian-election-betting.jpg", 
+    "thumbnail": {
+      "height": 300, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/09/australian-election-betting.jpg", 
+      "width": 450
+    }, 
     "title": "Down Under and Upside Down: The Eccentricities of Australian Politics"
   }, 
   {
@@ -2951,7 +3531,11 @@ var POSTS = [
       "rebecca worthington", 
       "susan boyle lawsuit"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/09/images.jpeg", 
+    "thumbnail": {
+      "height": 183, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/09/images.jpeg", 
+      "width": 275
+    }, 
     "title": "Legal Briefs: This Week in Law"
   }, 
   {
@@ -2968,7 +3552,11 @@ var POSTS = [
       "julia barton", 
       "podcast"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/09/Screen-Shot-2013-09-11-at-10.27.41-AM.png", 
+    "thumbnail": {
+      "height": 570, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/09/Screen-Shot-2013-09-11-at-10.27.41-AM.png", 
+      "width": 602
+    }, 
     "title": "The Editor\u2019s Dimension"
   }, 
   {
@@ -2981,7 +3569,11 @@ var POSTS = [
     "link": "http://www.lifeofthelaw.org/up-through-the-ranks-and-in-the-home-stretch-a-profile-of-colorado-prison-warden-rae-timme/", 
     "pubdate": "Fri, 13 Sep 2013 15:10:26 +0000", 
     "tags": [], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/09/Rae-photo.jpg", 
+    "thumbnail": {
+      "height": 269, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/09/Rae-photo.jpg", 
+      "width": 474
+    }, 
     "title": "Up Through the Ranks and in the Home Stretch: A Profile of Colorado Prison Warden Rae Timme"
   }, 
   {
@@ -2999,7 +3591,11 @@ var POSTS = [
       "macalaster college", 
       "Madelyn Nelson"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/09/test-taking-pic-12.png", 
+    "thumbnail": {
+      "height": 738, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/09/test-taking-pic-12.png", 
+      "width": 1043
+    }, 
     "title": "Students on the law: Active Citizenship Goes Beyond Memorization"
   }, 
   {
@@ -3016,7 +3612,11 @@ var POSTS = [
       "rebecca worthington", 
       "this week in law"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/09/ricks-new-york.jpg", 
+    "thumbnail": {
+      "height": 300, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/09/ricks-new-york.jpg", 
+      "width": 600
+    }, 
     "title": "Legal Briefs: This Week in Law, Strippers Get Minimum Wage"
   }, 
   {
@@ -3038,7 +3638,11 @@ var POSTS = [
       "PRPC", 
       "PRPD"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/09/photo.jpg", 
+    "thumbnail": {
+      "height": 968, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/09/photo.jpg", 
+      "width": 1296
+    }, 
     "title": "And it's off to Georgia for the PRPC (Public Radio Programmer's Conference)"
   }, 
   {
@@ -3055,7 +3659,11 @@ var POSTS = [
       "macalaster college", 
       "nick matzke"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/09/site_1_rand_2050684188_bicycle_cyclist_road_100601_b_ap.jpg", 
+    "thumbnail": {
+      "height": 375, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/09/site_1_rand_2050684188_bicycle_cyclist_road_100601_b_ap.jpg", 
+      "width": 500
+    }, 
     "title": "Students on the law: Why cyclists should report accidents"
   }, 
   {
@@ -3072,7 +3680,11 @@ var POSTS = [
       "macalaster college", 
       "rebecca gans"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/09/politics-vs-science1.jpg", 
+    "thumbnail": {
+      "height": 418, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/09/politics-vs-science1.jpg", 
+      "width": 562
+    }, 
     "title": "Students on the law: In the Emergency Contraception Debate Politics Still Trumps Science"
   }, 
   {
@@ -3089,7 +3701,11 @@ var POSTS = [
       "joe klein", 
       "macalaster college"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/09/03252012-Shld-supreme-court-allow-cameras1.jpg", 
+    "thumbnail": {
+      "height": 309, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/09/03252012-Shld-supreme-court-allow-cameras1.jpg", 
+      "width": 606
+    }, 
     "title": "Students on the law: It's seriously time to televise you, SCOTUS"
   }, 
   {
@@ -3105,7 +3721,11 @@ var POSTS = [
       "alisa roth", 
       "syrian national coalition"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/09/tent-refugee-low-rez.jpg", 
+    "thumbnail": {
+      "height": 3648, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/09/tent-refugee-low-rez.jpg", 
+      "width": 5472
+    }, 
     "title": "My Lawless Summer"
   }, 
   {
@@ -3122,7 +3742,11 @@ var POSTS = [
       "nfl settlement", 
       "settlement culture"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/09/bilde1.jpeg", 
+    "thumbnail": {
+      "height": 428, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/09/bilde1.jpeg", 
+      "width": 640
+    }, 
     "title": "How Settlement Culture is Hurting Us All"
   }, 
   {
@@ -3139,7 +3763,11 @@ var POSTS = [
       "rebecca worthington", 
       "this week in law"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/09/facebook-like-3-650x0.jpg", 
+    "thumbnail": {
+      "height": 433, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/09/facebook-like-3-650x0.jpg", 
+      "width": 650
+    }, 
     "title": "Legal Briefs: This Week in Law"
   }, 
   {
@@ -3156,7 +3784,11 @@ var POSTS = [
       "rebecca worthington", 
       "this week in law"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/09/images1.jpeg", 
+    "thumbnail": {
+      "height": 181, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/09/images1.jpeg", 
+      "width": 278
+    }, 
     "title": "Legal Briefs: This Week in Law"
   }, 
   {
@@ -3172,7 +3804,11 @@ var POSTS = [
       "legislature and courts", 
       "scott barcley"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/10/triangle-checks-and-balances-law.png", 
+    "thumbnail": {
+      "height": 1205, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/10/triangle-checks-and-balances-law.png", 
+      "width": 1437
+    }, 
     "title": "Let's Talk: How Congress and the Court Make It Work"
   }, 
   {
@@ -3188,7 +3824,11 @@ var POSTS = [
       "crime and delinquency", 
       "Nancy Mullane"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/03/IMG_3863.jpg", 
+    "thumbnail": {
+      "height": 450, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/03/IMG_3863.jpg", 
+      "width": 600
+    }, 
     "title": "Silenced: No Prison Access, No Prison Story"
   }, 
   {
@@ -3204,7 +3844,11 @@ var POSTS = [
       "family and the law", 
       "live law"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/10/Thanksgiving-dinner2-7603801.jpeg", 
+    "thumbnail": {
+      "height": 445, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/10/Thanksgiving-dinner2-7603801.jpeg", 
+      "width": 835
+    }, 
     "title": "Call for Stories: LIVE LAW seeking stories for our November Show"
   }, 
   {
@@ -3221,7 +3865,11 @@ var POSTS = [
       "rebecca worthington", 
       "this week in law"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/10/government-shutdown-live-update-.si_.jpg", 
+    "thumbnail": {
+      "height": 388, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/10/government-shutdown-live-update-.si_.jpg", 
+      "width": 690
+    }, 
     "title": "Legal Briefs: This Week in Law"
   }, 
   {
@@ -3234,7 +3882,11 @@ var POSTS = [
     "link": "http://www.lifeofthelaw.org/parenting-through-a-government-shutdown/", 
     "pubdate": "Wed, 09 Oct 2013 14:03:22 +0000", 
     "tags": [], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/10/parenting.jpg", 
+    "thumbnail": {
+      "height": 476, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/10/parenting.jpg", 
+      "width": 640
+    }, 
     "title": "Parenting Through a Government Shutdown"
   }, 
   {
@@ -3251,7 +3903,11 @@ var POSTS = [
       "christine clarke", 
       "employment law"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/10/Twilight-Sparkle-my-little-pony-friendship-is-magic-20571945-570-402.jpg", 
+    "thumbnail": {
+      "height": 402, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/10/Twilight-Sparkle-my-little-pony-friendship-is-magic-20571945-570-402.jpg", 
+      "width": 570
+    }, 
     "title": "Can I Be Fired For Being a Brony? Yes, Among A Million Other Things"
   }, 
   {
@@ -3268,7 +3924,11 @@ var POSTS = [
       "rebecca worthington", 
       "this week in law"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/10/6336202058_712c6e7b97_z.jpg", 
+    "thumbnail": {
+      "height": 360, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/10/6336202058_712c6e7b97_z.jpg", 
+      "width": 640
+    }, 
     "title": "Legal Briefs: This Week in Law"
   }, 
   {
@@ -3285,7 +3945,11 @@ var POSTS = [
       "david onek", 
       "mindfulness"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/10/Search-Inside-Yourself-google-logo.jpg", 
+    "thumbnail": {
+      "height": 210, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/10/Search-Inside-Yourself-google-logo.jpg", 
+      "width": 284
+    }, 
     "title": "Integrating Mindfulness into the Criminal Justice System"
   }, 
   {
@@ -3302,7 +3966,6 @@ var POSTS = [
       "jon gould", 
       "resources"
     ], 
-    "thumbnail_id": null, 
     "title": "How the Death Penalty is Linked to Resources"
   }, 
   {
@@ -3319,7 +3982,11 @@ var POSTS = [
       "rebecca worthington", 
       "this week in law"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/10/Upper-West-Side.Sized_.jpg", 
+    "thumbnail": {
+      "height": 472, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/10/Upper-West-Side.Sized_.jpg", 
+      "width": 778
+    }, 
     "title": "Legal Briefs: This Week in Law"
   }, 
   {
@@ -3335,7 +4002,11 @@ var POSTS = [
       "alisa roth", 
       "syria"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/10/9-Domiz-Tent_jpg_600x549_q85.jpg", 
+    "thumbnail": {
+      "height": 346, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/10/9-Domiz-Tent_jpg_600x549_q85.jpg", 
+      "width": 600
+    }, 
     "title": "Beyond the Camps: Images of the Syrian Exodus"
   }, 
   {
@@ -3348,7 +4019,11 @@ var POSTS = [
     "link": "http://www.lifeofthelaw.org/qa-legal-start-up-of-the-day-priori-legal/", 
     "pubdate": "Fri, 25 Oct 2013 11:24:40 +0000", 
     "tags": [], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/10/legal_blog_0.jpg", 
+    "thumbnail": {
+      "height": 235, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/10/legal_blog_0.jpg", 
+      "width": 360
+    }, 
     "title": "Q&A: Legal Start-Up of the Day, Priori Legal"
   }, 
   {
@@ -3364,7 +4039,11 @@ var POSTS = [
       "legal briefs", 
       "this week in law"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/10/mcdonalds.jpg", 
+    "thumbnail": {
+      "height": 339, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/10/mcdonalds.jpg", 
+      "width": 525
+    }, 
     "title": "Legal Briefs: This Week in Law"
   }, 
   {
@@ -3380,7 +4059,11 @@ var POSTS = [
       "austin sarat", 
       "botched executions"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/10/url-39.jpg", 
+    "thumbnail": {
+      "height": 399, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/10/url-39.jpg", 
+      "width": 600
+    }, 
     "title": "A Mostly Untold Story: Botched Executions and the Legitimacy of Capital Punishment"
   }, 
   {
@@ -3397,7 +4080,11 @@ var POSTS = [
       "jason albert", 
       "reporter"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/11/Entropy.jpeg", 
+    "thumbnail": {
+      "height": 576, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/11/Entropy.jpeg", 
+      "width": 576
+    }, 
     "title": "A Life of the Law Reporter on Entropy"
   }, 
   {
@@ -3414,7 +4101,11 @@ var POSTS = [
       "elizabeth joh", 
       "policing"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/11/Big-Data-disguises-digital-doubts-UU1M91QI-x-large.jpg", 
+    "thumbnail": {
+      "height": 360, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/11/Big-Data-disguises-digital-doubts-UU1M91QI-x-large.jpg", 
+      "width": 490
+    }, 
     "title": "Will Big Data Change How Police Do Their Job? "
   }, 
   {
@@ -3430,7 +4121,11 @@ var POSTS = [
       "legal briefs", 
       "this week in law"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/11/DCMetroAd.jpg", 
+    "thumbnail": {
+      "height": 366, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/11/DCMetroAd.jpg", 
+      "width": 468
+    }, 
     "title": "Legal Briefs: This Week in Law"
   }, 
   {
@@ -3443,7 +4138,11 @@ var POSTS = [
     "link": "http://www.lifeofthelaw.org/tickets-for-nov-24-live-law-now-available/", 
     "pubdate": "Mon, 04 Nov 2013 21:05:50 +0000", 
     "tags": [], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/05/Screen-Shot-2013-06-17-at-11.01.28-PM.png", 
+    "thumbnail": {
+      "height": 611, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/05/Screen-Shot-2013-06-17-at-11.01.28-PM.png", 
+      "width": 878
+    }, 
     "title": "Tickets for Nov. 24 LIVE LAW now available! "
   }, 
   {
@@ -3466,7 +4165,11 @@ var POSTS = [
       "storytelling", 
       "travel"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/11/EP-20-CIRCUIT-RIDING-GADEK-PHOTObanner.jpg", 
+    "thumbnail": {
+      "height": 274, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/11/EP-20-CIRCUIT-RIDING-GADEK-PHOTObanner.jpg", 
+      "width": 635
+    }, 
     "title": "Justices on the Move"
   }, 
   {
@@ -3483,7 +4186,11 @@ var POSTS = [
       "letters from jail", 
       "russian"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/11/img_6.jpg", 
+    "thumbnail": {
+      "height": 396, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/11/img_6.jpg", 
+      "width": 783
+    }, 
     "title": "Letters from a Provincial Jail"
   }, 
   {
@@ -3499,7 +4206,11 @@ var POSTS = [
       "legal briefs", 
       "this week in law"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/11/texting-and-driving-jesus.jpeg", 
+    "thumbnail": {
+      "height": 310, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/11/texting-and-driving-jesus.jpeg", 
+      "width": 579
+    }, 
     "title": "Legal Briefs: This Week in Law"
   }, 
   {
@@ -3512,7 +4223,11 @@ var POSTS = [
     "link": "http://www.lifeofthelaw.org/endas-game/", 
     "pubdate": "Wed, 13 Nov 2013 12:00:57 +0000", 
     "tags": [], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/11/ENDA.jpg", 
+    "thumbnail": {
+      "height": 279, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/11/ENDA.jpg", 
+      "width": 454
+    }, 
     "title": "ENDA's Game"
   }, 
   {
@@ -3528,7 +4243,11 @@ var POSTS = [
     "link": "http://www.lifeofthelaw.org/freestylespecial01/", 
     "pubdate": "Fri, 15 Nov 2013 22:33:29 +0000", 
     "tags": [], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/11/freestyle_01_0.gif", 
+    "thumbnail": {
+      "height": 274, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/11/freestyle_01_0.gif", 
+      "width": 486
+    }, 
     "title": "Freestyle Special"
   }, 
   {
@@ -3544,7 +4263,11 @@ var POSTS = [
       "legal briefs", 
       "this week in law"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/11/9322714_448x252.jpg", 
+    "thumbnail": {
+      "height": 252, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/11/9322714_448x252.jpg", 
+      "width": 448
+    }, 
     "title": "Legal Briefs: This Week in Law"
   }, 
   {
@@ -3572,7 +4295,11 @@ var POSTS = [
       "tribe", 
       "water"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/11/banner.jpg", 
+    "thumbnail": {
+      "height": 274, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/11/banner.jpg", 
+      "width": 638
+    }, 
     "title": "Water Rights"
   }, 
   {
@@ -3589,7 +4316,11 @@ var POSTS = [
       "ex-convicts", 
       "target"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/11/images.jpg", 
+    "thumbnail": {
+      "height": 167, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/11/images.jpg", 
+      "width": 301
+    }, 
     "title": "How is NYC like a Target Store? They're Both Easing Re-entry for Convicts...Sort of"
   }, 
   {
@@ -3602,7 +4333,11 @@ var POSTS = [
     "link": "http://www.lifeofthelaw.org/emotion-often-beats-reasoning-even-on-the-highest-court/", 
     "pubdate": "Fri, 22 Nov 2013 13:16:22 +0000", 
     "tags": [], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/11/open-carry_1379110205361_2925491_ver1.0_640_480.jpg", 
+    "thumbnail": {
+      "height": 480, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/11/open-carry_1379110205361_2925491_ver1.0_640_480.jpg", 
+      "width": 640
+    }, 
     "title": "Emotion Often Beats Reasoning, Even on the Highest Court"
   }, 
   {
@@ -3619,7 +4354,11 @@ var POSTS = [
       "rebecca worthington", 
       "this week in law"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/11/thanksgiving_sm.jpg", 
+    "thumbnail": {
+      "height": 364, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/11/thanksgiving_sm.jpg", 
+      "width": 548
+    }, 
     "title": "Legal Briefs: This Week in Law"
   }, 
   {
@@ -3634,7 +4373,11 @@ var POSTS = [
     "tags": [
       "live law"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/11/1453531_10152083240731810_449358975_n.jpg", 
+    "thumbnail": {
+      "height": 279, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/11/1453531_10152083240731810_449358975_n.jpg", 
+      "width": 494
+    }, 
     "title": "Thank you from the LOTL team! "
   }, 
   {
@@ -3647,7 +4390,11 @@ var POSTS = [
     "link": "http://www.lifeofthelaw.org/legal-briefs-this-week-in-law-24/", 
     "pubdate": "Mon, 02 Dec 2013 03:22:31 +0000", 
     "tags": [], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/11/cody-wilson-liberator-cover.jpg", 
+    "thumbnail": {
+      "height": 331, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/11/cody-wilson-liberator-cover.jpg", 
+      "width": 645
+    }, 
     "title": "Legal Briefs: This Week in Law"
   }, 
   {
@@ -3671,7 +4418,11 @@ var POSTS = [
       "prison", 
       "story"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/12/banner.jpg", 
+    "thumbnail": {
+      "height": 302, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/12/banner.jpg", 
+      "width": 638
+    }, 
     "title": "A Criminal Debt"
   }, 
   {
@@ -3687,7 +4438,11 @@ var POSTS = [
       "cara gallagher", 
       "supreme bystander"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/12/Press-secure-front-row-sidewalk-seats-at-Supreme-Court.jpg", 
+    "thumbnail": {
+      "height": 2448, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/12/Press-secure-front-row-sidewalk-seats-at-Supreme-Court.jpg", 
+      "width": 3264
+    }, 
     "title": "Life as a Supreme Bystander"
   }, 
   {
@@ -3700,7 +4455,11 @@ var POSTS = [
     "link": "http://www.lifeofthelaw.org/excuse-me-this-email-was-for-you/", 
     "pubdate": "Wed, 04 Dec 2013 14:09:29 +0000", 
     "tags": [], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/12/rts1.jpg", 
+    "thumbnail": {
+      "height": 901, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/12/rts1.jpg", 
+      "width": 1181
+    }, 
     "title": "Excuse me, this email was for you"
   }, 
   {
@@ -3717,7 +4476,11 @@ var POSTS = [
       "rebecca worthington", 
       "this week in law"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/12/24116719_SA.jpg", 
+    "thumbnail": {
+      "height": 371, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/12/24116719_SA.jpg", 
+      "width": 660
+    }, 
     "title": "Legal Briefs: This Week in Law"
   }, 
   {
@@ -3733,7 +4496,11 @@ var POSTS = [
       "airbnb", 
       "mary adkins"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/12/Screen-Shot-2013-12-09-at-10.44.57-AM.png", 
+    "thumbnail": {
+      "height": 481, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/12/Screen-Shot-2013-12-09-at-10.44.57-AM.png", 
+      "width": 974
+    }, 
     "title": "The Silver-lined Truth about Airbnb and You, New York"
   }, 
   {
@@ -3750,7 +4517,11 @@ var POSTS = [
       "Nancy Mullane", 
       "parent's perspective"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/12/IMG_4937.jpg", 
+    "thumbnail": {
+      "height": 2316, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/12/IMG_4937.jpg", 
+      "width": 3634
+    }, 
     "title": "Passing the Bar: A Parent\u2019s Perspective"
   }, 
   {
@@ -3764,7 +4535,11 @@ var POSTS = [
     "link": "http://www.lifeofthelaw.org/live-law-2/", 
     "pubdate": "Fri, 20 Dec 2013 16:20:38 +0000", 
     "tags": [], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/12/TLOTL_24-nov_035_FINAL-resize.jpg", 
+    "thumbnail": {
+      "height": 302, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/12/TLOTL_24-nov_035_FINAL-resize.jpg", 
+      "width": 638
+    }, 
     "title": "LIVE LAW 2: NEW YORK, NY"
   }, 
   {
@@ -3777,7 +4552,6 @@ var POSTS = [
     "link": "http://www.lifeofthelaw.org/legal-briefs-this-week-in-law-26/", 
     "pubdate": "Mon, 16 Dec 2013 11:30:00 +0000", 
     "tags": [], 
-    "thumbnail_id": null, 
     "title": "Legal Briefs: This Week in Law"
   }, 
   {
@@ -3804,7 +4578,11 @@ var POSTS = [
       "psychology", 
       "storytelling"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/12/Ep23-MomsIncarcerationPhotoCell-resize.jpg", 
+    "thumbnail": {
+      "height": 274, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/12/Ep23-MomsIncarcerationPhotoCell-resize.jpg", 
+      "width": 637
+    }, 
     "title": "On Prison and Pregnancy"
   }, 
   {
@@ -3817,7 +4595,11 @@ var POSTS = [
     "link": "http://www.lifeofthelaw.org/help-us-keep-making-great-stuff/", 
     "pubdate": "Tue, 17 Dec 2013 19:59:49 +0000", 
     "tags": [], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/05/Screen-Shot-2013-06-17-at-11.02.59-PM.png", 
+    "thumbnail": {
+      "height": 617, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/05/Screen-Shot-2013-06-17-at-11.02.59-PM.png", 
+      "width": 885
+    }, 
     "title": "Help us keep making great stuff! "
   }, 
   {
@@ -3834,7 +4616,11 @@ var POSTS = [
       "mary adkins", 
       "scandal"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/12/822x-1.jpg", 
+    "thumbnail": {
+      "height": 571, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/12/822x-1.jpg", 
+      "width": 813
+    }, 
     "title": "9 Reasons to Watch Scandal if You\u2019re a Lawyer"
   }, 
   {
@@ -3847,7 +4633,6 @@ var POSTS = [
     "link": "http://www.lifeofthelaw.org/legal-briefs-this-week-in-law-27/", 
     "pubdate": "Mon, 23 Dec 2013 03:41:30 +0000", 
     "tags": [], 
-    "thumbnail_id": null, 
     "title": "Legal Briefs: This Week in Law"
   }, 
   {
@@ -3866,7 +4651,11 @@ var POSTS = [
       "mary adkins", 
       "rina goldfield"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/12/12-days-cover-pic.jpg", 
+    "thumbnail": {
+      "height": 900, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/12/12-days-cover-pic.jpg", 
+      "width": 1500
+    }, 
     "title": "Jingle Hell: An Un-lawlerly Christmas Poem"
   }, 
   {
@@ -3879,7 +4668,11 @@ var POSTS = [
     "link": "http://www.lifeofthelaw.org/legal-briefs-this-week-in-law-28/", 
     "pubdate": "Mon, 30 Dec 2013 12:00:09 +0000", 
     "tags": [], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/12/Screen-Shot-2013-12-29-at-9.23.59-AM.png", 
+    "thumbnail": {
+      "height": 438, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/12/Screen-Shot-2013-12-29-at-9.23.59-AM.png", 
+      "width": 573
+    }, 
     "title": "Legal Briefs: This Week in Law"
   }, 
   {
@@ -3895,7 +4688,11 @@ var POSTS = [
       "mary adkins", 
       "top 10 top 10 law lists"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/12/Screen-Shot-2013-12-29-at-10.13.24-PM.png", 
+    "thumbnail": {
+      "height": 371, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/12/Screen-Shot-2013-12-29-at-10.13.24-PM.png", 
+      "width": 783
+    }, 
     "title": "Top 10 Top 10 Lists of 2013 (about law, of course)"
   }, 
   {
@@ -3908,7 +4705,11 @@ var POSTS = [
     "link": "http://www.lifeofthelaw.org/how-we-voluntarily-give-up-our-day-in-court-and-why-it-matters/", 
     "pubdate": "Fri, 03 Jan 2014 14:00:31 +0000", 
     "tags": [], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2014/01/Supreme_Court_blog_main_horizontal.jpg", 
+    "thumbnail": {
+      "height": 320, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2014/01/Supreme_Court_blog_main_horizontal.jpg", 
+      "width": 480
+    }, 
     "title": "How we voluntarily give up our day in court, and why it matters"
   }, 
   {
@@ -3930,7 +4731,11 @@ var POSTS = [
       "technology", 
       "video_games"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/04/Ep12_GamesLaw_banner.jpg", 
+    "thumbnail": {
+      "height": 274, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/04/Ep12_GamesLaw_banner.jpg", 
+      "width": 637
+    }, 
     "title": "Best of 2013"
   }, 
   {
@@ -3947,7 +4752,11 @@ var POSTS = [
       "rebecca worthington", 
       "this week in law"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2014/01/pot_2-1.jpg", 
+    "thumbnail": {
+      "height": 2000, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2014/01/pot_2-1.jpg", 
+      "width": 3000
+    }, 
     "title": "Legal Briefs: This Week in Law"
   }, 
   {
@@ -3964,7 +4773,6 @@ var POSTS = [
       "lawyers unions", 
       "should lawyers unionize"
     ], 
-    "thumbnail_id": null, 
     "title": "Should Lawyers Unionize? "
   }, 
   {
@@ -3988,7 +4796,11 @@ var POSTS = [
       "snow", 
       "transit"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/03/EP10-spotdibs-david-banner1.jpg", 
+    "thumbnail": {
+      "height": 274, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/03/EP10-spotdibs-david-banner1.jpg", 
+      "width": 633
+    }, 
     "title": "Dibs!"
   }, 
   {
@@ -4007,7 +4819,11 @@ var POSTS = [
       "eu", 
       "usa"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2014/01/IntlTrends.jpg", 
+    "thumbnail": {
+      "height": 354, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2014/01/IntlTrends.jpg", 
+      "width": 685
+    }, 
     "title": "The Shrinking Death Penalty at Home and Abroad"
   }, 
   {
@@ -4023,7 +4839,6 @@ var POSTS = [
       "legal briefs", 
       "this week in law"
     ], 
-    "thumbnail_id": null, 
     "title": "Legal Briefs: This Week in Law"
   }, 
   {
@@ -4050,7 +4865,11 @@ var POSTS = [
       "storytelling", 
       "three-strikes"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2014/01/Ep-25.Curtis.Field_.banner.jpg", 
+    "thumbnail": {
+      "height": 262, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2014/01/Ep-25.Curtis.Field_.banner.jpg", 
+      "width": 610
+    }, 
     "title": "Release Day"
   }, 
   {
@@ -4065,7 +4884,11 @@ var POSTS = [
     "tags": [
       "fun read of the day"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2014/01/a291b9199.jpg", 
+    "thumbnail": {
+      "height": 379, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2014/01/a291b9199.jpg", 
+      "width": 570
+    }, 
     "title": "Fun Read of the Day: What Happens When the President Sits Down Next to You at a Caf\u00e9"
   }, 
   {
@@ -4078,7 +4901,11 @@ var POSTS = [
     "link": "http://www.lifeofthelaw.org/fun-read-of-the-day-a-fathers-letters-to-indias-only-female-prime-minister/", 
     "pubdate": "Fri, 17 Jan 2014 12:00:23 +0000", 
     "tags": [], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2014/01/gandhi_indira.jpg", 
+    "thumbnail": {
+      "height": 277, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2014/01/gandhi_indira.jpg", 
+      "width": 340
+    }, 
     "title": "Fun Read of the Day: A Father's Letters to India's Only Female Prime Minister"
   }, 
   {
@@ -4095,7 +4922,11 @@ var POSTS = [
       "rebecca worthington", 
       "this week in law"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2014/01/topless1.jpg", 
+    "thumbnail": {
+      "height": 480, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2014/01/topless1.jpg", 
+      "width": 720
+    }, 
     "title": "Legal Briefs: This Week in Law"
   }, 
   {
@@ -4108,7 +4939,11 @@ var POSTS = [
     "link": "http://www.lifeofthelaw.org/fun-read-of-the-day-the-ipod-of-prison/", 
     "pubdate": "Tue, 21 Jan 2014 12:39:35 +0000", 
     "tags": [], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2014/01/prison-580.jpg", 
+    "thumbnail": {
+      "height": 580, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2014/01/prison-580.jpg", 
+      "width": 580
+    }, 
     "title": "Fun Read of the Day: The iPod of Prison"
   }, 
   {
@@ -4126,7 +4961,11 @@ var POSTS = [
       "kyle thompson", 
       "sneak peek"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2014/01/Screen-Shot-2014-01-21-at-8.35.53-AM.png", 
+    "thumbnail": {
+      "height": 343, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2014/01/Screen-Shot-2014-01-21-at-8.35.53-AM.png", 
+      "width": 614
+    }, 
     "title": "Podcast Sneak Peek: In School, What Makes a Crime? "
   }, 
   {
@@ -4139,7 +4978,11 @@ var POSTS = [
     "link": "http://www.lifeofthelaw.org/live-law-3-san-francisco-ca-feb-13-2014/", 
     "pubdate": "Thu, 23 Jan 2014 16:46:57 +0000", 
     "tags": [], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/12/TLOTL_24-nov_104_FINAL-e1386919572956.jpg", 
+    "thumbnail": {
+      "height": 502, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/12/TLOTL_24-nov_104_FINAL-e1386919572956.jpg", 
+      "width": 410
+    }, 
     "title": "LIVE LAW 3 \u2013 San Francisco, CA, Feb. 13, 2014"
   }, 
   {
@@ -4152,7 +4995,11 @@ var POSTS = [
     "link": "http://www.lifeofthelaw.org/eating-law-students-trash-literally/", 
     "pubdate": "Fri, 24 Jan 2014 12:00:16 +0000", 
     "tags": [], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2014/01/medium_5575089139.jpg", 
+    "thumbnail": {
+      "height": 426, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2014/01/medium_5575089139.jpg", 
+      "width": 640
+    }, 
     "title": "Eating Law Students' Trash, Literally"
   }, 
   {
@@ -4165,7 +5012,11 @@ var POSTS = [
     "link": "http://www.lifeofthelaw.org/legal-briefs-this-week-in-law-32/", 
     "pubdate": "Mon, 27 Jan 2014 12:00:46 +0000", 
     "tags": [], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2014/01/232346-home_alone_9_super.jpg", 
+    "thumbnail": {
+      "height": 388, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2014/01/232346-home_alone_9_super.jpg", 
+      "width": 600
+    }, 
     "title": "Legal Briefs: This Week in Law"
   }, 
   {
@@ -4191,7 +5042,11 @@ var POSTS = [
       "suspension", 
       "teacher"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2014/01/kyle.football.jpg", 
+    "thumbnail": {
+      "height": 273, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2014/01/kyle.football.jpg", 
+      "width": 637
+    }, 
     "title": "School Discipline"
   }, 
   {
@@ -4204,7 +5059,11 @@ var POSTS = [
     "link": "http://www.lifeofthelaw.org/fun-read-of-the-day-your-states-bicycling-laws/", 
     "pubdate": "Tue, 28 Jan 2014 15:40:11 +0000", 
     "tags": [], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2014/01/free-vector-bicyclist-silhouette-clip-art_103778_Bicyclist_Silhouette_clip_art_hight1.png", 
+    "thumbnail": {
+      "height": 418, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2014/01/free-vector-bicyclist-silhouette-clip-art_103778_Bicyclist_Silhouette_clip_art_hight1.png", 
+      "width": 486
+    }, 
     "title": "Fun Read of the Day: Your State's Bicycling Laws"
   }, 
   {
@@ -4217,7 +5076,11 @@ var POSTS = [
     "link": "http://www.lifeofthelaw.org/prison-newspaper-suspended-managing-editor-reports-for-lotl/", 
     "pubdate": "Thu, 30 Jan 2014 13:55:22 +0000", 
     "tags": [], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2011/12/IMG_3614.jpg", 
+    "thumbnail": {
+      "height": 2736, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2011/12/IMG_3614.jpg", 
+      "width": 3648
+    }, 
     "title": "Prison Newspaper Suspended, Managing Editor Reports for LOTL"
   }, 
   {
@@ -4230,7 +5093,11 @@ var POSTS = [
     "link": "http://www.lifeofthelaw.org/being-transgender-in-san-quentin-prison-an-inside-report/", 
     "pubdate": "Thu, 30 Jan 2014 13:56:20 +0000", 
     "tags": [], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/03/IMG_3773.jpg", 
+    "thumbnail": {
+      "height": 600, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/03/IMG_3773.jpg", 
+      "width": 450
+    }, 
     "title": "Being Transgender in San Quentin Prison, An Inside Report"
   }, 
   {
@@ -4243,7 +5110,11 @@ var POSTS = [
     "link": "http://www.lifeofthelaw.org/lotl-wins-prx-zeitfunk-award-in-two-categories/", 
     "pubdate": "Fri, 31 Jan 2014 20:13:01 +0000", 
     "tags": [], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2014/01/unnamed.jpg", 
+    "thumbnail": {
+      "height": 310, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2014/01/unnamed.jpg", 
+      "width": 800
+    }, 
     "title": " LOTL wins PRX Zeitfunk Award in TWO categories!"
   }, 
   {
@@ -4256,7 +5127,11 @@ var POSTS = [
     "link": "http://www.lifeofthelaw.org/legal-briefs-this-week-in-law-33/", 
     "pubdate": "Mon, 03 Feb 2014 15:10:14 +0000", 
     "tags": [], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2014/02/Screen-Shot-2014-02-03-at-10.10.28-AM.png", 
+    "thumbnail": {
+      "height": 449, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2014/02/Screen-Shot-2014-02-03-at-10.10.28-AM.png", 
+      "width": 649
+    }, 
     "title": "Legal Briefs: This Week in Law"
   }, 
   {
@@ -4281,7 +5156,11 @@ var POSTS = [
       "student", 
       "union"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2014/02/northwestern0222way-34aaf7c93babb5f5baedafc38b416feda9dff5e6-s6-c30.jpg", 
+    "thumbnail": {
+      "height": 710, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2014/02/northwestern0222way-34aaf7c93babb5f5baedafc38b416feda9dff5e6-s6-c30.jpg", 
+      "width": 948
+    }, 
     "title": "A New Kind of Student Union? Labor Law and Football"
   }, 
   {
@@ -4296,7 +5175,11 @@ var POSTS = [
     "tags": [
       "school discipline"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2014/02/medium_192330769.jpg", 
+    "thumbnail": {
+      "height": 427, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2014/02/medium_192330769.jpg", 
+      "width": 640
+    }, 
     "title": "School Discipline in New York"
   }, 
   {
@@ -4309,7 +5192,11 @@ var POSTS = [
     "link": "http://www.lifeofthelaw.org/death-row-health-order/", 
     "pubdate": "Fri, 07 Feb 2014 12:00:37 +0000", 
     "tags": [], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2014/02/origin_10449460006.jpg", 
+    "thumbnail": {
+      "height": 88, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2014/02/origin_10449460006.jpg", 
+      "width": 141
+    }, 
     "title": "Death Row Health Order"
   }, 
   {
@@ -4326,7 +5213,11 @@ var POSTS = [
       "rebecca worthington", 
       "this week in law"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2014/02/Screen-Shot-2014-02-10-at-9.24.19-AM.png", 
+    "thumbnail": {
+      "height": 468, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2014/02/Screen-Shot-2014-02-10-at-9.24.19-AM.png", 
+      "width": 912
+    }, 
     "title": "Legal Briefs: This Week in Law"
   }, 
   {
@@ -4342,7 +5233,11 @@ var POSTS = [
       "jason albert", 
       "water rights"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2014/02/Ep21-WATER-RIGHTS-ALBERT-PHOTO-2-e1384847696330.jpg", 
+    "thumbnail": {
+      "height": 333, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2014/02/Ep21-WATER-RIGHTS-ALBERT-PHOTO-2-e1384847696330.jpg", 
+      "width": 500
+    }, 
     "title": "Water Rights in Oregon: An Update Since Our Podcast"
   }, 
   {
@@ -4359,7 +5254,11 @@ var POSTS = [
       "gilad edelman", 
       "notre dame"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2014/02/dome-1136x640.jpg", 
+    "thumbnail": {
+      "height": 414, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2014/02/dome-1136x640.jpg", 
+      "width": 638
+    }, 
     "title": "Contraception, Notre Dame, and Absurdity"
   }, 
   {
@@ -4372,7 +5271,11 @@ var POSTS = [
     "link": "http://www.lifeofthelaw.org/how-smart-would-a-real-dumb-starbucks-chain-be/", 
     "pubdate": "Mon, 17 Feb 2014 19:39:23 +0000", 
     "tags": [], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2014/02/Dumb-Starbucks-132076463924_xlarge.jpeg", 
+    "thumbnail": {
+      "height": 257, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2014/02/Dumb-Starbucks-132076463924_xlarge.jpeg", 
+      "width": 350
+    }, 
     "title": "How Smart would a Real \"Dumb Starbucks\" Chain Be? "
   }, 
   {
@@ -4388,7 +5291,11 @@ var POSTS = [
       "katie barnett", 
       "valentine's"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2014/02/broadcast_1.jpg", 
+    "thumbnail": {
+      "height": 523, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2014/02/broadcast_1.jpg", 
+      "width": 600
+    }, 
     "title": "Life of the Law Loves You, Our Listeners"
   }, 
   {
@@ -4412,7 +5319,11 @@ var POSTS = [
       "social_media", 
       "storytelling"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/06/family_drawing-banner.jpg", 
+    "thumbnail": {
+      "height": 274, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/06/family_drawing-banner.jpg", 
+      "width": 638
+    }, 
     "title": "Polyamorous Love"
   }, 
   {
@@ -4429,7 +5340,11 @@ var POSTS = [
       "rebecca worthington", 
       "this week in law"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2014/02/medium_2406440234.jpg", 
+    "thumbnail": {
+      "height": 336, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2014/02/medium_2406440234.jpg", 
+      "width": 465
+    }, 
     "title": "Legal Briefs: This Week in Law"
   }, 
   {
@@ -4442,7 +5357,11 @@ var POSTS = [
     "link": "http://www.lifeofthelaw.org/dont-judge-that-new-policy-by-its-cover/", 
     "pubdate": "Thu, 20 Feb 2014 12:00:50 +0000", 
     "tags": [], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2014/02/medium_3031647041.jpg", 
+    "thumbnail": {
+      "height": 640, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2014/02/medium_3031647041.jpg", 
+      "width": 503
+    }, 
     "title": "Don't Judge That New Policy By Its Cover"
   }, 
   {
@@ -4459,7 +5378,11 @@ var POSTS = [
       "julia barton", 
       "radiolab"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2014/02/glomar2.jpg", 
+    "thumbnail": {
+      "height": 469, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2014/02/glomar2.jpg", 
+      "width": 808
+    }, 
     "title": "Truths Behind \u201cNeither Confirm Nor Deny\u201d"
   }, 
   {
@@ -4478,7 +5401,11 @@ var POSTS = [
       "equal pay act", 
       "title VII"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2014/02/equal_pay_2-20-121.jpg", 
+    "thumbnail": {
+      "height": 378, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2014/02/equal_pay_2-20-121.jpg", 
+      "width": 544
+    }, 
     "title": "How a Quirk of the Equal Pay Act Causes Some Women to Miss Out"
   }, 
   {
@@ -4495,7 +5422,11 @@ var POSTS = [
       "rebecca worthington", 
       "this week in law"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2014/02/medium_597174047.jpg", 
+    "thumbnail": {
+      "height": 480, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2014/02/medium_597174047.jpg", 
+      "width": 640
+    }, 
     "title": "Legal Briefs: This Week in Law"
   }, 
   {
@@ -4519,7 +5450,11 @@ var POSTS = [
       "politics", 
       "story"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2014/02/Banner-PHOTO-1.jpg", 
+    "thumbnail": {
+      "height": 274, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2014/02/Banner-PHOTO-1.jpg", 
+      "width": 635
+    }, 
     "title": "Bad Constitution"
   }, 
   {
@@ -4534,7 +5469,9 @@ var POSTS = [
     "tags": [
       "live law 3"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2014/02/8Doug-Miller-on-alto-sax.jpg", 
+    "thumbnail": {
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2014/02/8Doug-Miller-on-alto-sax.jpg"
+    }, 
     "title": "Live Law 3, Stories of Love and the Law, is Now on YouTube! "
   }, 
   {
@@ -4551,7 +5488,11 @@ var POSTS = [
       "marry me macklemore", 
       "renee cramer"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2014/02/unnamed.jpg", 
+    "thumbnail": {
+      "height": 355, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2014/02/unnamed.jpg", 
+      "width": 511
+    }, 
     "title": "Marry Me, Macklemore"
   }, 
   {
@@ -4564,7 +5505,11 @@ var POSTS = [
     "link": "http://www.lifeofthelaw.org/update-to-our-latest-podcast-bad-constitution/", 
     "pubdate": "Thu, 27 Feb 2014 15:00:50 +0000", 
     "tags": [], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2014/02/medium_541839267.jpg", 
+    "thumbnail": {
+      "height": 640, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2014/02/medium_541839267.jpg", 
+      "width": 480
+    }, 
     "title": "Update to Our Latest Podcast, Bad Constitution"
   }, 
   {
@@ -4581,7 +5526,11 @@ var POSTS = [
       "rebecca worthington", 
       "this week in law"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2014/03/medium_7832838220.jpg", 
+    "thumbnail": {
+      "height": 640, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2014/03/medium_7832838220.jpg", 
+      "width": 640
+    }, 
     "title": "Legal Briefs: This Week in Law"
   }, 
   {
@@ -4599,7 +5548,11 @@ var POSTS = [
       "michelle jalowski", 
       "q&amp;a"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2014/03/Screen-Shot-2014-03-04-at-8.55.49-AM.png", 
+    "thumbnail": {
+      "height": 260, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2014/03/Screen-Shot-2014-03-04-at-8.55.49-AM.png", 
+      "width": 674
+    }, 
     "title": "Q&A with a Legal Startup: Judicata on \"Mapping the Legal Genome\""
   }, 
   {
@@ -4618,7 +5571,11 @@ var POSTS = [
       "law school numbers", 
       "mary adkins"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2014/03/medium_2860228008.jpg", 
+    "thumbnail": {
+      "height": 409, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2014/03/medium_2860228008.jpg", 
+      "width": 640
+    }, 
     "title": "Law school by the numbers"
   }, 
   {
@@ -4635,7 +5592,11 @@ var POSTS = [
       "rebecca worthington", 
       "this week in law"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2014/03/medium_2162610423.jpg", 
+    "thumbnail": {
+      "height": 446, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2014/03/medium_2162610423.jpg", 
+      "width": 640
+    }, 
     "title": "Legal Briefs: This Week in Law"
   }, 
   {
@@ -4652,7 +5613,11 @@ var POSTS = [
       "michelle jalowski", 
       "q&amp;a with a legal startup"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2014/03/Legitimo-iPhone-set.png", 
+    "thumbnail": {
+      "height": 492, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2014/03/Legitimo-iPhone-set.png", 
+      "width": 1009
+    }, 
     "title": "Q&A With a Legal Startup: Legitimo, The App that Drafts Contracts...In Spanish"
   }, 
   {
@@ -4679,7 +5644,11 @@ var POSTS = [
       "performance", 
       "storytelling"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2014/03/Screen-Shot-2014-03-11-at-5.53.47-AM.png", 
+    "thumbnail": {
+      "height": 274, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2014/03/Screen-Shot-2014-03-11-at-5.53.47-AM.png", 
+      "width": 638
+    }, 
     "title": "Best Of Live Law 3"
   }, 
   {
@@ -4695,7 +5664,11 @@ var POSTS = [
       "alabama midwifery", 
       "interesting read of the day"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2014/03/midwifery-new1.jpg", 
+    "thumbnail": {
+      "height": 520, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2014/03/midwifery-new1.jpg", 
+      "width": 400
+    }, 
     "title": "Interesting Read of the Day: Will Alabama decriminalize the practice of midwifery?"
   }, 
   {
@@ -4712,7 +5685,11 @@ var POSTS = [
       "rebecca worthington", 
       "this week in law"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2014/03/iheartboobies.jpg", 
+    "thumbnail": {
+      "height": 181, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2014/03/iheartboobies.jpg", 
+      "width": 250
+    }, 
     "title": "Legal Briefs: This Week in Law"
   }, 
   {
@@ -4729,7 +5706,11 @@ var POSTS = [
       "live law", 
       "live law 4"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/12/TLOTL_24-nov_164_FINAL.jpg", 
+    "thumbnail": {
+      "height": 413, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/12/TLOTL_24-nov_164_FINAL.jpg", 
+      "width": 620
+    }, 
     "title": "Call for Stories: Tell your story at the next LIVE LAW in Minneapolis"
   }, 
   {
@@ -4744,7 +5725,11 @@ var POSTS = [
     "tags": [
       "julia barton"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2014/03/MixIsAlmost.jpg", 
+    "thumbnail": {
+      "height": 864, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2014/03/MixIsAlmost.jpg", 
+      "width": 1152
+    }, 
     "title": "From Broadcast to Publishing"
   }, 
   {
@@ -4761,7 +5746,11 @@ var POSTS = [
       "mary adkins", 
       "this week in law"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2014/03/images1.jpg", 
+    "thumbnail": {
+      "height": 183, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2014/03/images1.jpg", 
+      "width": 275
+    }, 
     "title": "Legal Briefs: This Week in Law"
   }, 
   {
@@ -4781,7 +5770,11 @@ var POSTS = [
       "lynn paltrow", 
       "supreme court"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2014/03/medium_13139453903.jpg", 
+    "thumbnail": {
+      "height": 376, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2014/03/medium_13139453903.jpg", 
+      "width": 640
+    }, 
     "title": "If Hobby Lobby Wants to Deny Insurance Coverage of Birth Control It Should Stop Selling Knitting Needles, Too"
   }, 
   {
@@ -4807,7 +5800,11 @@ var POSTS = [
       "storytelling", 
       "travel"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2014/03/Ep30_Jude_Photo1.jpg", 
+    "thumbnail": {
+      "height": 274, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2014/03/Ep30_Jude_Photo1.jpg", 
+      "width": 636
+    }, 
     "title": "Trouble with Profiling"
   }, 
   {
@@ -4823,7 +5820,11 @@ var POSTS = [
       "hobby lobby", 
       "sam ritchie"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2014/03/medium_92184611.jpg", 
+    "thumbnail": {
+      "height": 480, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2014/03/medium_92184611.jpg", 
+      "width": 640
+    }, 
     "title": "Is Wal-Mart a Presbyterian?"
   }, 
   {
@@ -4836,7 +5837,11 @@ var POSTS = [
     "link": "http://www.lifeofthelaw.org/interesting-read-of-the-day-dead-sea-scrolls-impersonation/", 
     "pubdate": "Thu, 27 Mar 2014 14:04:27 +0000", 
     "tags": [], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2014/03/medium_4498692615.jpg", 
+    "thumbnail": {
+      "height": 480, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2014/03/medium_4498692615.jpg", 
+      "width": 640
+    }, 
     "title": "Interesting Read of the Day: Dead Sea Scrolls & Impersonation"
   }, 
   {
@@ -4855,7 +5860,11 @@ var POSTS = [
       "joselin linder", 
       "subconscious copying"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2014/03/Screen-Shot-2014-03-28-at-10.28.13-AM.png", 
+    "thumbnail": {
+      "height": 368, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2014/03/Screen-Shot-2014-03-28-at-10.28.13-AM.png", 
+      "width": 637
+    }, 
     "title": "My Grandpa Versus Yours: Who Really Wrote the George Washington Bridge Song?"
   }, 
   {
@@ -4868,7 +5877,11 @@ var POSTS = [
     "link": "http://www.lifeofthelaw.org/legal-briefs-this-week-in-law-41/", 
     "pubdate": "Mon, 31 Mar 2014 11:00:20 +0000", 
     "tags": [], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2014/03/medium_6155324196.jpg", 
+    "thumbnail": {
+      "height": 461, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2014/03/medium_6155324196.jpg", 
+      "width": 640
+    }, 
     "title": "Legal Briefs: This Week in Law"
   }, 
   {
@@ -4885,7 +5898,11 @@ var POSTS = [
       "elizabeth joe", 
       "surveillance and law"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2014/04/stealth-wear-scarf-md.jpg", 
+    "thumbnail": {
+      "height": 1000, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2014/04/stealth-wear-scarf-md.jpg", 
+      "width": 800
+    }, 
     "title": "From Anti-drone Burqas to Face Cages: What Artists Are Showing Us about Surveillance and the Law"
   }, 
   {
@@ -4900,7 +5917,11 @@ var POSTS = [
     "tags": [
       "book of human flesh"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2014/04/medium_2097585335.jpg", 
+    "thumbnail": {
+      "height": 427, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2014/04/medium_2097585335.jpg", 
+      "width": 640
+    }, 
     "title": "Crazy Read of the Day: Harvard Has a Law Book Made of Human Skin"
   }, 
   {
@@ -4916,7 +5937,11 @@ var POSTS = [
       "legal briefs", 
       "this week in law"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2014/04/medium_11087147526.jpg", 
+    "thumbnail": {
+      "height": 427, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2014/04/medium_11087147526.jpg", 
+      "width": 640
+    }, 
     "title": "Legal Briefs: This Week in Law"
   }, 
   {
@@ -4931,7 +5956,11 @@ var POSTS = [
     "tags": [
       "juan haines"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2014/04/sq-news-staff-1013.jpg", 
+    "thumbnail": {
+      "height": 406, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2014/04/sq-news-staff-1013.jpg", 
+      "width": 940
+    }, 
     "title": "What does a DA talk about with convicted murderers who are also journalists? A lot."
   }, 
   {
@@ -4956,7 +5985,11 @@ var POSTS = [
       "taxes", 
       "US government"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2014/04/uncle-sam-we-want-you.jpg", 
+    "thumbnail": {
+      "height": 274, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2014/04/uncle-sam-we-want-you.jpg", 
+      "width": 638
+    }, 
     "title": "People and Their Taxes"
   }, 
   {
@@ -4969,7 +6002,11 @@ var POSTS = [
     "link": "http://www.lifeofthelaw.org/qa-with-a-legal-startup-hire-an-esquire/", 
     "pubdate": "Fri, 11 Apr 2014 11:00:43 +0000", 
     "tags": [], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2014/04/Screen-Shot-2014-04-10-at-10.20.40-AM.png", 
+    "thumbnail": {
+      "height": 400, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2014/04/Screen-Shot-2014-04-10-at-10.20.40-AM.png", 
+      "width": 822
+    }, 
     "title": "Q&A With a Legal Startup: Hire an Esquire"
   }, 
   {
@@ -4985,7 +6022,11 @@ var POSTS = [
       "legal briefs", 
       "this week in law"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2014/04/obama-ortiz-selfie-hed-2014.jpg", 
+    "thumbnail": {
+      "height": 367, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2014/04/obama-ortiz-selfie-hed-2014.jpg", 
+      "width": 652
+    }, 
     "title": "Legal Briefs: This Week in Law"
   }, 
   {
@@ -5000,7 +6041,11 @@ var POSTS = [
     "tags": [
       "manny boras"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/12/TLOTL_24-nov_199_FINAL-resize.jpg", 
+    "thumbnail": {
+      "height": 425, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/12/TLOTL_24-nov_199_FINAL-resize.jpg", 
+      "width": 638
+    }, 
     "title": "How the Bard Prison Initiative Set Me Free"
   }, 
   {
@@ -5015,7 +6060,11 @@ var POSTS = [
     "tags": [
       "katie barnett"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2014/04/medium_2340469906.jpg", 
+    "thumbnail": {
+      "height": 396, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2014/04/medium_2340469906.jpg", 
+      "width": 640
+    }, 
     "title": "The Laws of Springtime"
   }, 
   {
@@ -5028,7 +6077,11 @@ var POSTS = [
     "link": "http://www.lifeofthelaw.org/we-are-featured-on-itunes-this-week/", 
     "pubdate": "Wed, 16 Apr 2014 17:00:34 +0000", 
     "tags": [], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2014/04/Screen-Shot-2014-04-16-at-1.01.42-PM.png", 
+    "thumbnail": {
+      "height": 338, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2014/04/Screen-Shot-2014-04-16-at-1.01.42-PM.png", 
+      "width": 589
+    }, 
     "title": "We are featured on iTunes this week! "
   }, 
   {
@@ -5044,7 +6097,11 @@ var POSTS = [
       "donald beskin", 
       "north carolina racial justice act"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2014/04/deathpenaltythumbnail_060613-thumb-640xauto-8330.jpg", 
+    "thumbnail": {
+      "height": 339, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2014/04/deathpenaltythumbnail_060613-thumb-640xauto-8330.jpg", 
+      "width": 640
+    }, 
     "title": "A Little Justice for a Little While: North Carolina's Racial Justice Act"
   }, 
   {
@@ -5060,7 +6117,11 @@ var POSTS = [
       "legal briefs", 
       "rebecca worthington"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2014/04/medium_10350805026.jpg", 
+    "thumbnail": {
+      "height": 427, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2014/04/medium_10350805026.jpg", 
+      "width": 640
+    }, 
     "title": "Legal Briefs: This Week in Law"
   }, 
   {
@@ -5086,7 +6147,11 @@ var POSTS = [
       "technology", 
       "transportation"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2014/04/iseeyou-plate.jpg", 
+    "thumbnail": {
+      "height": 274, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2014/04/iseeyou-plate.jpg", 
+      "width": 638
+    }, 
     "title": "Privacy Issues"
   }, 
   {
@@ -5102,7 +6167,11 @@ var POSTS = [
       "juan haines", 
       "orange is the new black"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2014/04/2527249.jpg", 
+    "thumbnail": {
+      "height": 720, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2014/04/2527249.jpg", 
+      "width": 1280
+    }, 
     "title": "A Prisoner Weighs in on Orange is the New Black"
   }, 
   {
@@ -5118,7 +6187,11 @@ var POSTS = [
       "legal briefs", 
       "this week in law"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2014/04/medium_13450053894.jpg", 
+    "thumbnail": {
+      "height": 519, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2014/04/medium_13450053894.jpg", 
+      "width": 640
+    }, 
     "title": "Legal Briefs: This Week in Law"
   }, 
   {
@@ -5131,7 +6204,6 @@ var POSTS = [
     "link": "http://www.lifeofthelaw.org/live-today-at-1pm-et-nancy-mullanes-ama-on-reddit/", 
     "pubdate": "Mon, 28 Apr 2014 17:11:14 +0000", 
     "tags": [], 
-    "thumbnail_id": null, 
     "title": "Live today at 1pm ET: Nancy Mullane's AMA on Reddit"
   }, 
   {
@@ -5144,7 +6216,11 @@ var POSTS = [
     "link": "http://www.lifeofthelaw.org/when-you-say-photocopy-machine-what-do-you-mean/", 
     "pubdate": "Wed, 30 Apr 2014 11:00:41 +0000", 
     "tags": [], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2014/04/Screen-Shot-2014-04-29-at-2.30.09-PM.png", 
+    "thumbnail": {
+      "height": 422, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2014/04/Screen-Shot-2014-04-29-at-2.30.09-PM.png", 
+      "width": 888
+    }, 
     "title": "When You Say \"Photocopy Machine,\" What Do You Mean? "
   }, 
   {
@@ -5157,7 +6233,11 @@ var POSTS = [
     "link": "http://www.lifeofthelaw.org/nancys-ama-in-the-news/", 
     "pubdate": "Tue, 29 Apr 2014 19:47:48 +0000", 
     "tags": [], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2014/04/justin-helzer-california-death-row-2.jpg", 
+    "thumbnail": {
+      "height": 360, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2014/04/justin-helzer-california-death-row-2.jpg", 
+      "width": 480
+    }, 
     "title": "Nancy's AMA in the News! "
   }, 
   {
@@ -5173,7 +6253,11 @@ var POSTS = [
       "legal briefs", 
       "this week in law"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2014/05/medium_14035316126.jpg", 
+    "thumbnail": {
+      "height": 270, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2014/05/medium_14035316126.jpg", 
+      "width": 640
+    }, 
     "title": "Legal Briefs: This Week in Law"
   }, 
   {
@@ -5191,7 +6275,11 @@ var POSTS = [
       "obama letter", 
       "the empire writes back"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2014/05/obama-letter.jpeg", 
+    "thumbnail": {
+      "height": 673, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2014/05/obama-letter.jpeg", 
+      "width": 1259
+    }, 
     "title": "The Empire Writes Back"
   }, 
   {
@@ -5208,7 +6296,11 @@ var POSTS = [
       "genetic privacy", 
       "surveillance"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2014/05/Screen-Shot-2014-05-05-at-2.30.55-PM.png", 
+    "thumbnail": {
+      "height": 457, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2014/05/Screen-Shot-2014-05-05-at-2.30.55-PM.png", 
+      "width": 865
+    }, 
     "title": " Forget internet security, how do I protect my genetic privacy?"
   }, 
   {
@@ -5221,7 +6313,11 @@ var POSTS = [
     "link": "http://www.lifeofthelaw.org/dont-shelve-that-report-mr-attorney-general/", 
     "pubdate": "Thu, 08 May 2014 11:00:13 +0000", 
     "tags": [], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2014/05/medium_6365104687.jpg", 
+    "thumbnail": {
+      "height": 404, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2014/05/medium_6365104687.jpg", 
+      "width": 640
+    }, 
     "title": "Don\u2019t Shelve That Report, Mr. Attorney General"
   }, 
   {
@@ -5248,7 +6344,11 @@ var POSTS = [
       "storytelling", 
       "women"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2014/05/IMG_5575.jpg", 
+    "thumbnail": {
+      "height": 272, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2014/05/IMG_5575.jpg", 
+      "width": 637
+    }, 
     "title": "The Hardest Time: Moms in Prison"
   }, 
   {
@@ -5272,7 +6372,11 @@ var POSTS = [
       "psychology", 
       "storytelling"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2014/05/IMG_5576.jpg", 
+    "thumbnail": {
+      "height": 2736, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2014/05/IMG_5576.jpg", 
+      "width": 3648
+    }, 
     "title": "Birth and Motherhood in Prison: An Interview with Veronica Martinez at Folsom Women's Prison"
   }, 
   {
@@ -5288,7 +6392,11 @@ var POSTS = [
       "legal briefs", 
       "this week in law"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2014/05/medium_651370154.jpg", 
+    "thumbnail": {
+      "height": 218, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2014/05/medium_651370154.jpg", 
+      "width": 500
+    }, 
     "title": "Legal Briefs: This Week in Law...Moms"
   }, 
   {
@@ -5304,7 +6412,11 @@ var POSTS = [
       "manny boras", 
       "parole"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2014/05/DP818314.jpg", 
+    "thumbnail": {
+      "height": 2737, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2014/05/DP818314.jpg", 
+      "width": 3612
+    }, 
     "title": "My Tio Viga's Fish Tank in the Bronx"
   }, 
   {
@@ -5322,7 +6434,9 @@ var POSTS = [
       "minneapolis", 
       "storytellers"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2014/02/20140213_1_0092.jpg", 
+    "thumbnail": {
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2014/02/20140213_1_0092.jpg"
+    }, 
     "title": "Introducing our storytellers in Minneapolis! "
   }, 
   {
@@ -5338,7 +6452,11 @@ var POSTS = [
       "attica", 
       "heather thompson"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2014/05/url.jpg", 
+    "thumbnail": {
+      "height": 173, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2014/05/url.jpg", 
+      "width": 292
+    }, 
     "title": "Who Does the Freedom of Information Law Protect? Attica and the Code of State Silence"
   }, 
   {
@@ -5351,7 +6469,11 @@ var POSTS = [
     "link": "http://www.lifeofthelaw.org/legal-briefs-this-week-in-law-47/", 
     "pubdate": "Mon, 19 May 2014 11:00:28 +0000", 
     "tags": [], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2014/05/Screen-Shot-2014-05-18-at-10.05.08-AM.png", 
+    "thumbnail": {
+      "height": 473, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2014/05/Screen-Shot-2014-05-18-at-10.05.08-AM.png", 
+      "width": 975
+    }, 
     "title": "Legal Briefs: This Week in Law"
   }, 
   {
@@ -5377,7 +6499,11 @@ var POSTS = [
       "necessity defense", 
       "scotus"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2014/05/EP34-Dudley+Stephens-recreation-Photo-1-.jpg", 
+    "thumbnail": {
+      "height": 274, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2014/05/EP34-Dudley+Stephens-recreation-Photo-1-.jpg", 
+      "width": 637
+    }, 
     "title": "The Necessity Defense"
   }, 
   {
@@ -5390,7 +6516,11 @@ var POSTS = [
     "link": "http://www.lifeofthelaw.org/people-treating-people-like-people-a-review-of-through-the-door/", 
     "pubdate": "Wed, 21 May 2014 13:33:18 +0000", 
     "tags": [], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2014/05/466322920_640.jpg", 
+    "thumbnail": {
+      "height": 360, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2014/05/466322920_640.jpg", 
+      "width": 640
+    }, 
     "title": "People Treating People Like People: A Review of \"Through the Door\""
   }, 
   {
@@ -5403,7 +6533,11 @@ var POSTS = [
     "link": "http://www.lifeofthelaw.org/lotl-is-heading-to-minnesota/", 
     "pubdate": "Mon, 26 May 2014 14:18:55 +0000", 
     "tags": [], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2014/05/Screen-Shot-2014-05-26-at-10.15.10-AM.png", 
+    "thumbnail": {
+      "height": 337, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2014/05/Screen-Shot-2014-05-26-at-10.15.10-AM.png", 
+      "width": 435
+    }, 
     "title": "LOTL is heading to Minnesota! "
   }, 
   {
@@ -5420,7 +6554,11 @@ var POSTS = [
       "terri moran", 
       "world views"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2014/05/medium_4640934950.jpg", 
+    "thumbnail": {
+      "height": 427, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2014/05/medium_4640934950.jpg", 
+      "width": 640
+    }, 
     "title": "The Battle Has Been Underway Her Whole Life: Rape, Gender & World View"
   }, 
   {
@@ -5437,7 +6575,11 @@ var POSTS = [
       "simone seiver", 
       "this week in law"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2014/06/medium_7680214024.jpg", 
+    "thumbnail": {
+      "height": 480, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2014/06/medium_7680214024.jpg", 
+      "width": 640
+    }, 
     "title": "Legal Briefs: This Week in Law"
   }, 
   {
@@ -5453,7 +6595,11 @@ var POSTS = [
       "intern", 
       "simone seiver"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2014/06/medium_2118126521.jpg", 
+    "thumbnail": {
+      "height": 427, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2014/06/medium_2118126521.jpg", 
+      "width": 640
+    }, 
     "title": "Meet Me, Our Intern"
   }, 
   {
@@ -5468,7 +6614,11 @@ var POSTS = [
     "tags": [
       "simone seiver"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2014/06/public-interest-public-awareness-ads-18-2.jpg", 
+    "thumbnail": {
+      "height": 649, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2014/06/public-interest-public-awareness-ads-18-2.jpg", 
+      "width": 880
+    }, 
     "title": "How much do laws cost? More than these ads"
   }, 
   {
@@ -5484,7 +6634,11 @@ var POSTS = [
       "legal briefs", 
       "simone seiver"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2014/06/medium_12132192646.jpg", 
+    "thumbnail": {
+      "height": 427, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2014/06/medium_12132192646.jpg", 
+      "width": 640
+    }, 
     "title": "Legal Briefs: This Week in Law"
   }, 
   {
@@ -5498,7 +6652,11 @@ var POSTS = [
     "link": "http://www.lifeofthelaw.org/the-right-to-beg/", 
     "pubdate": "Tue, 10 Jun 2014 13:52:55 +0000", 
     "tags": [], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2014/06/Don-Sign-banner.png", 
+    "thumbnail": {
+      "height": 274, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2014/06/Don-Sign-banner.png", 
+      "width": 637
+    }, 
     "title": "The Right To Beg"
   }, 
   {
@@ -5515,7 +6673,11 @@ var POSTS = [
       "live law 4", 
       "photos"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2014/06/IMG_4984.jpg", 
+    "thumbnail": {
+      "height": 2848, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2014/06/IMG_4984.jpg", 
+      "width": 4272
+    }, 
     "title": "Photos from LIVE LAW 4 in Minneapolis! "
   }, 
   {
@@ -5532,7 +6694,11 @@ var POSTS = [
       "simone seiver", 
       "this week in law"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2014/06/medium_5601903659.jpg", 
+    "thumbnail": {
+      "height": 361, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2014/06/medium_5601903659.jpg", 
+      "width": 640
+    }, 
     "title": "Legal Briefs: This Week in Law"
   }, 
   {
@@ -5545,7 +6711,11 @@ var POSTS = [
     "link": "http://www.lifeofthelaw.org/the-rise-of-lock-em-up-how-crime-became-a-politics-question/", 
     "pubdate": "Wed, 18 Jun 2014 14:26:39 +0000", 
     "tags": [], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2014/06/medium_3002914196.jpg", 
+    "thumbnail": {
+      "height": 375, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2014/06/medium_3002914196.jpg", 
+      "width": 500
+    }, 
     "title": "The Rise of Lock 'Em Up: How Crime Became a Politics Question"
   }, 
   {
@@ -5558,7 +6728,11 @@ var POSTS = [
     "link": "http://www.lifeofthelaw.org/law-on-the-books-and-law-in-action-dont-always-align/", 
     "pubdate": "Thu, 19 Jun 2014 15:19:05 +0000", 
     "tags": [], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2014/06/medium_4417602702.jpg", 
+    "thumbnail": {
+      "height": 425, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2014/06/medium_4417602702.jpg", 
+      "width": 640
+    }, 
     "title": "Law on the Books and Law in Action Don't Always Align"
   }, 
   {
@@ -5575,7 +6749,11 @@ var POSTS = [
       "simone seiver", 
       "this week in law"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2014/06/medium_6009909019.jpg", 
+    "thumbnail": {
+      "height": 338, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2014/06/medium_6009909019.jpg", 
+      "width": 500
+    }, 
     "title": "Legal Briefs: This Week in Law"
   }, 
   {
@@ -5591,7 +6769,11 @@ var POSTS = [
       "abortion", 
       "vincent vecera"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2014/06/medium_3117302867.jpg", 
+    "thumbnail": {
+      "height": 360, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2014/06/medium_3117302867.jpg", 
+      "width": 500
+    }, 
     "title": "How We Talk About Abortion: When the Doctors Disappeared"
   }, 
   {
@@ -5605,7 +6787,11 @@ var POSTS = [
     "link": "http://www.lifeofthelaw.org/jury-nullification/", 
     "pubdate": "Tue, 24 Jun 2014 18:11:52 +0000", 
     "tags": [], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2014/06/juryCROP.jpg", 
+    "thumbnail": {
+      "height": 274, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2014/06/juryCROP.jpg", 
+      "width": 635
+    }, 
     "title": "Jury Nullification"
   }, 
   {
@@ -5623,7 +6809,11 @@ var POSTS = [
       "simone seiver", 
       "what the law looks like"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2014/06/476656246_72cd0f77d5_z.jpg", 
+    "thumbnail": {
+      "height": 640, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2014/06/476656246_72cd0f77d5_z.jpg", 
+      "width": 465
+    }, 
     "title": "What the Law Looks Like: Forging Down to a Fine Art"
   }, 
   {
@@ -5643,7 +6833,9 @@ var POSTS = [
       "person", 
       "RFRA"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2014/06/14358412220_4ff1132231_o-e1404176541391.jpg", 
+    "thumbnail": {
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2014/06/14358412220_4ff1132231_o-e1404176541391.jpg"
+    }, 
     "title": "Hobby Lobby: A Minefield Masquerading as a Minimalist Ruling"
   }, 
   {
@@ -5663,7 +6855,11 @@ var POSTS = [
       "renee cramer", 
       "reproduction"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2014/06/origin_4993573555.jpg", 
+    "thumbnail": {
+      "height": 740, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2014/06/origin_4993573555.jpg", 
+      "width": 493
+    }, 
     "title": "Less Than Human"
   }, 
   {
@@ -5680,7 +6876,11 @@ var POSTS = [
       "simone seiver", 
       "this week in law"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2014/07/Screen-Shot-2014-07-01-at-7.49.27-PM.png", 
+    "thumbnail": {
+      "height": 428, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2014/07/Screen-Shot-2014-07-01-at-7.49.27-PM.png", 
+      "width": 625
+    }, 
     "title": "Legal Briefs: This Week in Law"
   }, 
   {
@@ -5703,7 +6903,11 @@ var POSTS = [
       "simone seiver", 
       "story"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2014/07/Screen-Shot-2014-07-02-at-10.10.06-AM.png", 
+    "thumbnail": {
+      "height": 454, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2014/07/Screen-Shot-2014-07-02-at-10.10.06-AM.png", 
+      "width": 609
+    }, 
     "title": "Eight going on Fifteen: Seattle's New Minimum Wage"
   }, 
   {
@@ -5721,7 +6925,11 @@ var POSTS = [
       "nutrition", 
       "simone seiver"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2014/07/Screen-Shot-2014-07-05-at-10.57.36-AM.png", 
+    "thumbnail": {
+      "height": 425, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2014/07/Screen-Shot-2014-07-05-at-10.57.36-AM.png", 
+      "width": 514
+    }, 
     "title": "The \"500\" Calorie Burger is Not Illegal"
   }, 
   {
@@ -5738,7 +6946,11 @@ var POSTS = [
       "simone seiver", 
       "strategy"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2014/07/Screen-Shot-2014-07-06-at-1.18.01-PM.png", 
+    "thumbnail": {
+      "height": 426, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2014/07/Screen-Shot-2014-07-06-at-1.18.01-PM.png", 
+      "width": 640
+    }, 
     "title": "Meet Me, Our Intern: Part II"
   }, 
   {
@@ -5757,7 +6969,11 @@ var POSTS = [
       "marriage", 
       "simone seiver"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2014/07/Screen-Shot-2014-07-07-at-12.01.31-PM.png", 
+    "thumbnail": {
+      "height": 410, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2014/07/Screen-Shot-2014-07-07-at-12.01.31-PM.png", 
+      "width": 785
+    }, 
     "title": "Legal Briefs: This Week In Law"
   }, 
   {
@@ -5781,7 +6997,11 @@ var POSTS = [
       "pro bono", 
       "San Quentin"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2014/07/IMG_3655.jpg", 
+    "thumbnail": {
+      "height": 2736, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2014/07/IMG_3655.jpg", 
+      "width": 3648
+    }, 
     "title": "Jailhouse Lawyers"
   }, 
   {
@@ -5800,7 +7020,11 @@ var POSTS = [
       "parole", 
       "prison"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2014/07/IMG_3618.jpg", 
+    "thumbnail": {
+      "height": 2736, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2014/07/IMG_3618.jpg", 
+      "width": 3648
+    }, 
     "title": "Dodging Decarceration: The Shell Game of 'Getting Smart' on Crime"
   }, 
   {
@@ -5817,7 +7041,11 @@ var POSTS = [
       "simone seiver", 
       "vexatious litigants"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2014/07/366499457_5952bc0358-1.jpg", 
+    "thumbnail": {
+      "height": 375, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2014/07/366499457_5952bc0358-1.jpg", 
+      "width": 500
+    }, 
     "title": "Funnier than Letterman: California's Vexatious Litigants List"
   }, 
   {
@@ -5839,7 +7067,11 @@ var POSTS = [
       "San Quentin", 
       "unconstitutional"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2014/07/IMG_3925_21.jpg", 
+    "thumbnail": {
+      "height": 350, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2014/07/IMG_3925_21.jpg", 
+      "width": 638
+    }, 
     "title": "One Reporter on California's Death Row"
   }, 
   {
@@ -5860,7 +7092,11 @@ var POSTS = [
       "shelter", 
       "US"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2014/07/medium_13588180663.jpg", 
+    "thumbnail": {
+      "height": 333, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2014/07/medium_13588180663.jpg", 
+      "width": 500
+    }, 
     "title": "Children Immigrants and the United States"
   }, 
   {
@@ -5881,7 +7117,11 @@ var POSTS = [
       "Heather Ann Thompson", 
       "Jones v Chappell"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2014/07/IMG_3863.jpg", 
+    "thumbnail": {
+      "height": 2736, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2014/07/IMG_3863.jpg", 
+      "width": 3648
+    }, 
     "title": "Are We Any Closer to Ending the Death Penalty? A Word of Caution. "
   }, 
   {
@@ -5900,7 +7140,11 @@ var POSTS = [
       "Jones v Chappell", 
       "Judge Carney"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2014/07/IMG_3755_2.jpg", 
+    "thumbnail": {
+      "height": 2736, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2014/07/IMG_3755_2.jpg", 
+      "width": 3648
+    }, 
     "title": "Use It or Lose It:  A New Milestone on the Road to Abolition"
   }, 
   {
@@ -5919,7 +7163,11 @@ var POSTS = [
       "Judge Carney", 
       "litigation"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2014/07/IMG_3848.jpg", 
+    "thumbnail": {
+      "height": 3648, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2014/07/IMG_3848.jpg", 
+      "width": 2736
+    }, 
     "title": "CA Death Row Ruling of Enormous Importance"
   }, 
   {
@@ -5945,7 +7193,11 @@ var POSTS = [
       "river", 
       "summer"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2014/07/Deschutes_River.jpg", 
+    "thumbnail": {
+      "height": 350, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2014/07/Deschutes_River.jpg", 
+      "width": 638
+    }, 
     "title": "Two Sides of a River"
   }, 
   {
@@ -5971,7 +7223,11 @@ var POSTS = [
       "Nashville", 
       "Pursuit Magazine"
     ], 
-    "thumbnail": "http://www.lifeofthelaw.org/wp-content/uploads/2013/05/LiveLaw-630x250.jpg", 
+    "thumbnail": {
+      "height": 945, 
+      "url": "http://www.lifeofthelaw.org/wp-content/uploads/2013/05/LiveLaw-630x250.jpg", 
+      "width": 630
+    }, 
     "title": "LIVE LAW 6 - BLOOD SWEAT AND TEARS - Nashville - August 6 - 7pm"
   }
 ];
