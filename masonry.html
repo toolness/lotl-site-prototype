@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<base target="_blank">
+<link rel="stylesheet" href="vendor/font-awesome/css/font-awesome.css">
+<style>
+html {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  background-color: #ECEADF;
+  border-top: 50px solid #F5764B;
+}
+
+body {
+  width: 900px;
+  margin: 0 auto;
+}
+
+* {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.post {
+  width: 205px; /* Must be mirrored by COLUMN_WIDTH below. */
+  margin-right: 20px; /* Must be mirrored by GUTTER_WIDTH below. */
+  margin-bottom: 20px;
+  background-color: #FDFDFD;
+  font-size: 12px;
+}
+
+.post h3 {
+  margin: 0;
+}
+
+.post a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+.post a:hover {
+  color: #F5764B;
+}
+
+.post-pubdate {
+  color: #65B9B9;
+  font-weight: bold;
+}
+
+.post-details {
+  padding: 14px;
+}
+
+ul.post-actions {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+ul.post-actions li {
+  margin-right: 10px;
+  display: inline-block;
+  font-weight: bold;
+}
+</style>
+<title>Life of The Law Masonry Prototype</title>
+<h1>Life of The Law Masonry Prototype</h1>
+<div id="results"></div>
+<script type="text/html" id="post-template">
+  <div class="post">
+    {% if thumbnail %}
+    <img src="{{ thumbnail.url }}" width="{{ thumbnail.width }}" height="{{ thumbnail.height }}">
+    {% endif %}
+    <div class="post-details">
+      <h3><a href="{{ link }}">{{ title }}</a></h3>
+      <p class="post-pubdate">Posted {{ pubdate.toDateString() }}</p>
+      {% if excerpt %}
+      <p>{{ excerpt }}</p>
+      {% endif %}
+      <ul class="post-actions">
+        {% if enclosure %}
+        <li><a href="{{ enclosure }}"><i class="fa fa-play-circle"></i> Listen</a></li>
+        {% endif %}
+        <li><a href="{{ link }}"><i class="fa fa-book"></i> Read More</a></li>
+      </ul>
+    </div>
+  </div>
+</script>
+<script src="vendor/jquery.js"></script>
+<script src="vendor/nunjucks.js"></script>
+<script src="vendor/masonry.pkgd.js"></script>
+<script src="posts.js"></script>
+<script>
+$(function() {
+  var COLUMN_WIDTH = 205;
+  var GUTTER_WIDTH = 20;
+  var results = $('#results');
+
+  nunjucks.configure({autoescape: true});
+  var postTemplate = $.trim($('#post-template').text());
+  POSTS.reverse().forEach(function(post) {
+    if (post.author == 'lifeofthelaw')
+      post.author = null;
+    post.pubdate = new Date(post.pubdate);
+    if (post.thumbnail && !post.thumbnail.width) post.thumbnail = null;
+    if (post.thumbnail) {
+      post.thumbnail.height = post.thumbnail.height * COLUMN_WIDTH /
+                              post.thumbnail.width;
+      post.thumbnail.width = COLUMN_WIDTH;
+    }
+    post.$el = $(nunjucks.renderString(postTemplate, post))
+      .appendTo(results);
+  });
+
+  results.masonry({
+    columnWidth: COLUMN_WIDTH,
+    gutter: GUTTER_WIDTH,
+    itemSelector: '.post'
+  });
+});
+</script>
