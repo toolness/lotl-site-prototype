@@ -1,4 +1,9 @@
+import sys
 import xml.etree.ElementTree as ET
+
+sys.path.append('vendor')
+
+import phpserialize
 
 ITEM_OPEN_TAG = '''<?xml version="1.0" encoding="UTF-8" ?><item\
     xmlns:excerpt="excerpt"\
@@ -23,12 +28,17 @@ class Database(object):
                 continue
             pdict = {}
             pdict.update(post.__dict__)
-            for key in ['post_type', 'status', 'post_id', 'content']:
-                del pdict[key]
             if post.thumbnail_id is not None:
                 thumbnail = self.posts_by_id[post.thumbnail_id]
-                del pdict['thumbnail_id']
-                pdict['thumbnail'] = thumbnail.attachment_url
+                pdict['thumbnail'] = {'url': thumbnail.attachment_url}
+                if thumbnail.attachment_metadata:
+                    pdict['thumbnail'].update({
+                        'width': thumbnail.attachment_metadata['width'],
+                        'height': thumbnail.attachment_metadata['height']
+                    })
+            for key in ['post_type', 'status', 'post_id',
+                        'thumbnail_id', 'attachment_metadata', 'content']:
+                del pdict[key]
             posts.append(pdict)
 
         return json.dumps(posts, sort_keys=True, indent=2)
@@ -69,6 +79,7 @@ class Post(object):
         self.tags = []
         self.enclosure = None
         self.thumbnail_id = None
+        self.attachment_metadata = None
         if root.find('{wp}attachment_url') is not None:
             self.attachment_url = root.find('{wp}attachment_url').text
         for el in root.findall('category'):
@@ -85,6 +96,13 @@ class Post(object):
                   .splitlines()[0]
             elif meta_key == '_thumbnail_id':
                 self.thumbnail_id = int(el.find('{wp}meta_value').text)
+            elif meta_key == '_wp_attachment_metadata':
+                try:
+                    self.attachment_metadata = phpserialize.loads(
+                        el.find('{wp}meta_value').text
+                    )
+                except Exception, e:
+                    pass
 
     def __str__(self):
         return '<Post %s>' % (self.link)

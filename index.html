@@ -129,7 +129,7 @@ body {
 </div>
 <script type="text/html" id="post-template">
   <div class="post"
-   {% if thumbnail %}style="background-image: url({{ thumbnail }})"{% endif %}>
+   {% if thumbnail %}style="background-image: url({{ thumbnail.url }})"{% endif %}>
     <div class="overlay">
       <h3><a href="{{ link }}">{{ title }}</a></h3>
       <div class="details">
