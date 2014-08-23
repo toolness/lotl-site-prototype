@@ -120,7 +120,7 @@ $(function() {
 
   nunjucks.configure({autoescape: true});
   var postTemplate = $.trim($('#post-template').text());
-  POSTS.reverse().forEach(function(post, i) {
+  POSTS.reverse().forEach(function(post) {
     if (post.author == 'lifeofthelaw')
       post.author = null;
     post.pubdate = new Date(post.pubdate);
@@ -130,7 +130,7 @@ $(function() {
                               post.thumbnail.width;
       post.thumbnail.width = COLUMN_WIDTH;
     }
-    post.isWide = (i == 0);
+    post.isWide = !!post.enclosure;
     post.$el = $(nunjucks.renderString(postTemplate, post))
       .appendTo(results);
   });
