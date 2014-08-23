@@ -32,15 +32,18 @@ body {
   width: 430px;
 }
 
-.post.wide .post-thumbnail,
 .post.wide .post-details {
-  display: inline-block;
-  width: 50%;
-  vertical-align: top;
+  padding-left: 225px; /* Must be mirrored by COLUMN_WIDTH + GUTTER_WIDTH 
+                        * below. */
+  min-height: 225px;
 }
 
 .post.wide .post-thumbnail {
-  min-height: 225px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 205px; /* Must be mirrored by COLUMN_WIDTH below. */
   background-size: cover;
 }
 
