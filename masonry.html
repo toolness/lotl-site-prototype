@@ -49,22 +49,34 @@ var less = {
 <script>
 var results = $('#results');
 var postTemplate = $.trim($('#post-template').text());
-var postsLeft = POSTS.slice();
 var postStream = new Bacon.Bus();
+var scrollThrottledStream;
 
-function pushNextItem() {
-  var items = results.data('masonry').items;
+function ScrollThrottledStream($el, stream) {
+  var output = new Bacon.Bus();
+  var buffer = [];
 
-  if (!postsLeft.length) return;
-  if (items.length) {
-    var lastItem = items[items.length-1];
-    var y = results.offset().top + lastItem.position.y;
-    var scrollY = window.pageYOffset;
-    var isNotTooFarOffscreen = y - scrollY < window.innerHeight;
-    if (!isNotTooFarOffscreen) return;
-  }
+  stream.onValue(function(item) {
+    buffer.push(item);
+    output.flush();
+  });
+  output.flush = function() {
+    var items = $el.data('masonry').items;
 
-  postStream.push(postsLeft.pop());
+    if (!buffer.length) return output.error('drain');
+    if (items.length) {
+      var lastItem = items[items.length-1];
+      var y = $el.offset().top + lastItem.position.y;
+      var scrollY = window.pageYOffset;
+      var isNotTooFarOffscreen = y - scrollY < window.innerHeight;
+      if (!isNotTooFarOffscreen) return;
+    }
+
+    output.push(buffer.shift());
+  };
+  $el.masonry('on', 'layoutComplete', output.flush);
+
+  return output;
 }
 
 $(function() {
@@ -74,10 +86,8 @@ $(function() {
     gutter: GUTTER_WIDTH,
     itemSelector: '.post'
   });
-  results.masonry('on', 'layoutComplete', pushNextItem);
-  $(window).on('scroll resize', pushNextItem);
-
-  postStream.onValue(function(post) {
+  scrollThrottledStream = ScrollThrottledStream(results, postStream);
+  scrollThrottledStream.onValue(function(post) {
     if (post.author == 'lifeofthelaw')
       post.author = null;
     post.pubdate = new Date(post.pubdate);
@@ -92,7 +102,8 @@ $(function() {
     results.masonry('appended', post.$el[0]);
     results.masonry();
   });
+  $(window).on('scroll resize', scrollThrottledStream.flush);
 
-  pushNextItem();
+  postStream.plug(Bacon.fromArray(POSTS.slice().reverse()));
 });
 </script>
