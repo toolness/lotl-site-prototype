@@ -6,12 +6,10 @@
 html {
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   background-color: #ECEADF;
-  border-top: 50px solid #F5764B;
 }
 
 body {
-  width: 900px;
-  margin: 0 auto;
+  margin: 0;
 }
 
 * {
@@ -20,8 +18,28 @@ body {
   box-sizing: border-box;
 }
 
+.nav {
+  color: white;
+  background-color: #F5764B;
+  margin-bottom: 20px;
+  min-width: 900px;
+}
+
+.container {
+  width: 900px;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.masonry-container {
+  /* Budget enough width to contain all columns plus extra gutter, but 
+   * rely on parent .container to hide the extra gutter. Taken from
+   * http://jsfiddle.net/desandro/sJjYT/. */
+  width: 920px;
+}
+
 .post {
-  width: 205px; /* Must be mirrored by COLUMN_WIDTH below. */
+  width: 210px; /* Must be mirrored by COLUMN_WIDTH below. */
   margin-right: 20px; /* Must be mirrored by GUTTER_WIDTH below. */
   margin-bottom: 20px;
   background-color: #FDFDFD;
@@ -29,13 +47,14 @@ body {
 }
 
 .post.wide {
-  width: 430px;
+  width: 440px; /* Must be mirrored by COLUMN_WIDTH * 2 + GUTTER_WIDTH
+                 * below. */
 }
 
 .post.wide .post-details {
-  padding-left: 225px; /* Must be mirrored by COLUMN_WIDTH + GUTTER_WIDTH 
+  padding-left: 230px; /* Must be mirrored by COLUMN_WIDTH + GUTTER_WIDTH 
                         * below. */
-  min-height: 225px;
+  min-height: 230px;
 }
 
 .post.wide .post-thumbnail {
@@ -43,7 +62,7 @@ body {
   top: 0;
   left: 0;
   bottom: 0;
-  width: 205px; /* Must be mirrored by COLUMN_WIDTH below. */
+  width: 210px; /* Must be mirrored by COLUMN_WIDTH below. */
   background-size: cover;
 }
 
@@ -83,8 +102,8 @@ ul.post-actions li {
 }
 </style>
 <title>Life of The Law Masonry Prototype</title>
-<h1>Life of The Law Masonry Prototype</h1>
-<div id="results"></div>
+<div class="nav"><div class="container"><h1>Life of The Law Masonry Prototype</h1></div></div>
+<div class="container"><div id="results" class="masonry-container"></div></div>
 <script type="text/html" id="post-template">
   <div class="post{% if isWide %} wide{% endif %}">
     {% if isWide %}
@@ -114,7 +133,7 @@ ul.post-actions li {
 <script src="posts.js"></script>
 <script>
 $(function() {
-  var COLUMN_WIDTH = 205;
+  var COLUMN_WIDTH = 210;
   var GUTTER_WIDTH = 20;
   var results = $('#results');
 
