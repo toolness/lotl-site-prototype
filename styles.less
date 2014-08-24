@@ -1,6 +1,9 @@
 @orange: #F5764B;
 @beige: #ECEADF;
 @green: #65B9B9;
+@pageWidth: 900px;
+@columnWidth: 210px;  // Must be mirrored by COLUMN_WIDTH in JS.
+@gutterWidth: 20px;   // Must be mirrored by GUTTER_WIDTH in JS.
 
 html {
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -21,11 +24,11 @@ body {
   color: white;
   background-color: @orange;
   margin-bottom: 20px;
-  min-width: 900px;
+  min-width: @pageWidth;
 }
 
 .container {
-  width: 900px;
+  width: @pageWidth;
   overflow: hidden;
   margin: 0 auto;
 }
@@ -34,26 +37,24 @@ body {
   /* Budget enough width to contain all columns plus extra gutter, but 
    * rely on parent .container to hide the extra gutter. Taken from
    * http://jsfiddle.net/desandro/sJjYT/. */
-  width: 920px;
+  width: @pageWidth + @gutterWidth;
 }
 
 .post {
-  width: 210px; /* Must be mirrored by COLUMN_WIDTH below. */
-  margin-right: 20px; /* Must be mirrored by GUTTER_WIDTH below. */
-  margin-bottom: 20px;
+  width: @columnWidth;
+  margin-right: @gutterWidth;
+  margin-bottom: @gutterWidth;
   background-color: #FDFDFD;
   font-size: 0;
 }
 
 .post.wide {
-  width: 440px; /* Must be mirrored by COLUMN_WIDTH * 2 + GUTTER_WIDTH
-                 * below. */
+  width: @columnWidth * 2 + @gutterWidth;
 }
 
 .post.wide .post-details {
-  padding-left: 230px; /* Must be mirrored by COLUMN_WIDTH + GUTTER_WIDTH 
-                        * below. */
-  min-height: 230px;
+  padding-left: @columnWidth + @gutterWidth;
+  min-height: @columnWidth + @gutterWidth;
 }
 
 .post.wide .post-thumbnail {
@@ -61,7 +62,7 @@ body {
   top: 0;
   left: 0;
   bottom: 0;
-  width: 210px; /* Must be mirrored by COLUMN_WIDTH below. */
+  width: @columnWidth;
   background-size: cover;
 }
 
