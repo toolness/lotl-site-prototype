@@ -44,14 +44,40 @@ var less = {
 <script src="vendor/jquery.js"></script>
 <script src="vendor/nunjucks.js"></script>
 <script src="vendor/masonry.pkgd.js"></script>
+<script src="vendor/bacon.js"></script>
 <script src="posts.js"></script>
 <script>
-$(function() {
-  var results = $('#results');
+var results = $('#results');
+var postTemplate = $.trim($('#post-template').text());
+var postsLeft = POSTS.slice();
+var postStream = new Bacon.Bus();
 
+function pushNextItem() {
+  var items = results.data('masonry').items;
+
+  if (!postsLeft.length) return;
+  if (items.length) {
+    var lastItem = items[items.length-1];
+    var y = results.offset().top + lastItem.position.y;
+    var scrollY = window.pageYOffset;
+    var isNotTooFarOffscreen = y - scrollY < window.innerHeight;
+    if (!isNotTooFarOffscreen) return;
+  }
+
+  postStream.push(postsLeft.pop());
+}
+
+$(function() {
   nunjucks.configure({autoescape: true});
-  var postTemplate = $.trim($('#post-template').text());
-  POSTS.reverse().forEach(function(post) {
+  results.masonry({
+    columnWidth: COLUMN_WIDTH,
+    gutter: GUTTER_WIDTH,
+    itemSelector: '.post'
+  });
+  results.masonry('on', 'layoutComplete', pushNextItem);
+  $(window).on('scroll resize', pushNextItem);
+
+  postStream.onValue(function(post) {
     if (post.author == 'lifeofthelaw')
       post.author = null;
     post.pubdate = new Date(post.pubdate);
@@ -62,14 +88,11 @@ $(function() {
       post.thumbnail.width = COLUMN_WIDTH;
     }
     post.isWide = !!post.enclosure;
-    post.$el = $(nunjucks.renderString(postTemplate, post))
-      .appendTo(results);
+    post.$el = $(nunjucks.renderString(postTemplate, post)).appendTo(results);
+    results.masonry('appended', post.$el[0]);
+    results.masonry();
   });
 
-  results.masonry({
-    columnWidth: COLUMN_WIDTH,
-    gutter: GUTTER_WIDTH,
-    itemSelector: '.post'
-  });
+  pushNextItem();
 });
 </script>
