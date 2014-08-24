@@ -52,10 +52,11 @@ var postTemplate = $.trim($('#post-template').text());
 var postStream = new Bacon.Bus();
 var scrollThrottledStream;
 
-function ScrollThrottledStream($el, stream) {
+function ScrollThrottledStream($el, stream, onEmpty) {
   var output = new Bacon.Bus();
   var buffer = [];
 
+  if (!onEmpty) onEmpty = function() {};
   stream.onValue(function(item) {
     buffer.push(item);
     output.flush();
@@ -63,7 +64,6 @@ function ScrollThrottledStream($el, stream) {
   output.flush = function() {
     var items = $el.data('masonry').items;
 
-    if (!buffer.length) return output.error('drain');
     if (items.length) {
       var lastItem = items[items.length-1];
       var y = $el.offset().top + lastItem.position.y;
@@ -72,6 +72,7 @@ function ScrollThrottledStream($el, stream) {
       if (!isNotTooFarOffscreen) return;
     }
 
+    if (!buffer.length) return onEmpty();
     output.push(buffer.shift());
   };
   $el.masonry('on', 'layoutComplete', output.flush);
