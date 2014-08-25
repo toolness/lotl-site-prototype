@@ -38,7 +38,16 @@ var less = {
     </div>
   </div>
 </div>
-<div class="container"><div id="results" class="masonry-container"></div></div>
+<div class="container">
+  <div id="results" class="masonry-container"></div>
+  <div id="more"><i class="fa fa-chevron-circle-down"></i></div>
+</div>
+<footer>
+  <div class="container">
+    <p>Life of The Law is a super awesome 360 degree view of our legal system.</p>
+    <p><small>There should really be more content here.</small></p>
+  </div>
+</footer>
 <script type="text/html" id="post-template">
   <div class="post{% if isWide %} wide{% endif %}">
     {% if isWide %}
@@ -70,6 +79,7 @@ var less = {
 <script src="posts.js"></script>
 <script>
 var results = $('#results');
+var more = $('#more');
 var postTemplate = $.trim($('#post-template').text());
 var scrollThrottledStream;
 
@@ -186,7 +196,7 @@ function infiniteScroll(stream) {
   if (scrollThrottledStream) {
     results.masonry('destroy');
     results.empty();
-    $(window).off('scroll resize', scrollThrottledStream.flush);
+    more.off('click', scrollThrottledStream.flush);
   }
 
   results.masonry({
@@ -211,7 +221,7 @@ function infiniteScroll(stream) {
     results.masonry('appended', post.$el[0]);
     results.masonry();
   });
-  $(window).on('scroll resize', scrollThrottledStream.flush);
+  more.on('click', scrollThrottledStream.flush);
   postStream.plug(stream);
 }
 
