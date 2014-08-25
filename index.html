@@ -75,13 +75,13 @@ var less = {
 <script src="vendor/typeahead.js"></script>
 <script src="vendor/nunjucks.js"></script>
 <script src="vendor/masonry.pkgd.js"></script>
-<script src="vendor/bacon.js"></script>
 <script src="posts.js"></script>
 <script>
 var results = $('#results');
 var more = $('#more');
 var postTemplate = $.trim($('#post-template').text());
-var scrollThrottledStream;
+
+var SCROLL_CHUNK_SIZE = 10;
 
 // https://gist.github.com/jharding/9458744#file-the-basics-js
 var substringMatcher = function(strs) {
@@ -107,34 +107,6 @@ var substringMatcher = function(strs) {
     cb(matches);
   };
 };
-
-function ScrollThrottledStream($el, stream, onEmpty) {
-  var output = new Bacon.Bus();
-  var buffer = [];
-
-  if (!onEmpty) onEmpty = function() {};
-  stream.onValue(function(item) {
-    buffer.push(item);
-    output.flush();
-  });
-  output.flush = function() {
-    var items = $el.data('masonry').items;
-
-    if (items.length) {
-      var lastItem = items[items.length-1];
-      var y = $el.offset().top + lastItem.position.y;
-      var scrollY = window.pageYOffset;
-      var isNotTooFarOffscreen = y - scrollY < window.innerHeight;
-      if (!isNotTooFarOffscreen) return;
-    }
-
-    if (!buffer.length) return onEmpty();
-    output.push(buffer.shift());
-  };
-  $el.masonry('on', 'layoutComplete', output.flush);
-
-  return output;
-}
 
 function setupSearch() {
   var matcher;
@@ -166,7 +138,7 @@ function setupSearch() {
     if (val in tags) {
       if (currentTag != val) {
         currentTag = val;
-        infiniteScroll(tags[val]);
+        scrollify(tags[val]);
       }
     } else {
       if (event.which == 13 && val) {
@@ -179,33 +151,18 @@ function setupSearch() {
       } else {
         if (currentTag) {
           currentTag = null;
-          infiniteScroll(POSTS);
+          scrollify(POSTS);
         }
       }
     }
   });
 }
 
-function infiniteScroll(stream) {
-  var postStream = new Bacon.Bus();
+function scrollify(posts) {
   var postsSoFar = 0;
-
-  if ($.isArray(stream))
-    stream = Bacon.fromArray(stream.slice().reverse());
-
-  if (scrollThrottledStream) {
-    results.masonry('destroy');
-    results.empty();
-    more.off('click', scrollThrottledStream.flush);
-  }
-
-  results.masonry({
-    columnWidth: COLUMN_WIDTH,
-    gutter: GUTTER_WIDTH,
-    itemSelector: '.post'
-  });
-  scrollThrottledStream = ScrollThrottledStream(results, postStream);
-  scrollThrottledStream.onValue(function(post) {
+  var postsLeft = posts.slice();
+  var scroller = results.data('scroller');
+  var showOnePost = function showOnePost(post) {
     post = JSON.parse(JSON.stringify(post));
     if (post.author == 'lifeofthelaw')
       post.author = null;
@@ -220,14 +177,40 @@ function infiniteScroll(stream) {
     post.$el = $(nunjucks.renderString(postTemplate, post)).appendTo(results);
     results.masonry('appended', post.$el[0]);
     results.masonry();
+  };
+
+  if (scroller) {
+    results.masonry('destroy');
+    results.empty();
+    more.off('click', scroller.next).show();
+  }
+
+  scroller = {
+    next: function() {
+      for (var i = 0; i < SCROLL_CHUNK_SIZE; i++) {
+        if (postsLeft.length)
+          showOnePost(postsLeft.pop());
+        else {
+          more.hide();
+          return;
+        }
+      }
+    }
+  };
+  results.data('scroller', scroller);
+  results.masonry({
+    columnWidth: COLUMN_WIDTH,
+    gutter: GUTTER_WIDTH,
+    itemSelector: '.post'
   });
-  more.on('click', scrollThrottledStream.flush);
-  postStream.plug(stream);
+
+  more.on('click', scroller.next);
+  scroller.next();
 }
 
 $(function() {
   nunjucks.configure({autoescape: true});
   setupSearch();
-  infiniteScroll(POSTS);
+  scrollify(POSTS);
 });
 </script>
