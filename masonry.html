@@ -81,6 +81,8 @@ function ScrollThrottledStream($el, stream, onEmpty) {
 }
 
 $(function() {
+  var postsSoFar = 0;
+
   nunjucks.configure({autoescape: true});
   results.masonry({
     columnWidth: COLUMN_WIDTH,
@@ -98,7 +100,7 @@ $(function() {
                               post.thumbnail.width;
       post.thumbnail.width = COLUMN_WIDTH;
     }
-    post.isWide = !!post.enclosure;
+    post.isWide = (++postsSoFar == 1);
     post.$el = $(nunjucks.renderString(postTemplate, post)).appendTo(results);
     results.masonry('appended', post.$el[0]);
     results.masonry();
