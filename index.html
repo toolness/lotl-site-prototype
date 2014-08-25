@@ -2,158 +2,68 @@
 <meta charset="utf-8">
 <base target="_blank">
 <link rel="stylesheet" href="vendor/font-awesome/css/font-awesome.css">
-<style>
-html {
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  background-color: #f0f0f0;
-}
+<link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700' rel='stylesheet' type='text/css'>
+<link rel="stylesheet/less" href="styles.less">
+<script>
+var COLUMN_WIDTH = 210;
+var GUTTER_WIDTH = 20;
 
-body {
-  width: 900px;
-  margin: 0 auto;
-}
-
-* {
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
-.post {
-  width: 250px;
-  height: 250px;
-  position: relative;
-  display: inline-block;
-  vertical-align: bottom;
-  background-size: cover;
-  background-color: gray;
-}
-
-.post .overlay {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  color: white;
-  padding: 8px;
-  width: 100%;
-  height: 33%;
-  background: rgba(0, 0, 0, 0.75);
-}
-
-.post:hover .overlay {
-  height: 100%;
-  font-size: 12px;
-}
-
-.post .overlay .details {
-  display: none;
-  padding-top: 8px;
-  color: #f0f0f0;
-}
-
-.post:hover .overlay .details {
-  display: block;
-}
-
-.post .overlay .details .pubdate {
-  font-size: 10px;
-}
-
-.post .overlay .details .author {
-  font-size: 10px;
-}
-
-.post .overlay a {
-  color: inherit;
-  text-decoration: none;
-}
-
-.post .overlay a:hover {
-  text-decoration: underline;
-}
-
-.post .overlay h3 {
-  margin: 0;
-  font-size: 14px;
-}
-
-.post .overlay .actions {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  font-size: 20px;
-  padding: 4px;
-}
-
-.post .overlay .actions a:hover {
-  color: skyblue;
-}
-
-.search {
-  margin-bottom: 20px;
-  padding-right: 8px;
-}
-
-.search, .search .twitter-typeahead, .search #search, .search .tt-hint {
-  width: 100%;
-  border: none;
-}
-
-.search .tt-dropdown-menu {
-  background: rgba(255, 255, 255, 0.9);
-  width: 100%;
-  padding: 0 8px;
-}
-
-.search .tt-dropdown-menu .tt-cursor {
-  background: black;
-  color: white;
-}
-
-.search {
-  width: 150px;
-  display: inline-block;
-  vertical-align: top;
-}
-
-#results {
-  width: 750px;
-  display: inline-block;
-}
-</style>
-<title>Life of The Law Site Prototype</title>
-<h1>Life of The Law Site Prototype</h1>
-<div class="search">
-  <input type="text" id="search" placeholder="Search here">
-</div><div id="results">
+var less = {
+  globalVars: {
+    columnWidth: COLUMN_WIDTH + 'px',
+    gutterWidth: GUTTER_WIDTH + 'px'
+  }
+};
+</script>
+<script src="vendor/less.js"></script>
+<title>Life of The Law Masonry Prototype</title>
+<div class="nav">
+  <div class="container">
+    <h1>LOGO</h1>
+    <ul>
+      <li><a href="#">Topics</a></li>
+      <li><a href="http://www.lifeofthelaw.org/livelaw/">Live Law</a></li>
+      <li><a href="http://www.lifeofthelaw.org/about/">About</a></li>
+      <li><a href="https://donatenow.networkforgood.org/Lifeofthelaw">Donate</a></li>
+    </ul>
+    <div class="search"><input id="search" type="text" placeholder="Search"></div>
+  </div>
 </div>
+<div class="container"><div id="results" class="masonry-container"></div></div>
 <script type="text/html" id="post-template">
-  <div class="post"
-   {% if thumbnail %}style="background-image: url({{ thumbnail.url }})"{% endif %}>
-    <div class="overlay">
+  <div class="post{% if isWide %} wide{% endif %}">
+    {% if isWide %}
+    <div class="post-thumbnail"{% if thumbnail %} style="background-image: url({{ thumbnail.url }})"{% endif %}></div>
+    {% endif %}
+    {% if not isWide and thumbnail %}
+    <img src="{{ thumbnail.url }}" width="{{ thumbnail.width }}" height="{{ thumbnail.height }}">
+    {% endif %}
+    <div class="post-details">
       <h3><a href="{{ link }}">{{ title }}</a></h3>
-      <div class="details">
-        {% if author %}
-        <div class="author">By {{ author }}</div>
-        {% endif %}
-        <span class="pubdate">{{ pubdate.toDateString() }}</span>
-        {% if excerpt %}
-        <p>{{ excerpt }}</p>
-        {% endif %}
-      </div>
-      <div class="actions">
+      <p class="post-pubdate">Posted {{ pubdate.toDateString() }}</p>
+      {% if excerpt %}
+      <p>{{ excerpt }}</p>
+      {% endif %}
+      <ul class="post-actions">
         {% if enclosure %}
-        <a href="{{ enclosure }}"><i class="fa fa-play-circle"></i></a>
+        <li><a href="{{ enclosure }}"><i class="fa fa-play-circle"></i> Listen</a></li>
         {% endif %}
-      </div>
+        <li><a href="{{ link }}"><i class="fa fa-book"></i> Read More</a></li>
+      </ul>
     </div>
   </div>
 </script>
 <script src="vendor/jquery.js"></script>
-<script src="vendor/nunjucks.js"></script>
 <script src="vendor/typeahead.js"></script>
+<script src="vendor/nunjucks.js"></script>
+<script src="vendor/masonry.pkgd.js"></script>
+<script src="vendor/bacon.js"></script>
 <script src="posts.js"></script>
 <script>
+var results = $('#results');
+var postTemplate = $.trim($('#post-template').text());
+var scrollThrottledStream;
+
 // https://gist.github.com/jharding/9458744#file-the-basics-js
 var substringMatcher = function(strs) {
   return function findMatches(q, cb) {
@@ -179,25 +89,48 @@ var substringMatcher = function(strs) {
   };
 };
 
-var tags = {};
+function ScrollThrottledStream($el, stream, onEmpty) {
+  var output = new Bacon.Bus();
+  var buffer = [];
 
-$(function() {
-  nunjucks.configure({autoescape: true});
-  var postTemplate = $.trim($('#post-template').text());
-  POSTS.reverse().forEach(function(post) {
-    if (post.author == 'lifeofthelaw')
-      post.author = null;
-    post.pubdate = new Date(post.pubdate);
-    post.$el = $(nunjucks.renderString(postTemplate, post))
-      .appendTo('#results');
+  if (!onEmpty) onEmpty = function() {};
+  stream.onValue(function(item) {
+    buffer.push(item);
+    output.flush();
+  });
+  output.flush = function() {
+    var items = $el.data('masonry').items;
+
+    if (items.length) {
+      var lastItem = items[items.length-1];
+      var y = $el.offset().top + lastItem.position.y;
+      var scrollY = window.pageYOffset;
+      var isNotTooFarOffscreen = y - scrollY < window.innerHeight;
+      if (!isNotTooFarOffscreen) return;
+    }
+
+    if (!buffer.length) return onEmpty();
+    output.push(buffer.shift());
+  };
+  $el.masonry('on', 'layoutComplete', output.flush);
+
+  return output;
+}
+
+function setupSearch() {
+  var matcher;
+  var tags = {};
+  var currentTag = null;
+
+  POSTS.forEach(function(post) {
     post.tags.forEach(function(tag) {
       if (!(tag in tags))
-        tags[tag] = $();
-      tags[tag] = tags[tag].add(post.$el);
+        tags[tag] = [];
+      tags[tag].push(post);
     });
   });
 
-  var matcher = substringMatcher(Object.keys(tags));
+  matcher = substringMatcher(Object.keys(tags));
 
   $('#search').typeahead({
     hint: true,
@@ -212,8 +145,10 @@ $(function() {
     if (event.which == 27)
       return $(this).typeahead('val', '').trigger('keyup');
     if (val in tags) {
-      $('.post').hide();
-      tags[val].show();
+      if (currentTag != val) {
+        currentTag = val;
+        infiniteScroll(tags[val]);
+      }
     } else {
       if (event.which == 13 && val) {
         matcher(val, function(matches) {
@@ -222,9 +157,58 @@ $(function() {
             $(this).typeahead('val', val).trigger('keyup');
           }
         }.bind(this));
-      } else
-        $('.post').show();
+      } else {
+        if (currentTag) {
+          currentTag = null;
+          infiniteScroll(POSTS);
+        }
+      }
     }
   });
+}
+
+function infiniteScroll(stream) {
+  var postStream = new Bacon.Bus();
+  var postsSoFar = 0;
+
+  if ($.isArray(stream))
+    stream = Bacon.fromArray(stream.slice().reverse());
+
+  if (scrollThrottledStream) {
+    results.masonry('destroy');
+    results.empty();
+    $(window).off('scroll resize', scrollThrottledStream.flush);
+  }
+
+  results.masonry({
+    columnWidth: COLUMN_WIDTH,
+    gutter: GUTTER_WIDTH,
+    itemSelector: '.post'
+  });
+  scrollThrottledStream = ScrollThrottledStream(results, postStream);
+  scrollThrottledStream.onValue(function(post) {
+    post = JSON.parse(JSON.stringify(post));
+    if (post.author == 'lifeofthelaw')
+      post.author = null;
+    post.pubdate = new Date(post.pubdate);
+    if (post.thumbnail && !post.thumbnail.width) post.thumbnail = null;
+    if (post.thumbnail) {
+      post.thumbnail.height = post.thumbnail.height * COLUMN_WIDTH /
+                              post.thumbnail.width;
+      post.thumbnail.width = COLUMN_WIDTH;
+    }
+    post.isWide = (++postsSoFar == 1);
+    post.$el = $(nunjucks.renderString(postTemplate, post)).appendTo(results);
+    results.masonry('appended', post.$el[0]);
+    results.masonry();
+  });
+  $(window).on('scroll resize', scrollThrottledStream.flush);
+  postStream.plug(stream);
+}
+
+$(function() {
+  nunjucks.configure({autoescape: true});
+  setupSearch();
+  infiniteScroll(POSTS);
 });
 </script>
