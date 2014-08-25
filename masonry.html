@@ -26,7 +26,7 @@ var less = {
       <li><a href="http://www.lifeofthelaw.org/about/">About</a></li>
       <li><a href="https://donatenow.networkforgood.org/Lifeofthelaw">Donate</a></li>
     </ul>
-    <input type="text" placeholder="Search">
+    <div class="search"><input id="search" type="text" placeholder="Search"></div>
   </div>
 </div>
 <div class="container"><div id="results" class="masonry-container"></div></div>
@@ -54,6 +54,7 @@ var less = {
   </div>
 </script>
 <script src="vendor/jquery.js"></script>
+<script src="vendor/typeahead.js"></script>
 <script src="vendor/nunjucks.js"></script>
 <script src="vendor/masonry.pkgd.js"></script>
 <script src="vendor/bacon.js"></script>
@@ -63,6 +64,31 @@ var results = $('#results');
 var postTemplate = $.trim($('#post-template').text());
 var postStream = new Bacon.Bus();
 var scrollThrottledStream;
+
+// https://gist.github.com/jharding/9458744#file-the-basics-js
+var substringMatcher = function(strs) {
+  return function findMatches(q, cb) {
+    var matches, substrRegex;
+
+    // an array that will be populated with substring matches
+    matches = [];
+
+    // regex used to determine if a string contains the substring `q`
+    substrRegex = new RegExp(q, 'i');
+
+    // iterate through the pool of strings and for any string that
+    // contains the substring `q`, add it to the `matches` array
+    $.each(strs, function(i, str) {
+      if (substrRegex.test(str)) {
+        // the typeahead jQuery plugin expects suggestions to a
+        // JavaScript object, refer to typeahead docs for more info
+        matches.push({ value: str });
+      }
+    });
+
+    cb(matches);
+  };
+};
 
 function ScrollThrottledStream($el, stream, onEmpty) {
   var output = new Bacon.Bus();
@@ -92,6 +118,31 @@ function ScrollThrottledStream($el, stream, onEmpty) {
   return output;
 }
 
+function setupSearch() {
+  var matcher;
+  var tags = {};
+
+  POSTS.forEach(function(post) {
+    post.tags.forEach(function(tag) {
+      if (!(tag in tags))
+        tags[tag] = [];
+      tags[tag].push(post);
+    });
+  });
+
+  matcher = substringMatcher(Object.keys(tags));
+
+  $('#search').typeahead({
+    hint: true,
+    highlight: true,
+    minLength: 1
+  }, {
+    name: 'tags',
+    displayKey: 'value',
+    source: matcher
+  });
+}
+
 $(function() {
   var postsSoFar = 0;
 
@@ -118,6 +169,8 @@ $(function() {
     results.masonry();
   });
   $(window).on('scroll resize', scrollThrottledStream.flush);
+
+  setupSearch();
 
   postStream.plug(Bacon.fromArray(POSTS.slice().reverse()));
 });

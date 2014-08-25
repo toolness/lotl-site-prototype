@@ -21,7 +21,7 @@ body {
 }
 
 .nav .container {
-  overflow: auto;
+  overflow: visible;
 }
 
 .nav {
@@ -59,14 +59,29 @@ body {
   margin: 20px 20px 20px 0;
 }
 
-.nav input {
+.nav .search {
   float: right;
   margin-top: 18px;
+  color: black;
+}
+
+.nav .search input {
+  font-family: inherit;
   width: @columnWidth;
   border: none;
   padding: 4px;
-  font-family: inherit;
   background-color: rgba(255, 255, 255, 0.8);
+}
+
+.nav .search .tt-dropdown-menu {
+  background-color: rgba(255, 255, 255, 0.8);
+  width: 100%;
+  padding: 0 8px;
+}
+
+.nav .search .tt-dropdown-menu .tt-cursor {
+  background: black;
+  color: white;
 }
 
 .container {
