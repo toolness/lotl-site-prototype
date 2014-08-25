@@ -62,7 +62,6 @@ var less = {
 <script>
 var results = $('#results');
 var postTemplate = $.trim($('#post-template').text());
-var postStream = new Bacon.Bus();
 var scrollThrottledStream;
 
 // https://gist.github.com/jharding/9458744#file-the-basics-js
@@ -121,6 +120,7 @@ function ScrollThrottledStream($el, stream, onEmpty) {
 function setupSearch() {
   var matcher;
   var tags = {};
+  var currentTag = null;
 
   POSTS.forEach(function(post) {
     post.tags.forEach(function(tag) {
@@ -140,13 +140,46 @@ function setupSearch() {
     name: 'tags',
     displayKey: 'value',
     source: matcher
+  }).on('keyup', function(event) {
+    var val = $(this).val();
+    if (event.which == 27)
+      return $(this).typeahead('val', '').trigger('keyup');
+    if (val in tags) {
+      if (currentTag != val) {
+        currentTag = val;
+        infiniteScroll(tags[val]);
+      }
+    } else {
+      if (event.which == 13 && val) {
+        matcher(val, function(matches) {
+          if (matches.length) {
+            val = matches[0].value;
+            $(this).typeahead('val', val).trigger('keyup');
+          }
+        }.bind(this));
+      } else {
+        if (currentTag) {
+          currentTag = null;
+          infiniteScroll(POSTS);
+        }
+      }
+    }
   });
 }
 
-$(function() {
+function infiniteScroll(stream) {
+  var postStream = new Bacon.Bus();
   var postsSoFar = 0;
 
-  nunjucks.configure({autoescape: true});
+  if ($.isArray(stream))
+    stream = Bacon.fromArray(stream.slice().reverse());
+
+  if (scrollThrottledStream) {
+    results.masonry('destroy');
+    results.empty();
+    $(window).off('scroll resize', scrollThrottledStream.flush);
+  }
+
   results.masonry({
     columnWidth: COLUMN_WIDTH,
     gutter: GUTTER_WIDTH,
@@ -154,6 +187,7 @@ $(function() {
   });
   scrollThrottledStream = ScrollThrottledStream(results, postStream);
   scrollThrottledStream.onValue(function(post) {
+    post = JSON.parse(JSON.stringify(post));
     if (post.author == 'lifeofthelaw')
       post.author = null;
     post.pubdate = new Date(post.pubdate);
@@ -169,9 +203,12 @@ $(function() {
     results.masonry();
   });
   $(window).on('scroll resize', scrollThrottledStream.flush);
+  postStream.plug(stream);
+}
 
+$(function() {
+  nunjucks.configure({autoescape: true});
   setupSearch();
-
-  postStream.plug(Bacon.fromArray(POSTS.slice().reverse()));
+  infiniteScroll(POSTS);
 });
 </script>
