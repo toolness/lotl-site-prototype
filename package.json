@@ -1,0 +1,22 @@
+{
+  "name": "lotl-site-prototype",
+  "version": "0.0.1",
+  "description": "Prototype website for Life of The Law.",
+  "dependencies": {
+    "express": "^4.8.7"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/toolness/lotl-site-prototype.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/toolness/lotl-site-prototype/issues"
+  },
+  "homepage": "https://github.com/toolness/lotl-site-prototype"
+}
