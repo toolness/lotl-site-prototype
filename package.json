@@ -3,7 +3,8 @@
   "version": "0.0.1",
   "description": "Prototype website for Life of The Law.",
   "dependencies": {
-    "express": "^4.8.7"
+    "express": "^4.8.7",
+    "request": "2.40.0"
   },
   "devDependencies": {},
   "scripts": {
