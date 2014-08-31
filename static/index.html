@@ -57,10 +57,10 @@ var less = {
     <img src="{{ thumbnail.url }}" width="{{ thumbnail.width }}" height="{{ thumbnail.height }}">
     {% endif %}
     <div class="post-details">
-      <h3><a href="{{ link }}">{{ title }}</a></h3>
+      <h3><a href="{{ link }}">{{ title|safe }}</a></h3>
       <p class="post-pubdate">Posted {{ pubdate.toDateString() }}</p>
       {% if excerpt %}
-      <p>{{ excerpt }}</p>
+      <p>{{ excerpt|safe }}</p>
       {% endif %}
       <ul class="post-actions">
         {% if enclosure %}
