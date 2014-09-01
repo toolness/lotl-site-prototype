@@ -65,7 +65,9 @@ var less = {
       {% endif %}
       <ul class="post-actions">
         {% if enclosure %}
-        <li><a href="{{ enclosure }}"><i class="fa fa-play-circle"></i> Listen</a></li>
+        <li><a 
+          data-podcast-info="{{ enclosurePodcastInfo }}"
+          href="{{ enclosure }}"><i class="fa fa-play-circle"></i> Listen</a></li>
         {% endif %}
         <li><a href="{{ link }}"><i class="fa fa-book"></i> Read More</a></li>
       </ul>
@@ -146,14 +148,20 @@ function postRenderer() {
   return function renderPost(post) {
     if (post.author == 'lifeofthelaw')
       post.author = null;
-    post.pubdate = new Date(post.pubdate);
     if (post.thumbnail && !post.thumbnail.width) post.thumbnail = null;
     if (post.thumbnail) {
       post.thumbnail.height = post.thumbnail.height * COLUMN_WIDTH /
                               post.thumbnail.width;
       post.thumbnail.width = COLUMN_WIDTH;
     }
+    if (post.enclosure)
+      post.enclosurePodcastInfo = JSON.stringify({
+        id: post.id,
+        title: post.title,
+        pubdate: post.pubdate
+      });
     post.isWide = (++postsSoFar == 1);
+    post.pubdate = new Date(post.pubdate);
     return $(nunjucks.renderString(postTemplate, post)).first();
   };
 }
@@ -202,6 +210,19 @@ function scrollifyPosts(qs) {
 
   // TODO: Handle ajax errors somehow, e.g. via fetchedResults.onError().
 }
+
+$('body').on('click', '[data-podcast-info]', function(e) {
+  e.preventDefault();
+  var info = JSON.parse($(this).attr('data-podcast-info'));
+  var player = $('.player');
+  var mp3player = audiojs.instances.audiojs0;
+
+  $('.title', player).html(info.title);
+  $('.subtitle', player).text(new Date(info.pubdate).toDateString());
+
+  mp3player.load('/api/audio/' + info.id);
+  mp3player.play();
+});
 
 $(function() {
   var queries = new Bacon.Bus();
