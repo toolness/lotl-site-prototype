@@ -31,15 +31,12 @@ var less = {
 </div>
 <div class="container">
   <div class="player">
-    <div class="episode">
-      <span class="title">Two Sides of a River</span>
+    <div class="episode" role="show-playlist">
+      <span class="title"></span>
       <span class="subtitle">Latest Episode</span>
       <i class="fa fa-caret-down"></i>
-      <ul class="playlist">
-        <li data-role="show-all-episodes"><em>Show all episodes&hellip;</em></li>
-      </ul>
     </div>
-    <audio src="/api/audio/5749" preload="auto"></audio>
+    <audio id="mp3player" preload="auto"></audio>
   </div>
 </div>
 <div class="container" id="results-holder">
@@ -53,6 +50,17 @@ var less = {
     <p><small>There should really be more content here.</small></p>
   </div>
 </footer>
+<script type="text/html" id="playlist-template">
+  <ul class="playlist">
+    {% for podcast in podcasts %}
+      {% if podcast.id != currentID %}
+      <li role="play-podcast"
+          data-podcast-info="{{ podcast.enclosurePodcastInfo }}">{{ podcast.title|safe }}</li>
+      {% endif %}
+    {% endfor %}
+    <li role="show-all-episodes"><em>Show all episodes&hellip;</em></li>
+  </ul>
+</script>
 <script type="text/html" id="post-template">
   <div class="post{% if isWide %} wide{% endif %}">
     {% if isWide %}
@@ -70,6 +78,7 @@ var less = {
       <ul class="post-actions">
         {% if enclosure %}
         <li><a 
+          role="play-podcast"
           data-podcast-info="{{ enclosurePodcastInfo }}"
           href="{{ enclosure }}"><i class="fa fa-play-circle"></i> Listen</a></li>
         {% endif %}
@@ -85,9 +94,11 @@ var less = {
 <script src="/vendor/masonry.pkgd.js"></script>
 <script src="/vendor/bacon.js"></script>
 <script src="/api/tags.js"></script>
+<script src="/api/podcasts.js"></script>
 <script>
 var resultsTemplate = $('#results-holder').children().remove();
 var postTemplate = $.trim($('#post-template').text());
+var playlistTemplate = $.trim($('#playlist-template').text());
 
 // https://gist.github.com/jharding/9458744#file-the-basics-js
 var substringMatcher = function(strs) {
@@ -148,28 +159,74 @@ function setupSearch(queries) {
   });
 }
 
+function normalizePost(post) {
+  if (post.author == 'lifeofthelaw')
+    post.author = null;
+  if (post.thumbnail && !post.thumbnail.width) post.thumbnail = null;
+  if (post.thumbnail) {
+    post.thumbnail.height = post.thumbnail.height * COLUMN_WIDTH /
+                            post.thumbnail.width;
+    post.thumbnail.width = COLUMN_WIDTH;
+  }
+  if (post.enclosure)
+    post.enclosurePodcastInfo = JSON.stringify({
+      id: post.id,
+      title: post.title,
+      pubdate: post.pubdate
+    });
+  post.pubdate = new Date(post.pubdate);
+  return post;
+}
+
 function postRenderer() {
   var postsSoFar = 0;
 
   return function renderPost(post) {
-    if (post.author == 'lifeofthelaw')
-      post.author = null;
-    if (post.thumbnail && !post.thumbnail.width) post.thumbnail = null;
-    if (post.thumbnail) {
-      post.thumbnail.height = post.thumbnail.height * COLUMN_WIDTH /
-                              post.thumbnail.width;
-      post.thumbnail.width = COLUMN_WIDTH;
-    }
-    if (post.enclosure)
-      post.enclosurePodcastInfo = JSON.stringify({
-        id: post.id,
-        title: post.title,
-        pubdate: post.pubdate
-      });
+    post = normalizePost(post);
     post.isWide = (++postsSoFar == 1);
-    post.pubdate = new Date(post.pubdate);
     return $(nunjucks.renderString(postTemplate, post)).first();
   };
+}
+
+function setupPlayer() {
+  var mp3player = audiojs.create($('#mp3player')[0]);
+  var player = $('.player');
+  var currentID = PODCASTS[0].id;
+
+  player.find('.title').text(PODCASTS[0].title);
+  mp3player.load('/api/audio/' + PODCASTS[0].id);
+
+  $('body').on('click', '[role="play-podcast"]', function(e) {
+    e.preventDefault();
+    var info = JSON.parse($(this).attr('data-podcast-info'));
+    var player = $('.player');
+
+    $('.title', player).html(info.title);
+    $('.subtitle', player).text(new Date(info.pubdate).toDateString());
+
+    currentID = info.id;
+    mp3player.load('/api/audio/' + info.id);
+    mp3player.play();
+  });
+
+  player.on('click', '[role="show-playlist"]', function() {
+    var playlist = $('.playlist', this);
+
+    if (playlist.is(':visible')) {
+      playlist.hide();
+    } else {
+      playlist.remove();
+      playlist = $(nunjucks.renderString(playlistTemplate, {
+        currentID: currentID,
+        podcasts: PODCASTS.map(normalizePost)
+      })).first();
+      playlist.appendTo(this);
+    }
+  });
+
+  player.on('click', '[role="show-all-episodes"]', function() {
+    $('#search').typeahead('val', 'podcast').trigger('keyup');
+  });
 }
 
 function scrollifyPosts(qs) {
@@ -217,32 +274,11 @@ function scrollifyPosts(qs) {
   // TODO: Handle ajax errors somehow, e.g. via fetchedResults.onError().
 }
 
-$('body').on('click', '[data-podcast-info]', function(e) {
-  e.preventDefault();
-  var info = JSON.parse($(this).attr('data-podcast-info'));
-  var player = $('.player');
-  var mp3player = audiojs.instances.audiojs0;
-
-  $('.title', player).html(info.title);
-  $('.subtitle', player).text(new Date(info.pubdate).toDateString());
-
-  mp3player.load('/api/audio/' + info.id);
-  mp3player.play();
-});
-
-$('body').on('click', '.player .episode', function() {
-  $('.playlist', this).toggle();
-});
-
-$('body').on('click', '[data-role="show-all-episodes"]', function() {
-  $('#search').typeahead('val', 'podcast').trigger('keyup');
-});
-
 $(function() {
   var queries = new Bacon.Bus();
-  var audios = audiojs.createAll();
 
   nunjucks.configure({autoescape: true});
+  setupPlayer();
   setupSearch(queries);
   queries.debounce(300).skipDuplicates().onValue(function(q) {
     if (q === null) return scrollifyPosts();
