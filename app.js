@@ -7,11 +7,11 @@ var BASE_API_URL = 'http://lifeofthelaw.org/api';
 var app = express();
 
 app.get('/posts.json', function(req, res, next) {
+  var page = parseInt(req.query.page) > 0 ? parseInt(req.query.page) : 1;
+
   request({
     url: BASE_API_URL + '/get_recent_posts/',
-    qs: {
-      page: parseInt(req.query.page) > 0 ? parseInt(req.query.page) : 1
-    }
+    qs: {page: page}
   }, function(err, apiRes, body) {
     if (err) return next(err);
 
@@ -34,6 +34,7 @@ app.get('/posts.json', function(req, res, next) {
       };
     });
     return res.send({
+      page: page,
       pages: body.pages,
       posts: posts
     });

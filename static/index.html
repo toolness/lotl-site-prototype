@@ -158,10 +158,7 @@ function setupSearch() {
 }
 
 function scrollify(url) {
-  var page = 1;
   var postsSoFar = 0;
-  var morePagesLeft = new Bacon.Bus();
-  var fetchMore = new Bacon.Bus();
   var showOnePost = function showOnePost(post) {
     if (post.author == 'lifeofthelaw')
       post.author = null;
@@ -177,15 +174,15 @@ function scrollify(url) {
     results.masonry('appended', post.$el[0]);
     results.masonry();
   };
-  var fetchedResults = fetchMore.flatMapFirst(function() {
-    return Bacon.fromCallback(function(cb) {
-      return $.getJSON(url + '?page=' + page, function(info) {
-        morePagesLeft.push(page < info.pages);
-        page++;
-        cb(info);
-      });
-    });
+  var fetchMore = more.asEventStream('click')
+    .scan(1, function incrementPage(page) { return page + 1; });
+  var fetchedResults = fetchMore.flatMap(function(page) {
+    return Bacon.fromPromise($.getJSON(url + '?page=' + page));
   });
+  var morePagesLeft = fetchedResults.map(function(info) {
+    return info.page < info.pages;
+  }).toProperty(false);
+  var waiting = fetchMore.awaiting(fetchedResults);
 
   if (results.data('masonry')) {
     results.masonry('destroy');
@@ -203,13 +200,8 @@ function scrollify(url) {
     info.posts.forEach(showOnePost);
   });
 
-  fetchMore.awaiting(fetchedResults).assign($('#spinner'), 'toggle');
-  fetchMore.awaiting(fetchedResults).not()
-    .and(morePagesLeft).assign(more, 'toggle');
-  fetchMore.plug(more.asEventStream('click'));
-
-  morePagesLeft.push(false);
-  fetchMore.push(1);
+  waiting.assign($('#spinner'), 'toggle');
+  waiting.not().and(morePagesLeft).assign(more, 'toggle');
 }
 
 $('.player .controls').click(function() {
