@@ -77,6 +77,7 @@ var less = {
 <script src="vendor/nunjucks.js"></script>
 <script src="vendor/masonry.pkgd.js"></script>
 <script src="vendor/bacon.js"></script>
+<script src="tags.js"></script>
 <script>
 var resultsTemplate = $('#results-holder').children().remove();
 var postTemplate = $.trim($('#post-template').text());
@@ -107,19 +108,8 @@ var substringMatcher = function(strs) {
 };
 
 function setupSearch() {
-  var matcher;
-  var tags = {};
+  var matcher = substringMatcher(Object.keys(TAGS));
   var currentTag = null;
-
-  POSTS.forEach(function(post) {
-    post.tags.forEach(function(tag) {
-      if (!(tag in tags))
-        tags[tag] = [];
-      tags[tag].push(post);
-    });
-  });
-
-  matcher = substringMatcher(Object.keys(tags));
 
   $('#search').typeahead({
     hint: true,
@@ -133,10 +123,10 @@ function setupSearch() {
     var val = $(this).val();
     if (event.which == 27)
       return $(this).typeahead('val', '').trigger('keyup');
-    if (val in tags) {
+    if (val in TAGS) {
       if (currentTag != val) {
         currentTag = val;
-        scrollify(tags[val]);
+        scrollifyPosts({tag_id: TAGS[val]});
       }
     } else {
       if (event.which == 13 && val) {
@@ -149,7 +139,7 @@ function setupSearch() {
       } else {
         if (currentTag) {
           currentTag = null;
-          scrollify(POSTS);
+          scrollifyPosts();
         }
       }
     }
@@ -174,7 +164,9 @@ function postRenderer() {
   };
 }
 
-function scrollify(url, startPage) {
+function scrollifyPosts(qs) {
+  qs = qs || {};
+
   if ($('#results').length) {
     $('#results').masonry('destroy');
     $('#results-holder').empty();
@@ -182,14 +174,16 @@ function scrollify(url, startPage) {
 
   resultsTemplate.clone().appendTo('#results-holder');
 
+  var startPage = qs.page || 1;
   var results = $('#results');
   var more = $('#more');
   var spinner = $('#spinner');
   var renderPost = postRenderer();
   var fetchMore = more.asEventStream('click')
-    .scan(startPage || 1, function increment(page) { return page + 1; });
+    .scan(startPage, function increment(page) { return page + 1; });
   var fetchedResults = fetchMore.flatMap(function(page) {
-    return Bacon.fromPromise($.getJSON(url + '?page=' + page));
+    var url = '/api/posts?' + $.param($.extend({}, qs, {page: page}));
+    return Bacon.fromPromise($.getJSON(url));
   });
   var morePagesLeft = fetchedResults.map(function(info) {
     return info.page < info.pages;
@@ -221,8 +215,7 @@ $('.player .controls').click(function() {
 
 $(function() {
   nunjucks.configure({autoescape: true});
-  //TODO: Bring search back!
-  //setupSearch();
-  scrollify('/api/posts');
+  setupSearch();
+  scrollifyPosts();
 });
 </script>

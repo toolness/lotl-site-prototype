@@ -6,19 +6,41 @@ var BASE_API_URL = 'http://lifeofthelaw.org/api';
 
 var app = express();
 
+app.get('/tags.js', function(req, res, next) {
+  request({
+    url: BASE_API_URL + '/get_tag_index/'
+  }, function(err, apiRes, body) {
+    if (err) return next(err);
+
+    var tags = {};
+    JSON.parse(body).tags.forEach(function(info) {
+      tags[info.title] = info.id;
+    });
+
+    return res.type('application/javascript')
+      .send('var TAGS = ' + JSON.stringify(tags) + ';');
+  });
+});
+
 app.get('/api/posts', function(req, res, next) {
   var page = parseInt(req.query.page) > 0 ? parseInt(req.query.page) : 1;
+  var tag_id = !isNaN(parseInt(req.query.tag_id)) && req.query.tag_id;
+  var qs = {page: page};
+  var url = BASE_API_URL;
 
-  request({
-    url: BASE_API_URL + '/get_recent_posts/',
-    qs: {page: page}
-  }, function(err, apiRes, body) {
+  if (tag_id) {
+    url += '/get_posts/';
+    qs.tag_id = tag_id;
+  } else {
+    url += '/get_recent_posts/';
+  }
+
+  request({url: url, qs: qs}, function(err, apiRes, body) {
     if (err) return next(err);
 
     body = JSON.parse(body);
     var posts = body.posts.map(function(rawPost) {
       return {
-        tags: rawPost.tags.map(function(tag) { return tag.title; }),
         title: rawPost.title,
         link: rawPost.url,
         pubdate: new Date(rawPost.date).toISOString(),
