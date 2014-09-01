@@ -81,8 +81,6 @@ var less = {
 <script>
 var resultsTemplate = $('#results-holder').children().remove();
 var postTemplate = $.trim($('#post-template').text());
-var queries = new Bacon.Bus();
-var uniqueQueries = queries.debounce(300).skipDuplicates();
 
 // https://gist.github.com/jharding/9458744#file-the-basics-js
 var substringMatcher = function(strs) {
@@ -109,7 +107,7 @@ var substringMatcher = function(strs) {
   };
 };
 
-function setupSearch() {
+function setupSearch(queries) {
   var matcher = substringMatcher(Object.keys(TAGS));
 
   $('#search').typeahead({
@@ -209,9 +207,11 @@ $('.player .controls').click(function() {
 });
 
 $(function() {
+  var queries = new Bacon.Bus();
+
   nunjucks.configure({autoescape: true});
-  setupSearch();
-  uniqueQueries.onValue(function(tag_id) {
+  setupSearch(queries);
+  queries.debounce(300).skipDuplicates().onValue(function(tag_id) {
     if (tag_id === null) return scrollifyPosts();
     scrollifyPosts({tag_id: tag_id});
   });
