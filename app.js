@@ -6,7 +6,7 @@ var BASE_API_URL = 'http://lifeofthelaw.org/api';
 
 var app = express();
 
-app.get('/posts.json', function(req, res, next) {
+app.get('/api/posts', function(req, res, next) {
   var page = parseInt(req.query.page) > 0 ? parseInt(req.query.page) : 1;
 
   request({
