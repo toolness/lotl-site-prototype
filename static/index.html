@@ -157,9 +157,10 @@ function setupSearch() {
   });
 }
 
-function scrollify(url) {
+function postRenderer() {
   var postsSoFar = 0;
-  var showOnePost = function showOnePost(post) {
+
+  return function renderPost(post) {
     if (post.author == 'lifeofthelaw')
       post.author = null;
     post.pubdate = new Date(post.pubdate);
@@ -170,10 +171,12 @@ function scrollify(url) {
       post.thumbnail.width = COLUMN_WIDTH;
     }
     post.isWide = (++postsSoFar == 1);
-    post.$el = $(nunjucks.renderString(postTemplate, post)).appendTo(results);
-    results.masonry('appended', post.$el[0]);
-    results.masonry();
+    return $(nunjucks.renderString(postTemplate, post)).first();
   };
+}
+
+function scrollify(url) {
+  var renderPost = postRenderer();
   var fetchMore = more.asEventStream('click')
     .scan(1, function incrementPage(page) { return page + 1; });
   var fetchedResults = fetchMore.flatMap(function(page) {
@@ -197,7 +200,10 @@ function scrollify(url) {
   });
 
   fetchedResults.onValue(function(info) {
-    info.posts.forEach(showOnePost);
+    info.posts.forEach(function(post) {
+      results.masonry('appended', renderPost(post).appendTo(results)[0]);
+      results.masonry();
+    });
   });
 
   waiting.assign($('#spinner'), 'toggle');
