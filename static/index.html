@@ -81,6 +81,8 @@ var less = {
 <script>
 var resultsTemplate = $('#results-holder').children().remove();
 var postTemplate = $.trim($('#post-template').text());
+var queries = new Bacon.Bus();
+var uniqueQueries = queries.debounce(300).skipDuplicates();
 
 // https://gist.github.com/jharding/9458744#file-the-basics-js
 var substringMatcher = function(strs) {
@@ -109,7 +111,6 @@ var substringMatcher = function(strs) {
 
 function setupSearch() {
   var matcher = substringMatcher(Object.keys(TAGS));
-  var currentTag = null;
 
   $('#search').typeahead({
     hint: true,
@@ -124,10 +125,7 @@ function setupSearch() {
     if (event.which == 27)
       return $(this).typeahead('val', '').trigger('keyup');
     if (val in TAGS) {
-      if (currentTag != val) {
-        currentTag = val;
-        scrollifyPosts({tag_id: TAGS[val]});
-      }
+      queries.push(TAGS[val]);
     } else {
       if (event.which == 13 && val) {
         matcher(val, function(matches) {
@@ -137,10 +135,7 @@ function setupSearch() {
           }
         }.bind(this));
       } else {
-        if (currentTag) {
-          currentTag = null;
-          scrollifyPosts();
-        }
+        queries.push(null);
       }
     }
   });
@@ -216,6 +211,10 @@ $('.player .controls').click(function() {
 $(function() {
   nunjucks.configure({autoescape: true});
   setupSearch();
-  scrollifyPosts();
+  uniqueQueries.onValue(function(tag_id) {
+    if (tag_id === null) return scrollifyPosts();
+    scrollifyPosts({tag_id: tag_id});
+  });
+  queries.push(null);
 });
 </script>
