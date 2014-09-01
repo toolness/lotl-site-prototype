@@ -10,7 +10,7 @@ function enclosureURL(enclosure) {
   return enclosure[0].split('\n')[0].trim();
 }
 
-app.get('/tags.js', function(req, res, next) {
+app.get('/api/tags.js', function(req, res, next) {
   request({
     url: BASE_API_URL + '/get_tag_index/'
   }, function(err, apiRes, body) {
