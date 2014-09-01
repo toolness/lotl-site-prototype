@@ -6,6 +6,10 @@ var BASE_API_URL = 'http://lifeofthelaw.org/api';
 
 var app = express();
 
+function enclosureURL(enclosure) {
+  return enclosure[0].split('\n')[0].trim();
+}
+
 app.get('/tags.js', function(req, res, next) {
   request({
     url: BASE_API_URL + '/get_tag_index/'
@@ -19,6 +23,23 @@ app.get('/tags.js', function(req, res, next) {
 
     return res.type('application/javascript')
       .send('var TAGS = ' + JSON.stringify(tags) + ';');
+  });
+});
+
+app.get('/api/audio/:id', function(req, res, next) {
+  var id = parseInt(req.param('id'));
+
+  if (isNaN(id) || id < 0) return res.send(404);
+  request(BASE_API_URL + '/get_post/?id=' + id, function(err, apiRes, body) {
+    if (err) return next(err);
+
+    body = JSON.parse(body);
+    if (!(body.post && body.post.custom_fields.enclosure))
+      return res.send(404);
+
+    var url = enclosureURL(body.post.custom_fields.enclosure);
+
+    return request(url).pipe(res.type('audio/mp3'));
   });
 });
 
@@ -43,6 +64,7 @@ app.get('/api/posts', function(req, res, next) {
     body = JSON.parse(body);
     var posts = body.posts.map(function(rawPost) {
       return {
+        id: rawPost.id,
         title: rawPost.title,
         link: rawPost.url,
         pubdate: new Date(rawPost.date).toISOString(),
@@ -51,7 +73,7 @@ app.get('/api/posts', function(req, res, next) {
                 : rawPost.author.name,
         excerpt: rawPost.excerpt,
         enclosure: rawPost.custom_fields.enclosure
-                   ? rawPost.custom_fields.enclosure[0].split('\n')[0].trim()
+                   ? enclosureURL(rawPost.custom_fields.enclosure)
                    : null,
         thumbnail: rawPost.thumbnail_images &&
                    rawPost.thumbnail_images['home-thumbnail']
