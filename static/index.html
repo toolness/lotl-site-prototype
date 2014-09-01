@@ -41,6 +41,7 @@ var less = {
 <div class="container">
   <div id="results" class="masonry-container"></div>
   <div id="more"><i class="fa fa-chevron-circle-down"></i></div>
+  <div id="spinner"><i class="fa fa-circle-o-notch fa-spin"></i></div>
 </div>
 <footer>
   <div class="container">
@@ -159,6 +160,7 @@ function setupSearch() {
 function scrollify(url) {
   var page = 1;
   var postsSoFar = 0;
+  var morePagesLeft = true;
   var fetchMore = new Bacon.Bus();
   var showOnePost = function showOnePost(post) {
     if (post.author == 'lifeofthelaw')
@@ -178,6 +180,12 @@ function scrollify(url) {
   var fetchedResults = fetchMore.flatMapFirst(function() {
     return Bacon.fromCallback(function(cb) {
       return $.getJSON(url + '?page=' + page, function(info) {
+        if (info.pages <= page) {
+          morePagesLeft = false;
+          fetchMore.end();
+        } else {
+          page++;
+        }
         cb(info);
       });
     });
@@ -196,11 +204,15 @@ function scrollify(url) {
   });
 
   fetchedResults.onValue(function(info) {
-    if (info.pages == page) more.hide();
-    page++;
     info.posts.forEach(showOnePost);
   });
 
+  fetchMore.awaiting(fetchedResults).assign($('#spinner'), 'toggle');
+  fetchMore.awaiting(fetchedResults).not().onValue(function(v) {
+    // Wanted to just use Bacon's 'property.and()` here, but it
+    // didn't work for some reason.
+    more.toggle(v && morePagesLeft);
+  });
   fetchMore.plug(more.asEventStream('click'));
   fetchMore.push(1);
 }
