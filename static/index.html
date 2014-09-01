@@ -160,7 +160,7 @@ function setupSearch() {
 function scrollify(url) {
   var page = 1;
   var postsSoFar = 0;
-  var morePagesLeft = true;
+  var morePagesLeft = new Bacon.Bus();
   var fetchMore = new Bacon.Bus();
   var showOnePost = function showOnePost(post) {
     if (post.author == 'lifeofthelaw')
@@ -180,12 +180,8 @@ function scrollify(url) {
   var fetchedResults = fetchMore.flatMapFirst(function() {
     return Bacon.fromCallback(function(cb) {
       return $.getJSON(url + '?page=' + page, function(info) {
-        if (info.pages <= page) {
-          morePagesLeft = false;
-          fetchMore.end();
-        } else {
-          page++;
-        }
+        morePagesLeft.push(page < info.pages);
+        page++;
         cb(info);
       });
     });
@@ -208,12 +204,11 @@ function scrollify(url) {
   });
 
   fetchMore.awaiting(fetchedResults).assign($('#spinner'), 'toggle');
-  fetchMore.awaiting(fetchedResults).not().onValue(function(v) {
-    // Wanted to just use Bacon's 'property.and()` here, but it
-    // didn't work for some reason.
-    more.toggle(v && morePagesLeft);
-  });
+  fetchMore.awaiting(fetchedResults).not()
+    .and(morePagesLeft).assign(more, 'toggle');
   fetchMore.plug(more.asEventStream('click'));
+
+  morePagesLeft.push(false);
   fetchMore.push(1);
 }
 
