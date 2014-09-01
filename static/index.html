@@ -38,7 +38,7 @@ var less = {
     </div>
   </div>
 </div>
-<div class="container">
+<div class="container" id="results-holder">
   <div id="results" class="masonry-container"></div>
   <div id="more"><i class="fa fa-chevron-circle-down"></i></div>
   <div id="spinner"><i class="fa fa-circle-o-notch fa-spin"></i></div>
@@ -78,8 +78,7 @@ var less = {
 <script src="vendor/masonry.pkgd.js"></script>
 <script src="vendor/bacon.js"></script>
 <script>
-var results = $('#results');
-var more = $('#more');
+var resultsTemplate = $('#results-holder').children().remove();
 var postTemplate = $.trim($('#post-template').text());
 
 // https://gist.github.com/jharding/9458744#file-the-basics-js
@@ -175,10 +174,20 @@ function postRenderer() {
   };
 }
 
-function scrollify(url) {
+function scrollify(url, startPage) {
+  if ($('#results').length) {
+    $('#results').masonry('destroy');
+    $('#results-holder').empty();
+  }
+
+  resultsTemplate.clone().appendTo('#results-holder');
+
+  var results = $('#results');
+  var more = $('#more');
+  var spinner = $('#spinner');
   var renderPost = postRenderer();
   var fetchMore = more.asEventStream('click')
-    .scan(1, function incrementPage(page) { return page + 1; });
+    .scan(startPage || 1, function increment(page) { return page + 1; });
   var fetchedResults = fetchMore.flatMap(function(page) {
     return Bacon.fromPromise($.getJSON(url + '?page=' + page));
   });
@@ -186,12 +195,6 @@ function scrollify(url) {
     return info.page < info.pages;
   }).toProperty(false);
   var waiting = fetchMore.awaiting(fetchedResults);
-
-  if (results.data('masonry')) {
-    results.masonry('destroy');
-    results.empty();
-    more.off('click');
-  }
 
   results.masonry({
     columnWidth: COLUMN_WIDTH,
@@ -206,7 +209,7 @@ function scrollify(url) {
     });
   });
 
-  waiting.assign($('#spinner'), 'toggle');
+  waiting.assign(spinner, 'toggle');
   waiting.not().and(morePagesLeft).assign(more, 'toggle');
 }
 
