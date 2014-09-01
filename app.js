@@ -1,3 +1,4 @@
+var _ = require('underscore');
 var express = require('express');
 var request = require('request');
 
@@ -8,6 +9,18 @@ var app = express();
 
 function enclosureURL(enclosure) {
   return enclosure[0].split('\n')[0].trim();
+}
+
+function basicPostInfo(rawPost) {
+  return {
+    id: rawPost.id,
+    title: rawPost.title,
+    link: rawPost.url,
+    pubdate: new Date(rawPost.date).toISOString(),
+    enclosure: rawPost.custom_fields.enclosure
+               ? enclosureURL(rawPost.custom_fields.enclosure)
+               : null,
+  };
 }
 
 app.get('/api/tags.js', function(req, res, next) {
@@ -23,6 +36,16 @@ app.get('/api/tags.js', function(req, res, next) {
 
     return res.type('application/javascript')
       .send('var TAGS = ' + JSON.stringify(tags) + ';');
+  });
+});
+
+app.get('/api/podcasts.js', function(req, res, next) {
+  var url = BASE_API_URL + '/get_posts/?category_name=podcast'
+  request(url, function(err, apiRes, body) {
+    if (err) return next(err);
+    var podcasts = JSON.parse(body).posts.map(basicPostInfo);
+    return res.type('application/javascript')
+      .send('var PODCASTS = ' + JSON.stringify(podcasts) + ';');
   });
 });
 
@@ -63,21 +86,14 @@ app.get('/api/posts', function(req, res, next) {
 
     body = JSON.parse(body);
     var posts = body.posts.map(function(rawPost) {
-      return {
-        id: rawPost.id,
-        title: rawPost.title,
-        link: rawPost.url,
-        pubdate: new Date(rawPost.date).toISOString(),
+      return _.extend(basicPostInfo(rawPost), {
         author: rawPost.custom_fields.author
                 ? rawPost.custom_fields.author[0]
                 : rawPost.author.name,
         excerpt: rawPost.excerpt,
-        enclosure: rawPost.custom_fields.enclosure
-                   ? enclosureURL(rawPost.custom_fields.enclosure)
-                   : null,
         thumbnail: rawPost.thumbnail_images &&
                    rawPost.thumbnail_images['home-thumbnail']
-      };
+      });
     });
     return res.send({
       page: page,
