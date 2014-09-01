@@ -25,7 +25,7 @@ app.get('/tags.js', function(req, res, next) {
 app.get('/api/posts', function(req, res, next) {
   var page = parseInt(req.query.page) > 0 ? parseInt(req.query.page) : 1;
   var tag_id = !isNaN(parseInt(req.query.tag_id)) && req.query.tag_id;
-  var qs = {page: page};
+  var qs = {page: page, count: 10};
   var url = BASE_API_URL;
 
   if (tag_id) {
