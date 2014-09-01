@@ -6,12 +6,18 @@ var BASE_API_URL = 'http://lifeofthelaw.org/api';
 
 var app = express();
 
-app.get('/posts.js', function(req, res, next) {
-  request(BASE_API_URL + '/get_recent_posts/', function(err, apiRes, body) {
+app.get('/posts.json', function(req, res, next) {
+  request({
+    url: BASE_API_URL + '/get_recent_posts/',
+    qs: {
+      page: parseInt(req.query.page) > 0 ? parseInt(req.query.page) : 1
+    }
+  }, function(err, apiRes, body) {
     if (err) return next(err);
+
     body = JSON.parse(body);
-    body = body.posts.map(function(rawPost) {
-      var post = {
+    var posts = body.posts.map(function(rawPost) {
+      return {
         tags: rawPost.tags.map(function(tag) { return tag.title; }),
         title: rawPost.title,
         link: rawPost.url,
@@ -20,15 +26,17 @@ app.get('/posts.js', function(req, res, next) {
                 ? rawPost.custom_fields.author[0]
                 : rawPost.author.name,
         excerpt: rawPost.excerpt,
-        enclosure: null,
+        enclosure: rawPost.custom_fields.enclosure
+                   ? rawPost.custom_fields.enclosure[0].split('\n')[0]
+                   : null,
         thumbnail: rawPost.thumbnail_images &&
                    rawPost.thumbnail_images['home-thumbnail']
       };
-      return post;
     });
-    return res
-      .type('application/javascript')
-      .send('POSTS = ' + JSON.stringify(body) + ';');
+    return res.send({
+      pages: body.pages,
+      posts: posts
+    });
   });
 });
 
