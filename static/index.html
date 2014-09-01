@@ -35,6 +35,7 @@ var less = {
     <div class="episode">
       <span class="title">Two Sides of a River</span>
       <span class="subtitle">Latest Episode</span>
+      <audio id="podcast" src="/api/audio/5749"></audio>
     </div>
   </div>
 </div>
@@ -202,8 +203,19 @@ function scrollifyPosts(qs) {
   // TODO: Handle ajax errors somehow, e.g. via fetchedResults.onError().
 }
 
-$('.player .controls').click(function() {
-  alert("Sorry, this doesn't do anything yet.");
+$('.player .controls').on('click', function() {
+  var icon = $('i', this);
+  var podcast = $('#podcast')[0];
+
+  if (icon.hasClass('fa-play-circle')) {
+    podcast.play();
+    icon.removeClass('fa-play-circle');
+    icon.addClass('fa-pause');
+  } else {
+    podcast.pause();
+    icon.addClass('fa-play-circle');
+    icon.removeClass('fa-pause');
+  }
 });
 
 $(function() {
