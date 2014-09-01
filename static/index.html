@@ -125,7 +125,9 @@ function setupSearch(queries) {
     var val = $(this).val();
     if (event.which == 27)
       return $(this).typeahead('val', '').trigger('keyup');
-    if (val in TAGS) {
+    if (val == 'podcast') {
+      queries.push('podcast');
+    } else if (val in TAGS) {
       queries.push(TAGS[val]);
     } else {
       if (event.which == 13 && val) {
@@ -230,9 +232,12 @@ $(function() {
 
   nunjucks.configure({autoescape: true});
   setupSearch(queries);
-  queries.debounce(300).skipDuplicates().onValue(function(tag_id) {
-    if (tag_id === null) return scrollifyPosts();
-    scrollifyPosts({tag_id: tag_id});
+  queries.debounce(300).skipDuplicates().onValue(function(q) {
+    if (q === null) return scrollifyPosts();
+    if (typeof(q) == 'number')
+      scrollifyPosts({tag_id: q});
+    else
+      scrollifyPosts({category_name: q});
   });
   queries.push(null);
 });
