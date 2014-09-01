@@ -31,12 +31,11 @@ var less = {
 </div>
 <div class="container">
   <div class="player">
-    <div class="controls"><i class="fa fa-play-circle"></i> Listen</div>
     <div class="episode">
       <span class="title">Two Sides of a River</span>
       <span class="subtitle">Latest Episode</span>
-      <audio id="podcast" src="/api/audio/5749"></audio>
     </div>
+    <audio src="/api/audio/5749" preload="auto"></audio>
   </div>
 </div>
 <div class="container" id="results-holder">
@@ -73,6 +72,7 @@ var less = {
     </div>
   </div>
 </script>
+<script src="/vendor/audiojs/audio.min.js"></script>
 <script src="/vendor/jquery.js"></script>
 <script src="/vendor/typeahead.js"></script>
 <script src="/vendor/nunjucks.js"></script>
@@ -203,23 +203,9 @@ function scrollifyPosts(qs) {
   // TODO: Handle ajax errors somehow, e.g. via fetchedResults.onError().
 }
 
-$('.player .controls').on('click', function() {
-  var icon = $('i', this);
-  var podcast = $('#podcast')[0];
-
-  if (icon.hasClass('fa-play-circle')) {
-    podcast.play();
-    icon.removeClass('fa-play-circle');
-    icon.addClass('fa-pause');
-  } else {
-    podcast.pause();
-    icon.addClass('fa-play-circle');
-    icon.removeClass('fa-pause');
-  }
-});
-
 $(function() {
   var queries = new Bacon.Bus();
+  var audios = audiojs.createAll();
 
   nunjucks.configure({autoescape: true});
   setupSearch(queries);
