@@ -211,6 +211,8 @@ function scrollify(url, startPage) {
 
   waiting.assign(spinner, 'toggle');
   waiting.not().and(morePagesLeft).assign(more, 'toggle');
+
+  // TODO: Handle ajax errors somehow, e.g. via fetchedResults.onError().
 }
 
 $('.player .controls').click(function() {
