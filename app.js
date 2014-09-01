@@ -51,7 +51,7 @@ app.get('/api/posts', function(req, res, next) {
                 : rawPost.author.name,
         excerpt: rawPost.excerpt,
         enclosure: rawPost.custom_fields.enclosure
-                   ? rawPost.custom_fields.enclosure[0].split('\n')[0]
+                   ? rawPost.custom_fields.enclosure[0].split('\n')[0].trim()
                    : null,
         thumbnail: rawPost.thumbnail_images &&
                    rawPost.thumbnail_images['home-thumbnail']
