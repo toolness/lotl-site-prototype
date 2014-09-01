@@ -7,6 +7,7 @@
 
 @navLogoOffset: 100px;
 @playerWidth: @pageWidth - @navLogoOffset;
+@playerHeight: 50px;
 @playlistWidth: 200px;
 
 // Note that @columnWidth and @gutterWidth must be defined externally.
@@ -94,7 +95,7 @@ body {
   position: absolute;
   top: 75px;
   margin-left: @navLogoOffset;
-  height: 50px;
+  height: @playerHeight;
   width: @playerWidth;
   background-color: #404040;
   color: white;
@@ -104,10 +105,22 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  padding: 10px;
+  padding: 10px 10px 10px 25px;
   background-color: @darkgray;
   height: 100%;
   width: @playlistWidth;
+  cursor: pointer;
+}
+
+.player .episode:hover {
+  background-color: darken(@darkgray, 10%);
+}
+
+.player .episode i.fa-caret-down {
+  position: absolute;
+  left: 10px;
+  top: 8px;
+  color: @lightgray;
 }
 
 .player .episode .title {
@@ -119,6 +132,29 @@ body {
   display: block;
   font-size: 10px;
   color: @lightgray;
+}
+
+.player .episode ul {
+  display: none;
+  position: absolute;
+  top: @playerHeight;
+  left: 0;
+  right: 0;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  background: @darkgray;
+  z-index: 5000;
+}
+
+.player .episode ul li {
+  border-top: 1px solid @lightgray;
+  padding: 10px;
+  font-size: 12px;
+}
+
+.player .episode ul li:hover {
+  background-color: @orange;
 }
 
 .player .audiojs {

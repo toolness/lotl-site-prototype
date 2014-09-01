@@ -34,6 +34,10 @@ var less = {
     <div class="episode">
       <span class="title">Two Sides of a River</span>
       <span class="subtitle">Latest Episode</span>
+      <i class="fa fa-caret-down"></i>
+      <ul class="playlist">
+        <li data-role="show-all-episodes"><em>Show all episodes&hellip;</em></li>
+      </ul>
     </div>
     <audio src="/api/audio/5749" preload="auto"></audio>
   </div>
@@ -224,6 +228,14 @@ $('body').on('click', '[data-podcast-info]', function(e) {
 
   mp3player.load('/api/audio/' + info.id);
   mp3player.play();
+});
+
+$('body').on('click', '.player .episode', function() {
+  $('.playlist', this).toggle();
+});
+
+$('body').on('click', '[data-role="show-all-episodes"]', function() {
+  $('#search').typeahead('val', 'podcast').trigger('keyup');
 });
 
 $(function() {
