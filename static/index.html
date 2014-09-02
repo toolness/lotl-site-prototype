@@ -47,7 +47,9 @@ var less = {
   </div>
   <div id="post-detail-holder">
     <div id="post-detail">
-      <div class="spinner"><i class="fa fa-circle-o-notch fa-spin"></i></div>
+      <div class="pd-body">
+        <div class="spinner"><i class="fa fa-circle-o-notch fa-spin"></i></div>
+      </div>
     </div>
   </div>
 </div>
@@ -95,8 +97,11 @@ var less = {
   </div>
 </script>
 <script type="text/html" id="post-detail-template">
-  <h2>{{ title|safe }}</h2>
-  {{ content|safe }}
+  <div class="pd-feature-image" style="background-image: url({{ thumbnail_images.full.url }})"></div>
+  <div class="pd-body">
+    <h2>{{ title|safe }}</h2>
+    {{ content|safe }}
+  </div>
 </script>
 <script src="/vendor/audiojs/audio.min.js"></script>
 <script src="/vendor/jquery.js"></script>
