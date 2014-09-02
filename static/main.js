@@ -1,5 +1,7 @@
 var resultsTemplate = $('#results-holder').children().remove();
 var postTemplate = $.trim($('#post-template').text());
+var postDetailTemplate = $.trim($('#post-detail-template').text());
+var loadingPostDetailTemplate = $('#post-detail').children().remove();
 var playlistTemplate = $.trim($('#playlist-template').text());
 
 // https://gist.github.com/jharding/9458744#file-the-basics-js
@@ -134,17 +136,19 @@ function setupPlayer() {
 function scrollifyPosts(qs) {
   qs = qs || {};
 
+  var holder = $('#results-holder');
+
   if ($('#results').length) {
     $('#results').masonry('destroy');
-    $('#results-holder').empty();
+    holder.empty();
   }
 
-  resultsTemplate.clone().appendTo('#results-holder');
+  resultsTemplate.clone().appendTo(holder);
 
   var startPage = qs.page || 1;
   var results = $('#results');
-  var more = $('#more');
-  var spinner = $('#spinner');
+  var more = $('.more', holder);
+  var spinner = $('.spinner', holder);
   var renderPost = postRenderer();
   var fetchMore = more.asEventStream('click')
     .scan(startPage, function increment(page) { return page + 1; });
@@ -176,12 +180,42 @@ function scrollifyPosts(qs) {
   // TODO: Handle ajax errors somehow, e.g. via fetchedResults.onError().
 }
 
+function showPostDetail(id) {
+  var contentArea = $('#content-area');
+  var holder = $('#post-detail-holder');
+  var detail = $('#post-detail');
+  var rendered = $('<div></div>').append(loadingPostDetailTemplate.clone());
+
+  detail.empty().append(rendered);
+  contentArea.addClass('show-post-detail');
+  $.getJSON('/api/post/' + id, function(info) {
+    rendered.html(nunjucks.renderString(postDetailTemplate, info));
+  });
+}
+
+function hidePostDetail() {
+  $('#content-area').removeClass('show-post-detail');
+}
+
+function setupPostDetail() {
+  $('body').on('click', '#post-detail-holder', function(event) {
+    if (event.target != this) return;
+    hidePostDetail();
+  });
+
+  $('body').on('click', '[role="show-post-detail"]', function(event) {
+    event.preventDefault();
+    showPostDetail($(this).attr('data-post-id'));
+  });
+}
+
 $(function() {
   var queries = new Bacon.Bus();
 
   nunjucks.configure({autoescape: true});
   setupPlayer();
   setupSearch(queries);
+  setupPostDetail();
   queries.debounce(300).skipDuplicates().onValue(function(q) {
     if (q === null) return scrollifyPosts();
     if (typeof(q) == 'number')
@@ -189,5 +223,6 @@ $(function() {
     else
       scrollifyPosts({category_name: q});
   });
+  queries.onValue(hidePostDetail);
   queries.push(null);
 });

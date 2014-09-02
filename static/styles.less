@@ -237,20 +237,58 @@ ul.post-actions li {
   font-weight: bold;
 }
 
-#more, #spinner {
+.more, .spinner {
   text-align: center;
   font-size: 40px;
   color: @darkgray;
   cursor: pointer;
 }
 
-#more:hover {
+.more:hover {
   color: @orange;
 }
 
-#results-holder {
+#content-area {
+  position: relative;
   // TODO: Use a sticky footer instead of enforcing min-height.
   min-height: 1000px;
+}
+
+#results-holder {
+  transition: opacity 0.5s;
+}
+
+#content-area.show-post-detail #results-holder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  z-index: 0;
+  opacity: 0.33;
+}
+
+#content-area:not(.show-post-detail) #post-detail-holder {
+  display: none;
+}
+
+#post-detail-holder {
+  position: relative;
+  z-index: 1;
+}
+
+#post-detail {
+  background-color: white;
+  margin-left: 20%;
+  padding: 40px;
+}
+
+#post-detail img.aligncenter {
+  display: block;
+  margin: 0 auto;
+}
+
+#post-detail a {
+  color: @orange;
 }
 
 footer {
