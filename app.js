@@ -49,7 +49,7 @@ app.get('/api/podcasts.js', function(req, res, next) {
   });
 });
 
-app.get('/api/audio/:id', function(req, res, next) {
+app.param('id', function(req, res, next, id) {
   var id = parseInt(req.param('id'));
 
   if (isNaN(id) || id < 0) return res.send(404);
@@ -57,13 +57,24 @@ app.get('/api/audio/:id', function(req, res, next) {
     if (err) return next(err);
 
     body = JSON.parse(body);
-    if (!(body.post && body.post.custom_fields.enclosure))
-      return res.send(404);
+    if (!body.post) return res.send(404);
 
-    var url = enclosureURL(body.post.custom_fields.enclosure);
-
-    return request(url).pipe(res.type('audio/mp3'));
+    req.blogpost = body.post;
+    next();
   });
+});
+
+app.get('/api/post/:id', function(req, res, next) {
+  return res.send(req.blogpost);
+});
+
+app.get('/api/audio/:id', function(req, res, next) {
+  if (!(req.blogpost.custom_fields.enclosure))
+    return res.send(404);
+
+  var url = enclosureURL(req.blogpost.custom_fields.enclosure);
+
+  return request(url).pipe(res.type('audio/mp3'));
 });
 
 app.get('/api/posts', function(req, res, next) {
