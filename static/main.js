@@ -188,8 +188,10 @@ function showPostDetail(id) {
   var rendered = $('<div></div>').append(loadingPostDetailTemplate.clone());
 
   detail.empty().append(rendered);
+  holder.css({height: contentArea.height() + 'px'});
   contentArea.addClass('show-post-detail');
   $.getJSON('/api/post/' + id, function(info) {
+    holder.css({height: 'auto'});
     rendered.html(nunjucks.renderString(postDetailTemplate, info));
   });
   $.scrollTo('0px', 250);
