@@ -9,16 +9,20 @@
 @playerWidth: @pageWidth - @navLogoOffset;
 @playerHeight: 50px;
 @playlistWidth: 200px;
+@footerHeight: 150px;
+@footerTopMargin: 20px;
 
 // Note that @columnWidth and @gutterWidth must be defined externally.
 
 html {
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   background-color: @beige;
+  position: relative;
+  min-height: 100%;
 }
 
 body {
-  margin: 0;
+  margin: 0 0 @footerHeight + @footerTopMargin;
 }
 
 * {
@@ -252,11 +256,6 @@ ul.post-actions li {
   position: relative;
 }
 
-#content-area, #post-detail-holder {
-  // TODO: Use a sticky footer instead of enforcing min-height.
-  min-height: 1000px;
-}
-
 #results-holder {
   margin-top: 20px;
   transition: opacity 0.5s;
@@ -317,7 +316,11 @@ ul.post-actions li {
 }
 
 footer {
-  margin-top: 40px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: @footerHeight;
+  width: 100%;
   padding: 40px 0;
   background-color: @darkgray;
   color: white;
