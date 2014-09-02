@@ -1,9 +1,12 @@
+var fs = require('fs');
 var _ = require('underscore');
 var express = require('express');
 var request = require('request');
+var replaceStream = require('replacestream');
 
 var PORT = process.env.PORT || 3000;
 var BASE_API_URL = 'http://lifeofthelaw.org/api';
+var META_CHARSET = '<meta charset="utf-8">';
 
 var app = express();
 
@@ -16,6 +19,7 @@ function basicPostInfo(rawPost) {
     id: rawPost.id,
     title: rawPost.title,
     link: rawPost.url,
+    slug: rawPost.slug,
     pubdate: new Date(rawPost.date).toISOString(),
     enclosure: rawPost.custom_fields.enclosure
                ? enclosureURL(rawPost.custom_fields.enclosure)
@@ -49,10 +53,26 @@ app.get('/api/podcasts.js', function(req, res, next) {
   });
 });
 
+app.param('slug', function(req, res, next, slug) {
+  var url = BASE_API_URL + '/get_post/?slug=' + slug;
+
+  if (!/^[a-z0-9\-]+$/.test(slug)) return next('route');
+
+  request(url, function(err, apiRes, body) {
+    if (err) return next(err);
+
+    body = JSON.parse(body);
+    if (!body.post) return res.send(404);
+
+    req.blogpost = body.post;
+    next();
+  });
+});
+
 app.param('id', function(req, res, next, id) {
   var id = parseInt(req.param('id'));
 
-  if (isNaN(id) || id < 0) return res.send(404);
+  if (isNaN(id) || id < 0) return next('route');
   request(BASE_API_URL + '/get_post/?id=' + id, function(err, apiRes, body) {
     if (err) return next(err);
 
@@ -64,7 +84,7 @@ app.param('id', function(req, res, next, id) {
   });
 });
 
-app.get('/api/post/:id', function(req, res, next) {
+app.get('/api/post/:slug', function(req, res, next) {
   return res.send(req.blogpost);
 });
 
@@ -112,6 +132,16 @@ app.get('/api/posts', function(req, res, next) {
       posts: posts
     });
   });
+});
+
+app.get('/:slug/', function(req, res, next) {
+  return fs.createReadStream(__dirname + '/static/index.html')
+    .pipe(replaceStream(META_CHARSET,
+                        META_CHARSET + '\n<script>var POST = ' +
+                        JSON.stringify(req.blogpost) + ';</script>', {
+                          limit: 1
+                        }))
+    .pipe(res.type('text/html'));
 });
 
 app.use(express.static(__dirname + '/static'));

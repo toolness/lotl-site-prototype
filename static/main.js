@@ -181,19 +181,23 @@ function scrollifyPosts(qs) {
   // TODO: Handle ajax errors somehow, e.g. via fetchedResults.onError().
 }
 
-function showPostDetail(id) {
+function showPostDetail(slug) {
   var contentArea = $('#content-area');
   var holder = $('#post-detail-holder');
   var detail = $('#post-detail');
   var rendered = $('<div></div>').append(loadingPostDetailTemplate.clone());
+  var onPost = function(info) {
+    holder.css({height: 'auto'});
+    rendered.html(nunjucks.renderString(postDetailTemplate, info));
+  };
 
   detail.empty().append(rendered);
   holder.css({height: contentArea.height() + 'px'});
   contentArea.addClass('show-post-detail');
-  $.getJSON('/api/post/' + id, function(info) {
-    holder.css({height: 'auto'});
-    rendered.html(nunjucks.renderString(postDetailTemplate, info));
-  });
+  if (typeof(slug) == 'string')
+    $.getJSON('/api/post/' + slug, onPost);
+  else
+    onPost(slug);
   $.scrollTo('0px', 250);
 }
 
@@ -209,7 +213,7 @@ function setupPostDetail() {
 
   $('body').on('click', '[role="show-post-detail"]', function(event) {
     event.preventDefault();
-    showPostDetail($(this).attr('data-post-id'));
+    showPostDetail($(this).attr('data-post-slug'));
   });
 }
 
@@ -229,4 +233,7 @@ $(function() {
   });
   queries.onValue(hidePostDetail);
   queries.push(null);
+
+  if (typeof(POST) != 'undefined')
+    showPostDetail(POST);
 });
