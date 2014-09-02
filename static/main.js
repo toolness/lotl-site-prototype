@@ -187,8 +187,14 @@ function showPostDetail(slug) {
   var detail = $('#post-detail');
   var rendered = $('<div></div>').append(loadingPostDetailTemplate.clone());
   var onPost = function(info) {
+    var url = '/' + info.slug + '/';
     holder.css({height: 'auto'});
     rendered.html(nunjucks.renderString(postDetailTemplate, info));
+    if (window.location.pathname != url) {
+      window.history.pushState({
+        post: info
+      }, '', url);
+    }
   };
 
   detail.empty().append(rendered);
@@ -203,6 +209,8 @@ function showPostDetail(slug) {
 
 function hidePostDetail() {
   $('#content-area').removeClass('show-post-detail');
+  if (window.location.pathname != '/')
+    window.history.pushState({}, '', '/');
 }
 
 function setupPostDetail() {
@@ -233,6 +241,16 @@ $(function() {
   });
   queries.onValue(hidePostDetail);
   queries.push(null);
+
+  $(window).on('popstate', function(event) {
+    var state = event.originalEvent.state;
+
+    if (state && state.post) {
+      showPostDetail(state.post);
+    } else {
+      hidePostDetail();
+    }
+  });
 
   if (typeof(POST) != 'undefined')
     showPostDetail(POST);
