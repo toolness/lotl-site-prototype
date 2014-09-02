@@ -18,7 +18,7 @@ function basicPostInfo(rawPost) {
   return {
     id: rawPost.id,
     title: rawPost.title,
-    link: rawPost.url,
+    link: '/' + rawPost.slug + '/',
     slug: rawPost.slug,
     pubdate: new Date(rawPost.date).toISOString(),
     enclosure: rawPost.custom_fields.enclosure
