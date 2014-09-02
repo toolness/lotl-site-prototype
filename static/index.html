@@ -97,9 +97,8 @@ var less = {
   </div>
 </script>
 <script type="text/html" id="post-detail-template">
-  <div class="pd-feature-image" style="background-image: url({{ thumbnail_images.full.url }})"></div>
+  <div class="pd-feature-image" style="background-image: url({{ thumbnail_images.full.url }})"><h2>{{ title|safe }}</h2></div>
   <div class="pd-body">
-    <h2>{{ title|safe }}</h2>
     {{ content|safe }}
   </div>
 </script>
