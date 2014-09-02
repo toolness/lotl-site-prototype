@@ -111,6 +111,7 @@ function setupPlayer() {
     currentID = info.id;
     mp3player.load('/api/audio/' + info.id);
     mp3player.play();
+    $.scrollTo('0px', 250);
   });
 
   player.on('click', '[role="show-playlist"]', function() {
@@ -191,6 +192,7 @@ function showPostDetail(id) {
   $.getJSON('/api/post/' + id, function(info) {
     rendered.html(nunjucks.renderString(postDetailTemplate, info));
   });
+  $.scrollTo('0px', 250);
 }
 
 function hidePostDetail() {
