@@ -4,6 +4,8 @@ var express = require('express');
 var request = require('request');
 var replaceStream = require('replacestream');
 
+var wpRequest = require('./wp-request');
+
 var PORT = process.env.PORT || 3000;
 var BASE_API_URL = 'http://lifeofthelaw.org/api';
 var META_CHARSET = '<meta charset="utf-8">';
@@ -28,9 +30,9 @@ function basicPostInfo(rawPost) {
 }
 
 app.get('/api/tags.js', function(req, res, next) {
-  request({
+  wpRequest({
     url: BASE_API_URL + '/get_tag_index/'
-  }, function(err, apiRes, body) {
+  }, function(err, body) {
     if (err) return next(err);
 
     var tags = {};
@@ -45,7 +47,7 @@ app.get('/api/tags.js', function(req, res, next) {
 
 app.get('/api/podcasts.js', function(req, res, next) {
   var url = BASE_API_URL + '/get_posts/?category_name=podcast'
-  request(url, function(err, apiRes, body) {
+  wpRequest(url, function(err, body) {
     if (err) return next(err);
     var podcasts = JSON.parse(body).posts.map(basicPostInfo);
     return res.type('application/javascript')
@@ -58,7 +60,7 @@ app.param('slug', function(req, res, next, slug) {
 
   if (!/^[a-z0-9\-]+$/.test(slug)) return next('route');
 
-  request(url, function(err, apiRes, body) {
+  wpRequest(url, function(err, body) {
     if (err) return next(err);
 
     body = JSON.parse(body);
@@ -71,9 +73,10 @@ app.param('slug', function(req, res, next, slug) {
 
 app.param('id', function(req, res, next, id) {
   var id = parseInt(req.param('id'));
+  var url = BASE_API_URL + '/get_post/?id=' + id;
 
   if (isNaN(id) || id < 0) return next('route');
-  request(BASE_API_URL + '/get_post/?id=' + id, function(err, apiRes, body) {
+  wpRequest(url, function(err, body) {
     if (err) return next(err);
 
     body = JSON.parse(body);
@@ -112,7 +115,7 @@ app.get('/api/posts', function(req, res, next) {
     url += '/get_recent_posts/';
   }
 
-  request({url: url, qs: qs}, function(err, apiRes, body) {
+  wpRequest({url: url, qs: qs}, function(err, body) {
     if (err) return next(err);
 
     body = JSON.parse(body);
