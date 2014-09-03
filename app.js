@@ -106,7 +106,7 @@ app.get('/api/audio/:id', function(req, res, next) {
 
   var url = enclosureURL(req.blogpost.custom_fields.enclosure);
 
-  return request(url).pipe(res.type('audio/mp3'));
+  req.pipe(request(url)).pipe(res);
 });
 
 app.get('/api/posts', function(req, res, next) {
