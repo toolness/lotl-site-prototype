@@ -19,6 +19,7 @@ function getLastModified(url, cb) {
 module.exports = function(options, cb) {
   if (typeof(options) == 'string')
     options = {url: options};
+  options.qs = options.qs || {};
 
   var parsed = urlParse(options.url);
   var origin = parsed.protocol + '//' + parsed.host;
@@ -26,12 +27,12 @@ module.exports = function(options, cb) {
   getLastModified(origin + '/feed/', function(err, lastMod) {
     if (err) return cb(err);
 
-    var query = Object.keys(options.qs || {});
+    var query = Object.keys(options.qs);
     query.sort();
 
     var key = lastMod + '|' + options.url + '|' + query.map(function(k) {
-      return k + '=' + query[k]
-    });
+      return k + '=' + options.qs[k]
+    }).join('|');
 
     if (cache.has(key)) return cb(null, cache.get(key));
 
