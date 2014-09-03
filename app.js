@@ -16,17 +16,43 @@ function enclosureURL(enclosure) {
   return enclosure[0].split('\n')[0].trim();
 }
 
+function commonPostInfo(rawPost) {
+  var info = {
+    authorName: '',
+    pubdate: new Date(rawPost.date).toISOString(),
+    enclosure: rawPost.custom_fields.enclosure
+               ? enclosureURL(rawPost.custom_fields.enclosure)
+               : null
+  };
+  if (rawPost.custom_fields && rawPost.custom_fields.author &&
+      rawPost.custom_fields.author.length) {
+    info.authorName = rawPost.custom_fields.author[0];
+  } else if (rawPost.author && rawPost.author.name) {
+    info.authorName = rawPost.author.name;
+  }
+
+  return info;
+}
+
 function basicPostInfo(rawPost) {
-  return {
+  return _.extend({
     id: rawPost.id,
     title: rawPost.title,
     link: '/' + rawPost.slug + '/',
     slug: rawPost.slug,
-    pubdate: new Date(rawPost.date).toISOString(),
-    enclosure: rawPost.custom_fields.enclosure
-               ? enclosureURL(rawPost.custom_fields.enclosure)
-               : null,
-  };
+  }, commonPostInfo(rawPost));
+}
+
+function getBlogpostFromURL(url, req, res, next) {
+  wpRequest(url, function(err, body) {
+    if (err) return next(err);
+
+    body = JSON.parse(body);
+    if (!body.post) return res.send(404);
+
+    req.blogpost = _.extend(body.post, commonPostInfo(body.post));
+    next();
+  });
 }
 
 app.get('/api/tags.js', function(req, res, next) {
@@ -59,16 +85,7 @@ app.param('slug', function(req, res, next, slug) {
   var url = BASE_API_URL + '/get_post/?slug=' + slug;
 
   if (!/^[a-z0-9\-]+$/.test(slug)) return next('route');
-
-  wpRequest(url, function(err, body) {
-    if (err) return next(err);
-
-    body = JSON.parse(body);
-    if (!body.post) return res.send(404);
-
-    req.blogpost = body.post;
-    next();
-  });
+  getBlogpostFromURL(url, req, res, next);
 });
 
 app.param('id', function(req, res, next, id) {
@@ -76,15 +93,7 @@ app.param('id', function(req, res, next, id) {
   var url = BASE_API_URL + '/get_post/?id=' + id;
 
   if (isNaN(id) || id < 0) return next('route');
-  wpRequest(url, function(err, body) {
-    if (err) return next(err);
-
-    body = JSON.parse(body);
-    if (!body.post) return res.send(404);
-
-    req.blogpost = body.post;
-    next();
-  });
+  getBlogpostFromURL(url, req, res, next);
 });
 
 app.get('/api/post/:slug', function(req, res, next) {

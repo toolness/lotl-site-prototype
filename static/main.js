@@ -63,15 +63,18 @@ function setupSearch(queries) {
   });
 }
 
-function normalizePost(post) {
-  if (post.author == 'lifeofthelaw')
-    post.author = null;
+function normalizePostThumbnail(post) {
   if (post.thumbnail && !post.thumbnail.width) post.thumbnail = null;
   if (post.thumbnail) {
     post.thumbnail.height = post.thumbnail.height * COLUMN_WIDTH /
                             post.thumbnail.width;
     post.thumbnail.width = COLUMN_WIDTH;
   }
+  return post;
+}
+
+function normalizePost(post) {
+  if (post.authorName == 'lifeofthelaw') post.authorName = '';
   if (post.enclosure)
     post.enclosurePodcastInfo = JSON.stringify({
       id: post.id,
@@ -86,7 +89,7 @@ function postRenderer() {
   var postsSoFar = 0;
 
   return function renderPost(post) {
-    post = normalizePost(post);
+    post = normalizePostThumbnail(normalizePost(post));
     post.isWide = (++postsSoFar == 1);
     return $(nunjucks.renderString(postTemplate, post)).first();
   };
@@ -188,8 +191,9 @@ function showPostDetail(slug) {
   var rendered = $('<div></div>').append(loadingPostDetailTemplate.clone());
   var onPost = function(info) {
     var url = '/' + info.slug + '/';
+    var post = normalizePost(JSON.parse(JSON.stringify(info)));
     holder.css({height: 'auto'});
-    rendered.html(nunjucks.renderString(postDetailTemplate, info));
+    rendered.html(nunjucks.renderString(postDetailTemplate, post));
     if (window.location.pathname != url) {
       window.history.pushState({
         post: info
