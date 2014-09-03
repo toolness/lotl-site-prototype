@@ -258,4 +258,10 @@ $(function() {
 
   if (typeof(POST) != 'undefined')
     showPostDetail(POST);
+
+  $('body').on('click', '[role="home"]', function(e) {
+    e.preventDefault();
+    hidePostDetail();
+    queries.push(null);
+  });
 });
