@@ -5,7 +5,7 @@ var request = require('request');
 var nunjucks = require('nunjucks');
 var replaceStream = require('replacestream');
 
-var wpRequest = require('./wp-request');
+var wpRequest = require('./lib/wp-request');
 
 var PORT = process.env.PORT || 3000;
 var DEBUG = 'DEBUG' in process.env;
