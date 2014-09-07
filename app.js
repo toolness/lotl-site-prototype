@@ -7,8 +7,10 @@ var replaceStream = require('replacestream');
 var wpRequest = require('./wp-request');
 
 var PORT = process.env.PORT || 3000;
+var DEBUG = 'DEBUG' in process.env;
 var BASE_API_URL = 'http://lifeofthelaw.org/api';
 var META_CHARSET = '<meta charset="utf-8">';
+var VIEWS_DIR = __dirname + '/views';
 
 var app = express();
 
@@ -54,6 +56,22 @@ function getBlogpostFromURL(url, req, res, next) {
     next();
   });
 }
+
+app.get('/views.js', (function() {
+  var templates = null;
+
+  return function(req, res, next) {
+    if (!templates || DEBUG) {
+      templates = {};
+      fs.readdirSync(VIEWS_DIR).forEach(function(file) {
+        templates[file] = fs.readFileSync(VIEWS_DIR + '/' + file, 'utf-8')
+          .trim();
+      });
+    }
+    return res.type('application/javascript')
+      .send('var VIEWS = ' + JSON.stringify(templates) + ';');
+  };
+})());
 
 app.get('/api/tags.js', function(req, res, next) {
   wpRequest({

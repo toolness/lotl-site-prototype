@@ -59,59 +59,6 @@ var less = {
     <p><small>There should really be more content here.</small></p>
   </div>
 </footer>
-<script type="text/html" id="playlist-template">
-  <ul class="playlist">
-    {% for podcast in podcasts %}
-      {% if podcast.id != currentID %}
-      <li role="play-podcast"
-          data-podcast-info="{{ podcast.enclosurePodcastInfo }}">{{ podcast.title|safe }}</li>
-      {% endif %}
-    {% endfor %}
-    <li role="show-all-episodes"><em>Show all episodes&hellip;</em></li>
-  </ul>
-</script>
-<script type="text/html" id="post-template">
-  <div class="post{% if isWide %} wide{% endif %}">
-    {% if isWide %}
-    <div class="post-thumbnail"{% if thumbnail %} style="background-image: url({{ thumbnail.url }})"{% endif %}></div>
-    {% endif %}
-    {% if not isWide and thumbnail %}
-    <img src="{{ thumbnail.url }}" width="{{ thumbnail.width }}" height="{{ thumbnail.height }}">
-    {% endif %}
-    <div class="post-details">
-      <h3><a role="show-post-detail" data-post-slug="{{ slug }}" href="{{ link }}">{{ title|safe }}</a></h3>
-      <p class="post-pubdate">Posted {{ pubdate.toDateString() }}</p>
-      {% if excerpt %}
-      <p>{{ excerpt|safe }}</p>
-      {% endif %}
-      <ul class="post-actions">
-        {% if enclosure %}
-        <li><a 
-          role="play-podcast"
-          data-podcast-info="{{ enclosurePodcastInfo }}"
-          href="{{ enclosure }}"><i class="fa fa-play-circle"></i> Listen</a></li>
-        {% endif %}
-        <li><a role="show-post-detail" data-post-slug="{{ slug }}" href="{{ link }}"><i class="fa fa-book"></i> Read More</a></li>
-      </ul>
-    </div>
-  </div>
-</script>
-<script type="text/html" id="post-detail-template">
-  <div class="pd-feature-image" style="background-image: url({{ thumbnail_images.full.url }})"><h2>{{ title|safe }}</h2></div>
-  <div class="pd-body">
-    {% if enclosure %}
-    <p class="pd-listen"><a 
-      role="play-podcast"
-      data-podcast-info="{{ enclosurePodcastInfo }}"
-      href="{{ enclosure }}"><i class="fa fa-play-circle"></i> Listen</a></p>
-    {% endif %}
-    <p class="post-pubdate">Posted 
-    {% if authorName %}by {{ authorName }} on{% endif %}
-    {{ pubdate.toDateString() }}
-    </p>
-    {{ content|safe }}
-  </div>
-</script>
 <script src="/vendor/audiojs/audio.min.js"></script>
 <script src="/vendor/jquery.js"></script>
 <script src="/vendor/jquery.scrollTo.js"></script>
@@ -121,4 +68,5 @@ var less = {
 <script src="/vendor/bacon.js"></script>
 <script src="/api/tags.js"></script>
 <script src="/api/podcasts.js"></script>
+<script src="/views.js"></script>
 <script src="/main.js"></script>

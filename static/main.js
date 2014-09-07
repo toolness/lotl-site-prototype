@@ -1,8 +1,8 @@
 var resultsTemplate = $('#results-holder').children().remove();
-var postTemplate = $.trim($('#post-template').text());
-var postDetailTemplate = $.trim($('#post-detail-template').text());
+var postTemplate = VIEWS['post.html'];
+var postDetailTemplate = VIEWS['post-detail.html'];
 var loadingPostDetailTemplate = $('#post-detail').children().remove();
-var playlistTemplate = $.trim($('#playlist-template').text());
+var playlistTemplate = VIEWS['playlist.html'];
 
 // https://gist.github.com/jharding/9458744#file-the-basics-js
 var substringMatcher = function(strs) {
