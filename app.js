@@ -86,7 +86,7 @@ app.get('/main.js', (function() {
     };
 
     if (!code || DEBUG) {
-      browserify({debug: true})
+      browserify({debug: DEBUG})
         .add('./lib/browser/main.js')
         .bundle(function(err, buf) {
           if (err) return next(err);
