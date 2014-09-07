@@ -200,13 +200,9 @@ app.get('/:slug/', function(req, res, next) {
 });
 
 app.use(express.static(__dirname + '/static'));
+app.use('/vendor/nunjucks',
+        express.static(__dirname + '/node_modules/nunjucks/browser'));
 
 app.listen(PORT, function() {
   console.log('listening on port', PORT);
 });
-
-fs.writeFileSync(
-  __dirname + '/static/vendor/nunjucks-slim.js',
-  fs.readFileSync(__dirname +
-                  '/node_modules/nunjucks/browser/nunjucks-slim.js')
-);
