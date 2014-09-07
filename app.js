@@ -3,6 +3,7 @@ var _ = require('underscore');
 var express = require('express');
 var request = require('request');
 var nunjucks = require('nunjucks');
+var browserify = require('browserify');
 var replaceStream = require('replacestream');
 
 var wpRequest = require('./lib/wp-request');
@@ -73,6 +74,27 @@ app.get('/views.js', (function() {
     }
     return res.type('application/javascript')
       .send(templates.join('\n\n'));
+  };
+})());
+
+app.get('/main.js', (function() {
+  var code = null;
+
+  return function(req, res, next) {
+    var sendCode = function() {
+      res.type('application/javascript').send(code);
+    };
+
+    if (!code || DEBUG) {
+      browserify({debug: true})
+        .add('./lib/browser/main.js')
+        .bundle(function(err, buf) {
+          if (err) return next(err);
+          code = buf;
+          sendCode();
+        });
+    } else
+      sendCode();
   };
 })());
 
