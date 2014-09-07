@@ -2,19 +2,15 @@ var fs = require('fs');
 var _ = require('underscore');
 var express = require('express');
 var request = require('request');
-var nunjucks = require('nunjucks');
-var browserify = require('browserify');
-var less = require('less');
 var replaceStream = require('replacestream');
 
-var metrics = require('./lib/browser/metrics');
+var build = require('./lib/build');
 var wpRequest = require('./lib/wp-request');
 
 var PORT = process.env.PORT || 3000;
 var DEBUG = 'DEBUG' in process.env;
 var BASE_API_URL = 'http://lifeofthelaw.org/api';
 var META_CHARSET = '<meta charset="utf-8">';
-var VIEWS_DIR = __dirname + '/views';
 
 var app = express();
 
@@ -61,75 +57,9 @@ function getBlogpostFromURL(url, req, res, next) {
   });
 }
 
-app.get('/views.js', (function() {
-  var templates = null;
-
-  return function(req, res, next) {
-    if (!templates || DEBUG) {
-      templates = [];
-      fs.readdirSync(VIEWS_DIR).forEach(function(file) {
-        templates.push(nunjucks.precompileString(
-          fs.readFileSync(VIEWS_DIR + '/' + file, 'utf-8').trim(),
-          {name: file}
-        ));
-      });
-    }
-    return res.type('application/javascript')
-      .send(templates.join('\n\n'));
-  };
-})());
-
-app.get('/main.js', (function() {
-  var code = null;
-
-  return function(req, res, next) {
-    var sendCode = function() {
-      res.type('application/javascript').send(code);
-    };
-
-    if (!code || DEBUG) {
-      browserify({debug: DEBUG})
-        .add('./lib/browser/main.js')
-        .bundle(function(err, buf) {
-          if (err) return next(err);
-          code = buf;
-          sendCode();
-        });
-    } else
-      sendCode();
-  };
-})());
-
-app.get('/styles.css', (function() {
-  var css = null;
-
-  return function(req, res, next) {
-    var sendCss = function() { res.type('text/css').send(css); };
-
-    if (!css || DEBUG) {
-      var filename = 'styles.less';
-      var abspath = __dirname + '/less/' + filename;
-      var parser = new less.Parser({
-        filename: 'styles.less'
-      });
-      var source = fs.readFileSync(abspath, 'utf-8') + ';\n' +
-        '@columnWidth: ' + metrics.COLUMN_WIDTH + 'px;\n' +
-        '@gutterWidth: ' + metrics.GUTTER_WIDTH + 'px;\n';
-
-      parser.parse(source, function(err, tree) {
-        try {
-          if (err) throw err;
-          css = tree.toCSS();
-        } catch (err) {
-          return next(Error(filename + " line " + err.line +
-                      " compile error: " + err.message));
-        }
-        sendCss();
-      });
-    } else
-      sendCss();
-  };
-})());
+app.get('/views.js', build.nunjucks(DEBUG));
+app.get('/main.js', build.browserify(DEBUG));
+app.get('/styles.css', build.less(DEBUG));
 
 app.get('/api/tags.js', function(req, res, next) {
   wpRequest({
