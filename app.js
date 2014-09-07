@@ -4,8 +4,10 @@ var express = require('express');
 var request = require('request');
 var nunjucks = require('nunjucks');
 var browserify = require('browserify');
+var less = require('less');
 var replaceStream = require('replacestream');
 
+var metrics = require('./lib/browser/metrics');
 var wpRequest = require('./lib/wp-request');
 
 var PORT = process.env.PORT || 3000;
@@ -95,6 +97,37 @@ app.get('/main.js', (function() {
         });
     } else
       sendCode();
+  };
+})());
+
+app.get('/styles.css', (function() {
+  var css = null;
+
+  return function(req, res, next) {
+    var sendCss = function() { res.type('text/css').send(css); };
+
+    if (!css || DEBUG) {
+      var filename = 'styles.less';
+      var abspath = __dirname + '/less/' + filename;
+      var parser = new less.Parser({
+        filename: 'styles.less'
+      });
+      var source = fs.readFileSync(abspath, 'utf-8') + ';\n' +
+        '@columnWidth: ' + metrics.COLUMN_WIDTH + 'px;\n' +
+        '@gutterWidth: ' + metrics.GUTTER_WIDTH + 'px;\n';
+
+      parser.parse(source, function(err, tree) {
+        try {
+          if (err) throw err;
+          css = tree.toCSS();
+        } catch (err) {
+          return next(Error(filename + " line " + err.line +
+                      " compile error: " + err.message));
+        }
+        sendCss();
+      });
+    } else
+      sendCss();
   };
 })());
 

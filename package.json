@@ -9,6 +9,7 @@
     "lru-cache": "2.5.0",
     "nunjucks": "1.0.7",
     "browserify": "5.11.1",
+    "less": "1.7.5",
     "request": "2.40.0"
   },
   "devDependencies": {},
