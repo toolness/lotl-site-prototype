@@ -1,8 +1,5 @@
 var resultsTemplate = $('#results-holder').children().remove();
-var postTemplate = VIEWS['post.html'];
-var postDetailTemplate = VIEWS['post-detail.html'];
 var loadingPostDetailTemplate = $('#post-detail').children().remove();
-var playlistTemplate = VIEWS['playlist.html'];
 
 // https://gist.github.com/jharding/9458744#file-the-basics-js
 var substringMatcher = function(strs) {
@@ -91,7 +88,7 @@ function postRenderer() {
   return function renderPost(post) {
     post = normalizePostThumbnail(normalizePost(post));
     post.isWide = (++postsSoFar == 1);
-    return $(nunjucks.renderString(postTemplate, post)).first();
+    return $(nunjucks.render('post.html', post)).first();
   };
 }
 
@@ -124,7 +121,7 @@ function setupPlayer() {
       playlist.hide();
     } else {
       playlist.remove();
-      playlist = $(nunjucks.renderString(playlistTemplate, {
+      playlist = $(nunjucks.render('playlist.html', {
         currentID: currentID,
         podcasts: PODCASTS.map(normalizePost)
       })).first();
@@ -193,7 +190,7 @@ function showPostDetail(slug) {
     var url = '/' + info.slug + '/';
     var post = normalizePost(JSON.parse(JSON.stringify(info)));
     holder.css({height: 'auto'});
-    rendered.html(nunjucks.renderString(postDetailTemplate, post));
+    rendered.html(nunjucks.render('post-detail.html', post));
     if (window.location.pathname != url) {
       window.history.pushState({
         post: info

@@ -2,6 +2,7 @@ var fs = require('fs');
 var _ = require('underscore');
 var express = require('express');
 var request = require('request');
+var nunjucks = require('nunjucks');
 var replaceStream = require('replacestream');
 
 var wpRequest = require('./wp-request');
@@ -62,14 +63,16 @@ app.get('/views.js', (function() {
 
   return function(req, res, next) {
     if (!templates || DEBUG) {
-      templates = {};
+      templates = [];
       fs.readdirSync(VIEWS_DIR).forEach(function(file) {
-        templates[file] = fs.readFileSync(VIEWS_DIR + '/' + file, 'utf-8')
-          .trim();
+        templates.push(nunjucks.precompileString(
+          fs.readFileSync(VIEWS_DIR + '/' + file, 'utf-8').trim(),
+          {name: file}
+        ));
       });
     }
     return res.type('application/javascript')
-      .send('var VIEWS = ' + JSON.stringify(templates) + ';');
+      .send(templates.join('\n\n'));
   };
 })());
 
@@ -179,3 +182,9 @@ app.use(express.static(__dirname + '/static'));
 app.listen(PORT, function() {
   console.log('listening on port', PORT);
 });
+
+fs.writeFileSync(
+  __dirname + '/static/vendor/nunjucks-slim.js',
+  fs.readFileSync(__dirname +
+                  '/node_modules/nunjucks/browser/nunjucks-slim.js')
+);
