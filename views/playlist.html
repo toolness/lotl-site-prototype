@@ -1,9 +1,9 @@
 <ul class="playlist">
   {% for podcast in podcasts %}
     {% if podcast.id != currentID %}
-    <li role="play-podcast"
-        data-podcast-info="{{ podcast.enclosurePodcastInfo }}">{{ podcast.title|safe }}</li>
+    <li><a role="play-podcast"
+           data-podcast-info="{{ podcast.enclosurePodcastInfo }}">{{ podcast.title|safe }}</a></li>
     {% endif %}
   {% endfor %}
-  <li role="show-all-episodes"><em>Show all episodes&hellip;</em></li>
+  <li><a href="/?s=podcast"><em>Show all episodes&hellip;</em></a></li>
 </ul>
