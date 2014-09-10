@@ -3,7 +3,7 @@
 @green: #65B9B9;
 @darkgray: #77726F;
 @lightgray: #ADA6A1;
-@pageWidth: 96%;
+@pageWidth: 100% - (@gutterWidth * 2);
 
 @navLogoOffset: 100px;
 @playerWidth: @pageWidth - @navLogoOffset;
@@ -40,7 +40,6 @@ body {
   color: white;
   background-color: @orange;
   margin-bottom: 80px;
-  min-width: @pageWidth;
 }
 
 .nav h1 {
@@ -192,7 +191,7 @@ body {
   /* Budget enough width to contain all columns plus extra gutter, but 
    * rely on parent .container to hide the extra gutter. Taken from
    * http://jsfiddle.net/desandro/sJjYT/. */
-  width: @pageWidth + @gutterWidth;
+  width: 100% + @gutterWidth;
 }
 
 .grid-sizer {
