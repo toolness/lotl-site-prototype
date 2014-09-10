@@ -3,7 +3,7 @@
 @green: #65B9B9;
 @darkgray: #77726F;
 @lightgray: #ADA6A1;
-@pageWidth: 900px;
+@pageWidth: 96%;
 
 @navLogoOffset: 100px;
 @playerWidth: @pageWidth - @navLogoOffset;
@@ -12,7 +12,8 @@
 @footerHeight: 150px;
 @footerTopMargin: 20px;
 
-// Note that @columnWidth and @gutterWidth must be defined externally.
+@columnWidth: 23%;
+@gutterWidth: 2%;
 
 html {
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -194,6 +195,14 @@ body {
   width: @pageWidth + @gutterWidth;
 }
 
+.grid-sizer {
+  width: @columnWidth;
+}
+
+.gutter-sizer {
+  width: @gutterWidth;
+}
+
 .post {
   width: @columnWidth;
   margin-right: @gutterWidth;
@@ -208,7 +217,6 @@ body {
 
 .post.wide .post-details {
   padding-left: @columnWidth + @gutterWidth;
-  min-height: @columnWidth + @gutterWidth;
 }
 
 .post.wide .post-thumbnail {
@@ -218,6 +226,22 @@ body {
   bottom: 0;
   width: @columnWidth;
   background-size: cover;
+}
+
+.post:not(.wide) .post-thumbnail {
+  position: relative;
+  width: 100%;
+}
+
+// We're setting the height of images based on a percentage
+// of their width via padding on the parent element. For
+// more information, see http://stackoverflow.com/a/12925343.
+
+.post:not(.wide) .post-thumbnail img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
 }
 
 .post .post-podcast-badge {

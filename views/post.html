@@ -1,7 +1,14 @@
 <div class="post{% if isWide %} wide{% endif %}">
-  <div class="post-thumbnail"{% if isWide and thumbnail %} style="background-image: url({{ thumbnail.url }})"{% endif %}>
+  <div class="post-thumbnail"
+    {% if thumbnail %}
+      {% if isWide %}
+        style="background-image: url({{ thumbnail.url }})"
+      {% else %}
+        style="padding-top: {{ thumbnail.heightPercentage }}%"
+      {% endif %}
+    {% endif %}>
   {% if not isWide and thumbnail %}
-  <img src="{{ thumbnail.url }}" width="{{ thumbnail.width }}" height="{{ thumbnail.height }}">
+  <img src="{{ thumbnail.url }}">
   {% endif %}
   {% if enclosure %}<i role="play-podcast" data-podcast-info="{{ enclosurePodcastInfo }}"class="post-podcast-badge fa fa-microphone"></i>{% endif %}
   </div>
