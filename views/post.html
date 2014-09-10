@@ -1,10 +1,10 @@
 <div class="post{% if isWide %} wide{% endif %}">
-  {% if isWide %}
-  <div class="post-thumbnail"{% if thumbnail %} style="background-image: url({{ thumbnail.url }})"{% endif %}></div>
-  {% endif %}
+  <div class="post-thumbnail"{% if isWide and thumbnail %} style="background-image: url({{ thumbnail.url }})"{% endif %}>
   {% if not isWide and thumbnail %}
   <img src="{{ thumbnail.url }}" width="{{ thumbnail.width }}" height="{{ thumbnail.height }}">
   {% endif %}
+  {% if enclosure %}<i role="play-podcast" data-podcast-info="{{ enclosurePodcastInfo }}"class="post-podcast-badge fa fa-microphone"></i>{% endif %}
+  </div>
   <div class="post-details">
     <h3><a role="show-post-detail" data-post-slug="{{ slug }}" href="{{ link }}">{{ title|safe }}</a></h3>
     <p class="post-pubdate">Posted {{ pubdate.toDateString() }}</p>
