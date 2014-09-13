@@ -10,6 +10,7 @@
     "nunjucks": "1.0.7",
     "browserify": "5.11.1",
     "less": "1.7.5",
+    "baconjs": "0.7.22",
     "request": "2.40.0"
   },
   "devDependencies": {
