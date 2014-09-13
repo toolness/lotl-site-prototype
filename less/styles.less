@@ -12,8 +12,8 @@
 @footerHeight: 150px;
 @footerTopMargin: 20px;
 
-@columnWidth: 23%;
-@gutterWidth: 2%;
+@columnWidth: 25% - @gutterWidth;
+@gutterWidth: 20px;
 
 html {
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -195,7 +195,7 @@ body {
 }
 
 .grid-sizer {
-  width: @columnWidth;
+  width: calc(@columnWidth);
 }
 
 .gutter-sizer {
@@ -203,7 +203,7 @@ body {
 }
 
 .post {
-  width: @columnWidth;
+  width: calc(@columnWidth);
   margin-right: @gutterWidth;
   margin-bottom: @gutterWidth;
   background-color: #FDFDFD;
@@ -211,7 +211,7 @@ body {
 }
 
 .post.wide {
-  width: calc(@columnWidth * 2 + @gutterWidth);
+  width: calc((@columnWidth) * 2 + @gutterWidth);
 }
 
 .post.wide .post-details {
