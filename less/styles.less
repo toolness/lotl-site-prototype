@@ -49,17 +49,34 @@ body {
   position: absolute;
   top: 0;
   margin: 0;
+  font-size: 10px;
 }
 
 .nav h1 a {
   display: block;
   background-color: rgba(0, 0, 0, 0.65);
-  transition: padding 0.25s;
-  padding: 20px;
+  padding: 20px 20px 0 20px;
 }
 
-.nav h1 a:hover {
-  padding-top: 35px;
+.nav h1 .subtitle {
+  opacity: 0.75;
+  transition: opacity 0.25s;
+  display: inline-block;
+  width: 100px;
+  padding-top: 6px;
+  text-align: justify;
+}
+
+.nav h1 .subtitle:after {
+  /* This effectively force-justifies the last line.
+   * http://blog.vjeux.com/2011/css/css-one-line-justify.html */
+  content: '';
+  display: inline-block;
+  width: 100%;
+}
+
+.nav h1 a:hover .subtitle {
+  opacity: 1;
 }
 
 .nav h1 a img {
