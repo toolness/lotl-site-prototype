@@ -87,6 +87,21 @@ app.get('/api/podcasts.js', function(req, res, next) {
   });
 });
 
+app.param('pageslug', function(req, res, next, slug) {
+  var url = BASE_API_URL + '/get_page/?slug=' + slug;
+
+  if (!/^[a-z0-9\-]+$/.test(slug)) return next('route');
+  wpRequest(url, function(err, body) {
+    if (err) return next(err);
+
+    body = JSON.parse(body);
+    if (!body.page) return res.send(404);
+
+    req.blogpage = body.page;
+    next();
+  });
+});
+
 app.param('slug', function(req, res, next, slug) {
   var url = BASE_API_URL + '/get_post/?slug=' + slug;
 
@@ -100,6 +115,10 @@ app.param('id', function(req, res, next, id) {
 
   if (isNaN(id) || id < 0) return next('route');
   getBlogpostFromURL(url, req, res, next);
+});
+
+app.get('/api/page/:pageslug', function(req, res, next) {
+  return res.send(req.blogpage);
 });
 
 app.get('/api/post/:slug', function(req, res, next) {
