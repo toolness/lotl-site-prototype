@@ -1,7 +1,8 @@
-<div class="post">
+<div class="post person">
   {% if thumbnail %}
   <div class="post-thumbnail" style="padding-top: {{ thumbnail.heightPercentage }}%">
     <img src="{{ thumbnail.url }}">
+    <span class="name">{{ name }}</span>
   </div>
   {% endif %}
   <div class="post-details">
