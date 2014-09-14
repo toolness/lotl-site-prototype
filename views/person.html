@@ -6,6 +6,11 @@
   </div>
   {% endif %}
   <div class="post-details">
-    {{ excerpt|safe }}
+    <p>{{ excerpt|safe }}</p>
+    <ul class="post-actions">
+      {% if search %}
+      <li><a href="{{ search }}"><i class="fa fa-th"></i> See Their Work</a></li>
+      {% endif %}
+    </ul>
   </div>
 </div>
