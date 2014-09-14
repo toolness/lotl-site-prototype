@@ -1,9 +1,9 @@
 var should = require('should');
 
-var browserUtil = require('../../lib/browser/util');
+var postList = require('../../lib/browser/post-list');
 
 describe('reorderPostsForHomepage', function() {
-  var reorder = browserUtil.reorderPostsForHomepage;
+  var reorder = postList.reorderPostsForHomepage;
 
   it('should be non-destructive', function() {
     var posts = ['a', 'b', 'c'];
