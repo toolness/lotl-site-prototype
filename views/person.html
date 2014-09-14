@@ -1,0 +1,10 @@
+<div class="post">
+  {% if thumbnail %}
+  <div class="post-thumbnail" style="padding-top: {{ thumbnail.heightPercentage }}%">
+    <img src="{{ thumbnail.url }}">
+  </div>
+  {% endif %}
+  <div class="post-details">
+    {{ excerpt|safe }}
+  </div>
+</div>
