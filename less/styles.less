@@ -1,4 +1,5 @@
 /* This is the color palette defined by LOTL's designer, Marybeth. */
+
 @marybeth_darkred: #901B30;
 @marybeth_red: #EE3F23;
 @marybeth_yellow: #FFC845;
@@ -9,11 +10,16 @@
 @marybeth_blue: #639ED2;
 @marybeth_lightblue: #95BCE2;
 
-@orange: #F5764B;
+/* These are the actual colors we'll use on the site. */
+
+@primary: #F5764B;
+@secondary: #65B9B9;
 @beige: #ECEADF;
-@green: #65B9B9;
 @darkgray: #77726F;
 @lightgray: #ADA6A1;
+
+/* These are various metrics. */
+
 @minPageWidth: 900px;
 @maxPageWidth: 1400px;
 @pageWidth: 100% - (@gutterWidth * 2);
@@ -52,7 +58,7 @@ body {
 
 .nav {
   color: white;
-  background-color: @orange;
+  background-color: @primary;
   margin-bottom: 80px;
 }
 
@@ -238,7 +244,7 @@ body {
 }
 
 .player .episode ul li a:hover {
-  background-color: @orange;
+  background-color: @primary;
 }
 
 .player .audiojs {
@@ -315,7 +321,7 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  background-color: fade(@orange, 80%);
+  background-color: fade(@primary, 80%);
   color: white;
   font-size: 14px;
   padding: 6px;
@@ -329,7 +335,7 @@ body {
   position: absolute;
   top: 0;
   right: 0;
-  background-color: fade(@orange, 80%);
+  background-color: fade(@primary, 80%);
   color: white;
   font-size: 20px;
   width: 32px;
@@ -352,11 +358,11 @@ body {
 }
 
 .post a:hover {
-  color: @orange;
+  color: @primary;
 }
 
 .post-pubdate {
-  color: @green;
+  color: @secondary;
   font-weight: bold;
 }
 
@@ -385,7 +391,7 @@ ul.post-actions li {
 }
 
 .more:hover {
-  color: @orange;
+  color: @primary;
 }
 
 #content-area {
@@ -429,7 +435,7 @@ ul.post-actions li {
 
 .post-detail .pd-feature-image h2 {
   margin: 0;
-  color: @orange;
+  color: @primary;
   position: absolute;
   bottom: -30px;
   left: 30px;
@@ -449,7 +455,7 @@ ul.post-actions li {
 }
 
 .post-detail a {
-  color: @orange;
+  color: @primary;
 }
 
 .post-detail .pd-listen {
@@ -464,7 +470,7 @@ ul.post-actions li {
 }
 
 .post-detail .pd-listen a:hover {
-  color: @orange;
+  color: @primary;
 }
 
 footer {
