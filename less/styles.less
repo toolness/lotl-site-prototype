@@ -91,6 +91,15 @@ body {
   text-decoration: none;
 }
 
+.nav ul li a {
+  opacity: 0.75;
+  transition: opacity 0.25s;
+}
+
+.nav ul li a:hover {
+  opacity: 1;
+}
+
 .nav ul.nav-left {
   list-style-type: none;
   margin: 0 0 0 @navLogoOffset;
@@ -103,17 +112,8 @@ body {
   margin: 20px 20px 20px 0;
 }
 
-.nav ul.nav-left li a {
-  opacity: 0.75;
-  transition: opacity 1s;
-}
-
-.nav ul.nav-left li a:hover {
-  text-decoration: underline;
-}
-
 .nav ul.nav-left li a.selected {
-  opacity: 1;
+  text-decoration: underline;
   pointer-events: none;
 }
 
@@ -127,15 +127,6 @@ body {
 .nav ul.nav-right li {
   display: inline-block;
   margin: 0 0 0 10px;
-}
-
-.nav ul.nav-right li a {
-  opacity: 0.75;
-  transition: opacity 0.25s;
-}
-
-.nav ul.nav-right li a:hover {
-  opacity: 1;
 }
 
 .nav ul.nav-right li.search {
