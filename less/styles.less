@@ -91,53 +91,74 @@ body {
   text-decoration: none;
 }
 
-.nav ul {
+.nav ul.nav-left {
   list-style-type: none;
   margin: 0 0 0 @navLogoOffset;
   padding: 0;
   display: inline-block;
 }
 
-.nav ul li {
+.nav ul.nav-left li {
   display: inline-block;
   margin: 20px 20px 20px 0;
 }
 
-.nav ul li a {
+.nav ul.nav-left li a {
   opacity: 0.75;
   transition: opacity 1s;
 }
 
-.nav ul li a:hover {
+.nav ul.nav-left li a:hover {
   text-decoration: underline;
 }
 
-.nav ul li a.selected {
+.nav ul.nav-left li a.selected {
   opacity: 1;
   pointer-events: none;
 }
 
-.nav .search {
+.nav ul.nav-right {
   float: right;
-  margin-top: 18px;
+  list-style-type: none;
+  margin: 18px 0 0 0;
+  padding: 0;
+}
+
+.nav ul.nav-right li {
+  display: inline-block;
+  margin: 0 0 0 10px;
+}
+
+.nav ul.nav-right li a {
+  opacity: 0.75;
+  transition: opacity 0.25s;
+}
+
+.nav ul.nav-right li a:hover {
+  opacity: 1;
+}
+
+.nav ul.nav-right li.search {
   color: black;
 }
 
-.nav .search input {
+.nav ul.nav-right li.search input {
+  /* typeahead.js sets vertical-align: top on the element, which
+   * throws off our formatting, so we undo that here. Which is weird. */
+  vertical-align: middle !important;
   font-family: inherit;
-  width: 100%;
   border: none;
   padding: 4px;
   background-color: rgba(255, 255, 255, 0.8);
 }
 
-.nav .search .tt-dropdown-menu {
+.nav ul.nav-right li.search .tt-dropdown-menu {
   background-color: rgba(255, 255, 255, 0.8);
   width: 100%;
   padding: 0 8px;
 }
 
-.nav .search .tt-dropdown-menu .tt-cursor {
+.nav ul.nav-right li.search .tt-dropdown-menu .tt-cursor {
   background: black;
   color: white;
 }
