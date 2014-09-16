@@ -159,14 +159,23 @@ body {
   background-color: rgba(255, 255, 255, 0.8);
 }
 
+.nav ul.nav-right li.search .tt-dropdown-menu .tt-suggestion p {
+  /* Why every typeahead.js suggestion is wrapped in a paragraph
+   * is anyone's guess... */
+  margin: 0;
+}
+
 .nav ul.nav-right li.search .tt-dropdown-menu {
   background-color: rgba(255, 255, 255, 0.8);
   width: 100%;
-  padding: 0 8px;
+}
+
+.nav ul.nav-right li.search .tt-dropdown-menu .tt-suggestion {
+  padding: 8px;
 }
 
 .nav ul.nav-right li.search .tt-dropdown-menu .tt-cursor {
-  background: black;
+  background: @primary;
   color: white;
 }
 
