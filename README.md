@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/toolness/lotl-site-prototype.svg)](https://travis-ci.org/toolness/lotl-site-prototype)
+
 This is a potential replacement for the [Life of The Law][lotl] website.
 
 ## Quick Start
