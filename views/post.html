@@ -25,7 +25,11 @@
         data-podcast-info="{{ enclosurePodcastInfo }}"
         href="{{ enclosure }}"><i class="fa fa-play-circle"></i> Listen</a></li>
       {% endif %}
+      {% if isVideo %}
+      <li><a href="{{ link }}"><i class="fa fa-play-circle"></i> Watch</a></li>
+      {% else %}
       <li><a href="{{ link }}"><i class="fa fa-book"></i> Read More</a></li>
+      {% endif %}
     </ul>
   </div>
 </div>
