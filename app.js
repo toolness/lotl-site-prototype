@@ -1,4 +1,5 @@
 var fs = require('fs');
+var urlParse = require('url').parse;
 var _ = require('underscore');
 var express = require('express');
 var request = require('request');
@@ -14,17 +15,19 @@ var META_CHARSET = '<meta charset="utf-8">';
 
 var app = express();
 
-function enclosureURL(enclosure) {
-  return enclosure[0].split('\n')[0].trim();
+function getEnclosureURL(rawPost) {
+  if (rawPost.custom_fields.enclosure)
+    return rawPost.custom_fields.enclosure[0].split('\n')[0].trim();
+  if (rawPost.custom_fields.apm_download)
+    return rawPost.custom_fields.apm_download[0];
+  return null;
 }
 
 function commonPostInfo(rawPost) {
   var info = {
     authorName: '',
     pubdate: new Date(rawPost.date).toISOString(),
-    enclosure: rawPost.custom_fields.enclosure
-               ? enclosureURL(rawPost.custom_fields.enclosure)
-               : null
+    enclosure: getEnclosureURL(rawPost)
   };
   if (rawPost.custom_fields && rawPost.custom_fields.author &&
       rawPost.custom_fields.author.length) {
@@ -126,12 +129,17 @@ app.get('/api/post/:slug', function(req, res, next) {
 });
 
 app.get('/api/audio/:id', function(req, res, next) {
-  if (!(req.blogpost.custom_fields.enclosure))
+  var enclosureURL = getEnclosureURL(req.blogpost);
+
+  if (!enclosureURL)
     return res.send(404);
 
-  var url = enclosureURL(req.blogpost.custom_fields.enclosure);
+  // Dropbox-hosted files don't have CORS headers, so pipe the audio.
+  if (/dropbox/.test(urlParse(enclosureURL).hostname))
+    return req.pipe(request(enclosureURL)).pipe(res);
 
-  req.pipe(request(url)).pipe(res);
+  // Assume the audio has CORS headers and just redirect to it.
+  return res.redirect(enclosureURL);
 });
 
 app.get('/api/posts', function(req, res, next) {
