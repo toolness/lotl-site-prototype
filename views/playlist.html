@@ -1,6 +1,9 @@
 <ul class="playlist">
+  <li><a href="{{ current.link }}"><i class="fa fa-book"></i> Read more about this episode</a></li>
+  <li><a href="{{ current.enclosure }}"><i class="fa fa-download"></i> Download this episode</a></li>
+  <li class="divider">More Episodes</li>
   {% for podcast in podcasts %}
-    {% if podcast.id != currentID %}
+    {% if podcast.id != current.id %}
     <li><a role="play-podcast"
            data-podcast-info="{{ podcast.enclosurePodcastInfo }}">{{ podcast.title|safe }}</a></li>
     {% endif %}
