@@ -10,7 +10,10 @@
   {% if not isWide and thumbnail %}
   <img src="{{ thumbnail.url }}">
   {% endif %}
-  {% if enclosure %}<i role="play-podcast" data-podcast-info="{{ enclosurePodcastInfo }}"class="post-podcast-badge fa fa-microphone"></i>{% endif %}
+  {% if enclosure %}<a href="{{ enclosure }}" role="play-podcast" data-podcast-info="{{ enclosurePodcastInfo }}" class="post-media-badge"><i class="fa fa-microphone"></i></a>
+  {% elif isVideo %}
+  <a href="{{ link }}" class="post-media-badge"><i class="fa fa-video-camera"></i></a>
+  {% endif %}
   </div>
   <div class="post-details">
     <h3><a href="{{ link }}">{{ title|safe }}</a></h3>

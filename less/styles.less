@@ -322,7 +322,7 @@ h3.post {
   text-decoration: underline;
 }
 
-.post .post-podcast-badge {
+.post a.post-media-badge {
   position: absolute;
   top: 0;
   right: 0;
@@ -331,12 +331,20 @@ h3.post {
   font-size: 20px;
   width: 32px;
   height: 32px;
-  padding: 6px 0 0 10px;
   cursor: pointer;
 }
 
-.post .post-podcast-badge:hover {
+.post a.post-media-badge:hover {
   background-color: black;
+  color: white;
+}
+
+.post a.post-media-badge .fa-microphone {
+  padding: 6px 0 0 10px;
+}
+
+.post a.post-media-badge .fa-video-camera {
+  padding: 6px 0 0 5px;
 }
 
 .post h3 {
