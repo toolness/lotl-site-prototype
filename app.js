@@ -1,7 +1,6 @@
 var fs = require('fs');
 var urlParse = require('url').parse;
 var _ = require('underscore');
-var nunjucks = require('nunjucks');
 var express = require('express');
 var request = require('request');
 
@@ -14,11 +13,6 @@ var DEBUG = 'DEBUG' in process.env;
 var BASE_API_URL = 'http://lifeofthelaw.org/api';
 
 var app = express();
-
-nunjucks.configure(__dirname + '/views', {
-  autoescape: true,
-  watch: DEBUG
-});
 
 function getEnclosureURL(rawPost) {
   if (rawPost.custom_fields.enclosure)
@@ -64,6 +58,8 @@ function getBlogpostFromURL(url, req, res, next) {
     next();
   });
 }
+
+build.configure(DEBUG);
 
 app.get('/views.js', build.nunjucks(DEBUG));
 app.get('/main.js', build.browserify(DEBUG));
