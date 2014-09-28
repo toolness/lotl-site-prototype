@@ -13,6 +13,7 @@ var DEBUG = 'DEBUG' in process.env;
 var BASE_API_URL = 'http://lifeofthelaw.org/api';
 
 var app = express();
+var renderPostDetail = post.detailRenderer(DEBUG);
 
 function getEnclosureURL(rawPost) {
   if (rawPost.custom_fields.enclosure)
@@ -180,7 +181,9 @@ app.get('/api/posts', function(req, res, next) {
   });
 });
 
-app.get('/:slug/', post.renderPostDetail(DEBUG));
+app.get('/:slug/', function(req, res) {
+  return res.type('text/html').send(renderPostDetail(req.blogpost));
+});
 
 app.use(express.static(__dirname + '/static'));
 app.use('/vendor/nunjucks',
