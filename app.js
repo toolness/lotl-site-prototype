@@ -1,14 +1,12 @@
 var fs = require('fs');
 var urlParse = require('url').parse;
 var _ = require('underscore');
-var Bacon = require('baconjs').Bacon;
 var nunjucks = require('nunjucks');
-var cheerio = require('cheerio');
 var express = require('express');
 var request = require('request');
 
 var build = require('./lib/build');
-var postDetail = require('./lib/browser/post-detail');
+var post = require('./lib/post');
 var wpRequest = require('./lib/wp-request');
 
 var PORT = process.env.PORT || 3000;
@@ -186,17 +184,7 @@ app.get('/api/posts', function(req, res, next) {
   });
 });
 
-app.get('/:slug/', function(req, res, next) {
-  var html = fs.readFileSync(__dirname + '/static/index.html', 'utf-8');
-  var $ = cheerio.load(html);
-  var details = new Bacon.Bus();
-  $('title').before($('<script></script>').text(
-    'var POST = ' + JSON.stringify(req.blogpost) + ';'
-  ));
-  postDetail.setup($('#content-area'), details, $, nunjucks);
-  details.push(req.blogpost);
-  return res.type('text/html').send($.html());
-});
+app.get('/:slug/', post.renderPostDetail(DEBUG));
 
 app.use(express.static(__dirname + '/static'));
 app.use('/vendor/nunjucks',
