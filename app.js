@@ -3,17 +3,17 @@ var urlParse = require('url').parse;
 var _ = require('underscore');
 var express = require('express');
 var request = require('request');
-var replaceStream = require('replacestream');
 
 var build = require('./lib/build');
+var post = require('./lib/post');
 var wpRequest = require('./lib/wp-request');
 
 var PORT = process.env.PORT || 3000;
 var DEBUG = 'DEBUG' in process.env;
 var BASE_API_URL = 'http://lifeofthelaw.org/api';
-var META_CHARSET = '<meta charset="utf-8">';
 
 var app = express();
+var renderPostDetail = post.detailRenderer(DEBUG);
 
 function getEnclosureURL(rawPost) {
   if (rawPost.custom_fields.enclosure)
@@ -59,6 +59,8 @@ function getBlogpostFromURL(url, req, res, next) {
     next();
   });
 }
+
+build.configure(DEBUG);
 
 app.get('/views.js', build.nunjucks(DEBUG));
 app.get('/main.js', build.browserify(DEBUG));
@@ -179,14 +181,8 @@ app.get('/api/posts', function(req, res, next) {
   });
 });
 
-app.get('/:slug/', function(req, res, next) {
-  return fs.createReadStream(__dirname + '/static/index.html')
-    .pipe(replaceStream(META_CHARSET,
-                        META_CHARSET + '\n<script>var POST = ' +
-                        JSON.stringify(req.blogpost) + ';</script>', {
-                          limit: 1
-                        }))
-    .pipe(res.type('text/html'));
+app.get('/:slug/', function(req, res) {
+  return res.type('text/html').send(renderPostDetail(req.blogpost));
 });
 
 app.use(express.static(__dirname + '/static'));
