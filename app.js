@@ -189,6 +189,9 @@ app.use(express.static(__dirname + '/static'));
 app.use('/vendor/nunjucks',
         express.static(__dirname + '/node_modules/nunjucks/browser'));
 
+if (DEBUG)
+  app.use('/less', express.static(__dirname + '/less'));
+
 app.listen(PORT, function() {
   console.log('listening on port', PORT);
 });
