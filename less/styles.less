@@ -13,8 +13,8 @@
 /* These are the actual colors we'll use on the site. */
 
 @primary: @marybeth_red;
-@nav: @marybeth_blue;
-@navText: white;
+@nav: white;
+@navText: black;
 @secondary: @marybeth_blue;
 @darkgray: #77726F;
 @lightgray: #ADA6A1;
@@ -125,6 +125,7 @@ body {
 
 .nav ul.nav-right li.search {
   color: black;
+  border-bottom: 1px dotted lightgray;
 }
 
 .nav ul.nav-right li.search input {
@@ -153,7 +154,7 @@ body {
 }
 
 .nav ul.nav-right li.search .tt-dropdown-menu .tt-cursor {
-  background: @nav;
+  background: @secondary;
   color: white;
 }
 
