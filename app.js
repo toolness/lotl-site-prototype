@@ -1,4 +1,4 @@
-if (typeof process.env.NEWRELIC !== 'undefined') require('newrelic');
+if ('NEWRELIC' in process.env) require('newrelic');
 var fs = require('fs');
 var urlParse = require('url').parse;
 var _ = require('underscore');
