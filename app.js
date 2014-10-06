@@ -203,6 +203,17 @@ app.use('/vendor/nunjucks',
 if (DEBUG)
   app.use('/less', express.static(__dirname + '/less'));
 
+app.use(function(err, req, res, next) {
+  if (typeof(err) == 'number')
+    return res.type('text/plain').send(err);
+  if (typeof(err.status) == 'number')
+    return res.type('text/plain').send(err.status, err.message);
+  var stack = err.stack || err.toString();
+  process.stderr.write(stack);
+  res.type('text')
+    .send(500, DEBUG ? stack : 'Sorry, something exploded!');
+});
+
 app.listen(PORT, function() {
   console.log('listening on port', PORT);
 });
