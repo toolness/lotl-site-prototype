@@ -68,6 +68,10 @@ app.get('/views.js', build.nunjucks(DEBUG));
 app.get('/main.js', build.browserify(DEBUG));
 app.get('/styles.css', build.less(DEBUG));
 
+app.get('/wp-content/*', function(req, res, next) {
+  return res.redirect(301, 'http://wordpress.lifeofthelaw.org' + req.url);
+});
+
 app.get('/api/tags.js', function(req, res, next) {
   wpRequest({
     url: BASE_API_URL + '/get_tag_index/'
