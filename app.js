@@ -7,6 +7,7 @@ var request = require('request');
 var build = require('./lib/build');
 var post = require('./lib/post');
 var wpRequest = require('./lib/wp-request');
+var getYoutubeSearchURL = require('./lib/browser/youtube').getSearchURL;
 
 var PORT = process.env.PORT || 3000;
 var DEBUG = 'DEBUG' in process.env;
@@ -142,6 +143,15 @@ app.get('/api/audio/:id', function(req, res, next) {
 
   // Assume the audio has CORS headers and just redirect to it.
   return res.redirect(enclosureURL);
+});
+
+app.get('/api/youtube-proxy/search', function(req, res, next) {
+  request({
+    url: getYoutubeSearchURL(req.query),
+    headers: {
+      'Referer': 'http://localhost:3000/'
+    }
+  }).pipe(res);
 });
 
 app.get('/api/posts', function(req, res, next) {
