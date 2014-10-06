@@ -11,7 +11,7 @@ var getYoutubeSearchURL = require('./lib/browser/youtube').getSearchURL;
 
 var PORT = process.env.PORT || 3000;
 var DEBUG = 'DEBUG' in process.env;
-var BASE_API_URL = 'http://lifeofthelaw.org/api';
+var BASE_API_URL = 'http://wordpress.lifeofthelaw.org/api';
 
 var app = express();
 var renderPostDetail = post.detailRenderer(DEBUG);
