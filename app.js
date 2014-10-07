@@ -7,6 +7,7 @@ var request = require('request');
 
 var build = require('./lib/build');
 var post = require('./lib/post');
+var notFound = require('./lib/browser/not-found');
 var wpRequest = require('./lib/wp-request');
 var getYoutubeSearchURL = require('./lib/browser/youtube').getSearchURL;
 
@@ -55,7 +56,7 @@ function getBlogpostFromURL(url, req, res, next) {
     if (err) return next(err);
 
     body = JSON.parse(body);
-    if (!body.post) return res.send(404);
+    if (!body.post) return next(404);
 
     req.blogpost = _.extend(body.post, commonPostInfo(body.post));
     next();
@@ -106,7 +107,7 @@ app.param('pageslug', function(req, res, next, slug) {
     if (err) return next(err);
 
     body = JSON.parse(body);
-    if (!body.page) return res.send(404);
+    if (!body.page) return next(404);
 
     req.blogpage = body.page;
     next();
@@ -140,7 +141,7 @@ app.get('/api/audio/:id', function(req, res, next) {
   var enclosureURL = getEnclosureURL(req.blogpost);
 
   if (!enclosureURL)
-    return res.send(404);
+    return next(404);
 
   // Dropbox-hosted files don't have CORS headers, so pipe the audio.
   if (/dropbox/.test(urlParse(enclosureURL).hostname))
@@ -207,7 +208,12 @@ app.use('/vendor/nunjucks',
 if (DEBUG)
   app.use('/less', express.static(__dirname + '/less'));
 
+app.use(function(req, res, next) { return next(404); });
+
 app.use(function(err, req, res, next) {
+  if (err === 404)
+    return res.status(404).type('text/html')
+      .send(renderPostDetail(notFound.postDetail(req.url)));
   if (typeof(err) == 'number')
     return res.type('text/plain').send(err);
   if (typeof(err.status) == 'number')
