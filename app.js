@@ -52,7 +52,10 @@ function basicPostInfo(rawPost) {
 }
 
 function getBlogpostFromURL(url, req, res, next) {
-  wpRequest(url, function(err, body) {
+  wpRequest({
+    url: url,
+    bypassCache: req.headers['x-bypass-cache'] == '1'
+  }, function(err, body) {
     if (err) return next(err);
 
     body = JSON.parse(body);
@@ -103,7 +106,10 @@ app.param('pageslug', function(req, res, next, slug) {
   var url = BASE_API_URL + '/get_page/?slug=' + slug;
 
   if (!/^[a-z0-9\-]+$/.test(slug)) return next('route');
-  wpRequest(url, function(err, body) {
+  wpRequest({
+    url: url,
+    bypassCache: req.headers['x-bypass-cache'] == '1'
+  }, function(err, body) {
     if (err) return next(err);
 
     body = JSON.parse(body);
@@ -205,8 +211,9 @@ app.use(express.static(__dirname + '/static'));
 app.use('/vendor/nunjucks',
         express.static(__dirname + '/node_modules/nunjucks/browser'));
 
-if (DEBUG)
-  app.use('/less', express.static(__dirname + '/less'));
+// This is required for the debug panel to work, which we want usable
+// even when DEBUG is false.
+app.use('/less', express.static(__dirname + '/less'));
 
 app.use(function(req, res, next) {
   return next(404);
