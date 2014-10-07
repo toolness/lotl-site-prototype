@@ -306,6 +306,10 @@ h3.post {
 .post:not(.wide) .post-thumbnail {
   position: relative;
   width: 100%;
+
+  // This ensures that thumbnails don't accidentally obscure text
+  // if their dimensions are mis-reported.
+  overflow: hidden;
 }
 
 // We're setting the height of images based on a percentage
