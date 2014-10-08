@@ -9,6 +9,7 @@ var nunjucks = require('nunjucks');
 var build = require('./lib/build');
 var post = require('./lib/post');
 var wpRequest = require('./lib/wp-request');
+var oldSite = require('./lib/browser/old-site');
 var getYoutubeSearchURL = require('./lib/browser/youtube').getSearchURL;
 
 var PORT = process.env.PORT || 3000;
@@ -71,6 +72,10 @@ build.configure(DEBUG);
 app.get('/views.js', build.nunjucks(DEBUG));
 app.get('/main.js', build.browserify(DEBUG));
 app.get('/styles.css', build.less(DEBUG));
+
+oldSite.forEachRedirect(function(url, redirect) {
+  app.get(url, function(req, res) { res.redirect(redirect); });
+});
 
 app.get('/wp-content/*', function(req, res, next) {
   return res.redirect(301, 'http://wordpress.lifeofthelaw.org' + req.url);
