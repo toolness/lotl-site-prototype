@@ -7,6 +7,7 @@ var request = require('request');
 var nunjucks = require('nunjucks');
 
 var build = require('./lib/build');
+var feedProxy = require('./lib/feed-proxy');
 var post = require('./lib/post');
 var wpRequest = require('./lib/wp-request');
 var oldSite = require('./lib/browser/old-site');
@@ -76,6 +77,8 @@ app.get('/styles.css', build.less(DEBUG));
 oldSite.forEachRedirect(function(url, redirect) {
   app.get(url, function(req, res) { res.redirect(redirect); });
 });
+
+app.get('/feed/', feedProxy('/feed/'));
 
 app.get('/wp-content/*', function(req, res, next) {
   return res.redirect(301, 'http://wordpress.lifeofthelaw.org' + req.url);
