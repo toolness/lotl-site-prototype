@@ -211,6 +211,12 @@ app.get('/api/posts', function(req, res, next) {
   });
 });
 
+app.get('/api/stats', function(req, res) {
+  return res.send({
+    wpRequest: wpRequest.getStats()
+  });
+});
+
 app.get('/:slug/', function(req, res) {
   return res.type('text/html').send(renderPostDetail(req.blogpost));
 });
