@@ -32,6 +32,7 @@ function commonPostInfo(rawPost) {
   var info = {
     authorName: '',
     pubdate: new Date(rawPost.date).toISOString(),
+    link: '/' + rawPost.slug + '/',
     enclosure: getEnclosureURL(rawPost)
   };
   if (rawPost.custom_fields && rawPost.custom_fields.author &&
