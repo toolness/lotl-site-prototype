@@ -29,10 +29,13 @@ function getEnclosureURL(rawPost) {
 }
 
 function commonPostInfo(rawPost) {
+  pubdate = new Date(rawPost.date);
+
   var info = {
     authorName: '',
     pubdate: new Date(rawPost.date).toISOString(),
     link: '/' + rawPost.slug + '/',
+    pubdate: pubdate.toISOString(),
     enclosure: getEnclosureURL(rawPost)
   };
   if (rawPost.custom_fields && rawPost.custom_fields.author &&
@@ -41,6 +44,10 @@ function commonPostInfo(rawPost) {
   } else if (rawPost.author && rawPost.author.name) {
     info.authorName = rawPost.author.name;
   }
+
+  monthNames = [ "Jan", "Feb", "Mar", "Apr", "May", "June",
+    "July", "Aug", "Sept", "Oct", "Nov", "Dec" ];
+  info.pubdateAbbrev =  monthNames[pubdate.getMonth()] + ' ' + pubdate.getUTCDate();
 
   return info;
 }

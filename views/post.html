@@ -17,13 +17,13 @@
   </div>
   <div class="post-details">
     <h3><a href="{{ link }}">{{ title|safe }}</a></h3>
-    <p class="post-pubdate">Posted {{ pubdate.toDateString() }}</p>
+    <p class="post-pubdate">By {{ authorName }}, {{ pubdateAbbrev }}</p>
     {% if excerpt %}
     <p>{{ excerpt|safe }}</p>
     {% endif %}
     <ul class="post-actions">
       {% if enclosure %}
-      <li><a 
+      <li><a
         role="play-podcast"
         data-podcast-info="{{ enclosurePodcastInfo }}"
         href="{{ enclosure }}"><i class="fa fa-play-circle"></i> Listen</a></li>

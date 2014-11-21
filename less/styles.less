@@ -123,6 +123,22 @@ body {
   margin: 0 0 0 10px;
 }
 
+/* this is required as font-awesome doesn't have itunes icon { */
+.nav ul.nav-right .itunes {
+  width: 1em;
+}
+
+.nav ul.nav-right .itunes .fa-square-o {
+  font-size: 1.35em;
+  line-height: 1.5;
+}
+
+.nav ul.nav-right .itunes .fa-music {
+  font-size: 0.65em;
+}
+
+/* } this is required as font-awesome doesn't have itunes icon */
+
 .nav ul.nav-right li.search {
   color: black;
   border-bottom: 1px dotted lightgray;
@@ -258,7 +274,7 @@ body {
 }
 
 .masonry-container {
-  /* Budget enough width to contain all columns plus extra gutter, but 
+  /* Budget enough width to contain all columns plus extra gutter, but
    * rely on parent .container to hide the extra gutter. Taken from
    * http://jsfiddle.net/desandro/sJjYT/. */
   width: calc(100% + @gutterWidth);
@@ -440,6 +456,7 @@ ul.post-actions li {
 .post-detail {
   background-color: white;
   margin: 0 6%;
+  overflow: hidden;
 }
 
 .post-detail .pd-feature-image {
@@ -485,8 +502,37 @@ ul.post-actions li {
   font-weight: bold;
 }
 
+.post-detail .content {
+  width: 70%;
+  float: right;
+  margin-right: 10%;
+}
+
 .post-detail .pd-listen a:hover {
   color: @primary;
+}
+
+.post-detail ul.post-share-links {
+  list-style-type: none;
+  margin: 1em 0;
+  padding: 0;
+  width: 15%;
+  float: left;
+}
+
+.post-detail ul.post-share-links li {
+  font-size: 1.25em;
+}
+
+.post-detail ul.post-share-links li a {
+  text-decoration: none;
+  color: #000;
+  opacity: 0.35;
+  transition: opacity 0.25s;
+}
+
+.post-detail ul.post-share-links li a:hover {
+  opacity: 1;
 }
 
 footer {

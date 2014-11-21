@@ -10,7 +10,13 @@
   {% if authorName %}by {{ authorName }} on{% endif %}
   {{ pubdate.toDateString() }}
   </p>
-  {{ content|safe }}
+  <ul class="post-share-links">
+    <li><a href="http://www.facebook.com/share.php?u=http://www.lifeofthelaw.org{{ link }}&text={{ title | safe }}">Share <i class="fa fa-facebook"></i></a></li>
+    <li><a href="http://twitter.com/home?status={{ title | safe }}+http://www.lifeofthelaw.org{{ link }}">Tweet <i class="fa fa-twitter"></i></a></li>
+  </ul>
+  <div class="content">
+    {{ content|safe }}
+  </div>
 
   <div id="disqus_thread"></div>
     <script type="text/javascript">
