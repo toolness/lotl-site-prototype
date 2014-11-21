@@ -407,6 +407,7 @@ ul.post-actions {
   margin: 0;
   padding: 0;
   color: @lightgray;
+  float: left;
 }
 
 ul.post-actions li {
@@ -513,9 +514,40 @@ ul.post-actions li {
   color: @primary;
 }
 
-.post-detail ul.post-share-links {
+.post .post-footer {
+  padding: 0 0 1em;
+}
+
+ul.post-share-links {
   list-style-type: none;
-  margin: 1em 0;
+}
+
+ul.post-share-links li a {
+  text-decoration: none;
+  color: #000;
+  opacity: 0.35;
+  transition: opacity 0.25s;
+}
+
+ul.post-share-links li a:hover {
+  opacity: 1;
+}
+
+.post ul.post-share-links {
+  float: right;
+  padding: 0;
+  margin: 0;
+  font-size: 1.25em;
+  line-height: 1;
+}
+
+.post ul.post-share-links li {
+  float: left;
+  margin-left: 0.25em;
+}
+
+.post-detail ul.post-share-links {
+  margin: 1.5em 0;
   padding: 0;
   width: 15%;
   float: left;
@@ -523,18 +555,9 @@ ul.post-actions li {
 
 .post-detail ul.post-share-links li {
   font-size: 1.25em;
+  margin-bottom: 0.25em;
 }
 
-.post-detail ul.post-share-links li a {
-  text-decoration: none;
-  color: #000;
-  opacity: 0.35;
-  transition: opacity 0.25s;
-}
-
-.post-detail ul.post-share-links li a:hover {
-  opacity: 1;
-}
 
 footer {
   position: absolute;
