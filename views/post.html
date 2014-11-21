@@ -21,18 +21,26 @@
     {% if excerpt %}
     <p>{{ excerpt|safe }}</p>
     {% endif %}
-    <ul class="post-actions">
-      {% if enclosure %}
-      <li><a
-        role="play-podcast"
-        data-podcast-info="{{ enclosurePodcastInfo }}"
-        href="{{ enclosure }}"><i class="fa fa-play-circle"></i> Listen</a></li>
-      {% endif %}
-      {% if isVideo %}
-      <li><a href="{{ link }}"><i class="fa fa-play-circle"></i> Watch</a></li>
-      {% else %}
-      <li><a href="{{ link }}"><i class="fa fa-book"></i> Read More</a></li>
-      {% endif %}
-    </ul>
+    <div class="post-footer">
+      <ul class="post-actions">
+        {% if enclosure %}
+        <li><a
+          role="play-podcast"
+          data-podcast-info="{{ enclosurePodcastInfo }}"
+          href="{{ enclosure }}"><i class="fa fa-play-circle"></i> Listen</a></li>
+        {% endif %}
+        {% if isVideo %}
+        <li><a href="{{ link }}"><i class="fa fa-play-circle"></i> Watch</a></li>
+        {% else %}
+        <li><a href="{{ link }}"><i class="fa fa-book"></i> Read More</a></li>
+        {% endif %}
+      </ul>
+
+      <ul class="post-share-links">
+        <li><a href="http://www.facebook.com/share.php?u=http://www.lifeofthelaw.org{{ link }}&text={{ title | safe }}"><i class="fa fa-facebook"></i></a></li>
+        <li><a href="http://twitter.com/home?status={{ title | safe }}+http://www.lifeofthelaw.org{{ link }}"><i class="fa fa-twitter"></i></a></li>
+      </ul>
+    </div>
+
   </div>
 </div>
