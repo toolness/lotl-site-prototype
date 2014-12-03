@@ -11,6 +11,7 @@
   {{ pubdate.toDateString() }}
   </p>
   <section id="media-links">
+
     <ul class="post-share-links">
       <li><a href="http://www.facebook.com/share.php?u=http://www.lifeofthelaw.org{{ link }}&text={{ title | safe }}">Share <i class="fa fa-facebook"></i></a></li>
       <li><a href="http://twitter.com/home?status={{ title | safe }}+http://www.lifeofthelaw.org{{ link }}">Tweet <i class="fa fa-twitter"></i></a></li>
@@ -31,6 +32,11 @@
       <li><a href="https://twitter.com/TheLifeoftheLaw" title="Twitter"><i class="fa fa-twitter"></i></a></li>
       <li><a href="https://www.youtube.com/channel/UCoiT74LRtNm13hK9d0eUvgQ" title="YouTube"><i class="fa fa-youtube"></i></a></li>
     </ul>
+
+    <h3 id="email-sign-up">
+      <a href="http://eepurl.com/YNbPT" target="_blank">Subscribe to LOTL Emails</a>
+    </h3>
+
   </section>
   <div class="content">
     {{ content|safe }}

@@ -577,13 +577,14 @@ ul.post-share-links li a:hover {
 }
 
 .post-detail .subscribe-links {
-  padding: 0;
+  padding: 0 0 10px;
   margin: 0;
+  border-bottom: 1px solid rgba(0,0,0,0.35);
 }
 
 .post-detail .subscribe-links li {
   margin: 5px 2px 0 0;
-  font-size: 1.35em;
+  font-size: 1.15em;
 }
 
 .post-detail .subscribe-links li#subscribe-link-itunes {
@@ -605,6 +606,19 @@ ul.post-share-links li a:hover {
   list-style-type: none;
   color: @navText;
   background-color: @nav;
+}
+
+.post-detail #email-sign-up a {
+  font-weight: normal;
+  padding-top: 10px;
+  color: @navText;
+  opacity: 0.35;
+  transition: opacity 0.25s;
+  text-decoration: none;
+}
+
+.post-detail #email-sign-up a:hover {
+  opacity: 1;
 }
 
 footer {
