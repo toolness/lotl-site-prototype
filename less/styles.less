@@ -89,12 +89,14 @@ p {
   text-decoration: none;
 }
 
-.nav ul li a {
+.nav ul li a,
+.subscribe-links li a {
   opacity: 0.35;
   transition: opacity 0.25s;
 }
 
-.nav ul li a:hover {
+.nav ul li a:hover,
+.subscribe-links li a:hover {
   opacity: 1;
 }
 
@@ -117,12 +119,12 @@ p {
 
 .nav ul.nav-right {
   float: right;
-  list-style-type: none;
   margin: 18px 0 0 0;
   padding: 0;
 }
 
-.nav ul.nav-right li {
+.nav ul.nav-right li,
+ul.subscribe-links li {
   display: inline-block;
   margin: 0 0 0 10px;
 }
@@ -402,8 +404,9 @@ h3.post {
 }
 
 .post-details {
-  font-size: 12px;
-  padding: 14px;
+  font-size: 0.8125rem;
+  line-height: 1.125rem;
+  padding: 1rem;
 }
 
 ul.post-actions {
@@ -511,7 +514,8 @@ ul.post-actions li {
   width: 65%;
   float: right;
   margin-right: 14%;
-  font-size: 1em;
+  font-size: 1rem;
+  line-height: 1.4375;
 }
 
 .post-detail .pd-listen a:hover {
@@ -520,6 +524,11 @@ ul.post-actions li {
 
 .post .post-footer {
   padding: 0 0 1em;
+}
+
+#media-links {
+  width: 15%;
+  float: left;
 }
 
 ul.post-share-links {
@@ -552,9 +561,8 @@ ul.post-share-links li a:hover {
 
 .post-detail ul.post-share-links {
   margin: 1em 0;
-  padding: 0;
-  width: 15%;
-  float: left;
+  padding: 0 0 10px;
+  border-bottom: 1px solid rgba(0,0,0,0.35);
 }
 
 .post-detail ul.post-share-links li {
@@ -562,6 +570,42 @@ ul.post-share-links li a:hover {
   margin-bottom: 0.25em;
 }
 
+.post-detail .subscribe-links-header {
+  opacity: 0.35;
+  margin: 0 0 0;
+  font-weight: normal;
+}
+
+.post-detail .subscribe-links {
+  padding: 0;
+  margin: 0;
+}
+
+.post-detail .subscribe-links li {
+  margin: 5px 2px 0 0;
+  font-size: 1.35em;
+}
+
+.post-detail .subscribe-links li#subscribe-link-itunes {
+  width: 1.8em;
+  margin-left: -9px;
+}
+
+.itunes .fa-square-o {
+  font-size: 1.35em;
+  line-height: 1.4;
+}
+
+.subscribe-links .itunes .fa-music {
+  font-size: 0.65em;
+  line-height: 2.8;
+}
+
+.post-detail .subscribe-links a {
+  list-style-type: none;
+  color: @navText;
+  background-color: @nav;
+}
 
 footer {
   position: absolute;
