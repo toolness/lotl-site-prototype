@@ -123,8 +123,7 @@ p {
   padding: 0;
 }
 
-.nav ul.nav-right li,
-ul.subscribe-links li {
+.nav ul.nav-right li {
   display: inline-block;
   margin: 0 0 0 10px;
 }
@@ -572,40 +571,48 @@ ul.post-share-links li a:hover {
 
 .post-detail .subscribe-links-header {
   opacity: 0.35;
-  margin: 0 0 0;
+  margin: 0 0 10px;
   font-weight: normal;
 }
 
 .post-detail .subscribe-links {
   padding: 0 0 10px;
   margin: 0;
+  list-style: none;
   border-bottom: 1px solid rgba(0,0,0,0.35);
 }
 
 .post-detail .subscribe-links li {
-  margin: 5px 2px 0 0;
-  font-size: 1.15em;
+  width: 47%;
+  display: inline-block;
+  text-align: center;
 }
 
 .post-detail .subscribe-links li#subscribe-link-itunes {
-  width: 1.8em;
-  margin-left: -9px;
+  height: 2.5rem;
+}
+.post-detail .subscribe-links li#subscribe-link-itunes .itunes.fa-stack {
+  height: 2.5rem;
+  width: 2.5rem;
+  line-height: 1;
+  vertical-align: top;
 }
 
-.itunes .fa-square-o {
-  font-size: 1.35em;
-  line-height: 1.4;
+.post-detail .subscribe-links .itunes .fa-square-o {
+  font-size: 2.85rem;
+  line-height: 1.1;
 }
 
-.subscribe-links .itunes .fa-music {
-  font-size: 0.65em;
-  line-height: 2.8;
+.post-detail .subscribe-links .itunes .fa-music {
+  font-size: 1.3rem;
+  line-height: 2;
 }
 
 .post-detail .subscribe-links a {
   list-style-type: none;
   color: @navText;
   background-color: @nav;
+  font-size: 2.5rem;
 }
 
 .post-detail #email-sign-up a {
